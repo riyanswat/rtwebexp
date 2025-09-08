@@ -10,7 +10,7 @@ const Hero = () => {
       >
 {/* background image */}
       <Image
-        src="/images/lexus.jpg" // Put your image in public/images/
+        src="/images/hero-bg.png" // Put your image in public/images/
         alt="Hero Background"
         fill
         className="absolute inset-0 object-cover opacity-70 dark:opacity-30"
@@ -23,10 +23,10 @@ const Hero = () => {
             <div className="w-full px-4">
               <div className="mx-auto max-w-[800px] text-center">
                 <h1 className="mb-5 text-3xl font-bold leading-tight text-black dark:text-white sm:text-4xl sm:leading-tight md:text-5xl md:leading-tight">
-                  Your gateway to Japan&apos;s best vehicles
+                  Your Trusted Car Exporter from Japan
                 </h1>
                 <p className="mb-12 text-base leading-relaxed! text-body-color dark:text-body-color-dark sm:text-lg md:text-xl">
-                  Whether it’s Japanese cars, commercial trucks, heavy machinery like forklifts and excavators, or non-Japanese vehicles — we’re your trusted partner for sourcing and shipping quality vehicles worldwide, hassle-free
+                  We export all kinds of vehicles from Japan — used cars, trucks, heavy machinery and even European imports — straight to your port, with honest and transparent service.
                 </p>
                 <div className="flex flex-col items-center justify-center space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
                   <Link
