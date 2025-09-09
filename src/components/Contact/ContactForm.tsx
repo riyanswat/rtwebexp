@@ -2,43 +2,42 @@
 
 import { useTheme } from "next-themes";
 
-const ContactForm = () => {
+export default function ContactForm() {
   const { theme } = useTheme();
 
   return (
     <div className="shadow-three dark:bg-gray-dark relative z-10 rounded-xs bg-white p-8 sm:p-11 lg:p-8 xl:p-11">
-      <h3 className="mb-4 text-2xl leading-tight font-bold text-black dark:text-white">
-        Find Us
-      </h3>
+      {/* Google Map */}
+      <div className="w-full overflow-hidden rounded-xs">
+        <iframe
+          title="Rayan Trading Location"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3218.735220346897!2d139.52298457466603!3d36.22163020010164!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x601f2f0072eb430f%3A0x8b58636648491ce9!2zUkFZQU4gVFJBRElORyDmoKrlvI_kvJrnpL4!5e0!3m2!1sen!2sjp!4v1754834384789!5m2!1sen!2sjp"
+          className="h-64 w-full md:h-80"
+          style={{ border: 0 }}
+          loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"
+          allowFullScreen
+        />
+      </div>
 
-      <a
-        href="https://share.google/iZO5VJK5bMfPGnF5H"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="block"
-      >
-        <button className="bg-primary shadow-submit hover:bg-primary/90 dark:shadow-submit-dark flex w-full items-center justify-center rounded-xs px-9 py-4 text-base font-medium text-white duration-300 cursor-pointer">
-          Find us on Google
-        </button>
-        
-      </a>
+      {/* Spacing */}
       <div className="my-4" />
+
+      {/* Button */}
       <a
-        href="https://www.facebook.com/rtjapan"
+        href="https://maps.app.goo.gl/WPc28rcV9k9vpZ5P9"
         target="_blank"
         rel="noopener noreferrer"
         className="block"
       >
         <button className="bg-primary shadow-submit hover:bg-primary/90 dark:shadow-submit-dark flex w-full items-center justify-center rounded-xs px-9 py-4 text-base font-medium text-white duration-300 cursor-pointer">
-          Find us on Facebook
+          Open in Google Maps
         </button>
-        
       </a>
 
-      {/* Background decoration SVGs */}
+      {/* Decorative SVG */}
       <div>
         <span className="absolute top-7 left-2">
-          {/* SVG #1 */}
           <svg
             width="57"
             height="65"
@@ -73,16 +72,116 @@ const ContactForm = () => {
             </defs>
           </svg>
         </span>
-
-        {/* (Keep your other SVGs exactly the same) */}
       </div>
     </div>
   );
-};
-
-export default ContactForm;
+}
 
 
+
+// "use client";
+
+// import { useTheme } from "next-themes";
+
+// const ContactForm = () => {
+//   const { theme } = useTheme();
+
+//   return (
+//     <div className="shadow-three dark:bg-gray-dark relative z-10 rounded-xs bg-white p-8 sm:p-11 lg:p-8 xl:p-11">
+//       <h3 className="mb-4 text-2xl leading-tight font-bold text-black dark:text-white">
+//         Find Us
+//       </h3>
+
+//       <a
+//         href="https://share.google/iZO5VJK5bMfPGnF5H"
+//         target="_blank"
+//         rel="noopener noreferrer"
+//         className="block"
+//       >
+//         <button className="bg-primary shadow-submit hover:bg-primary/90 dark:shadow-submit-dark flex w-full items-center justify-center rounded-xs px-9 py-4 text-base font-medium text-white duration-300 cursor-pointer">
+//           Find us on Google
+//         </button>
+        
+//       </a>
+//       <div className="my-4" />
+//       <a
+//         href="https://www.facebook.com/rtjapan"
+//         target="_blank"
+//         rel="noopener noreferrer"
+//         className="block"
+//       >
+//         <button className="bg-primary shadow-submit hover:bg-primary/90 dark:shadow-submit-dark flex w-full items-center justify-center rounded-xs px-9 py-4 text-base font-medium text-white duration-300 cursor-pointer">
+//           Find us on Facebook
+//         </button>
+        
+//       </a>
+
+//       {/* Background decoration SVGs */}
+//       <div>
+//         <span className="absolute top-7 left-2">
+//           {/* SVG #1 */}
+//           <svg
+//             width="57"
+//             height="65"
+//             viewBox="0 0 57 65"
+//             fill="none"
+//             xmlns="http://www.w3.org/2000/svg"
+//           >
+//             <path
+//               opacity="0.5"
+//               d="M0.407629 15.9573L39.1541 64.0714L56.4489 0.160793L0.407629 15.9573Z"
+//               fill="url(#paint0_linear_1028_600)"
+//             />
+//             <defs>
+//               <linearGradient
+//                 id="paint0_linear_1028_600"
+//                 x1="-18.3187"
+//                 y1="55.1044"
+//                 x2="37.161"
+//                 y2="15.3509"
+//                 gradientUnits="userSpaceOnUse"
+//               >
+//                 <stop
+//                   stopColor={theme === "light" ? "#4A6CF7" : "#fff"}
+//                   stopOpacity="0.62"
+//                 />
+//                 <stop
+//                   offset="1"
+//                   stopColor={theme === "light" ? "#4A6CF7" : "#fff"}
+//                   stopOpacity="0"
+//                 />
+//               </linearGradient>
+//             </defs>
+//           </svg>
+//         </span>
+
+//         {/* (Keep your other SVGs exactly the same) */}
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default ContactForm;
+
+
+// ======================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Old version
 
 
 // "use client";
