@@ -1,5 +1,6 @@
+
+
 import Image from "next/image";
-import SectionTitle from "../Common/SectionTitle";
 
 const checkIcon = (
   <svg width="16" height="13" viewBox="0 0 16 13" className="fill-current">
@@ -23,13 +24,18 @@ const AboutSectionOne = () => {
         <div className="border-b border-body-color/[.15] pb-16 dark:border-white/[.15] md:pb-20 lg:pb-28">
           <div className="-mx-4 flex flex-wrap items-center">
             <div className="w-full px-4 lg:w-1/2">
-              <SectionTitle
-                title="Crafted for Startup, SaaS and Business Sites."
-                paragraph="The main ‘thrust’ is to focus on educating attendees on how to best protect highly vulnerable business applications with interactive panel discussions and roundtables."
-                mb="44px"
-              />
+            
 
-              <div
+            <h2 className="text-3xl font-bold text-black dark:text-white sm:text-4xl mb-6">
+                Who We Are
+              </h2>
+              <p className="text-base text-body-color mb-8">
+                We are a Japan-based car exporting company, helping dealers and importers worldwide access Japanese vehicles. Our focus is on honesty, transparency and hassle-free exports.
+              </p>
+
+              
+
+              {/* <div
                 className="mb-12 max-w-[570px] lg:mb-0"
                 data-wow-delay=".15s"
               >
@@ -46,7 +52,7 @@ const AboutSectionOne = () => {
                     <List text="Developer friendly" />
                   </div>
                 </div>
-              </div>
+              </div> */}
             </div>
 
             <div className="w-full px-4 lg:w-1/2">
@@ -58,10 +64,11 @@ const AboutSectionOne = () => {
                   className="mx-auto max-w-full drop-shadow-three dark:hidden dark:drop-shadow-none lg:mr-0"
                 />
                 <Image
-                  src="/images/about/about-image-dark.svg"
+                  src="/images/about/lexus_about.jpg"
                   alt="about-image"
                   fill
-                  className="mx-auto hidden max-w-full drop-shadow-three dark:block dark:drop-shadow-none lg:mr-0"
+                  // rounded-lg shadow-lg object-contain hidden dark:block
+                  className="rounded-lg mx-auto hidden max-w-full drop-shadow-three dark:block dark:drop-shadow-none lg:mr-0"
                 />
               </div>
             </div>
