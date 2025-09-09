@@ -7,13 +7,13 @@ const testimonialData: Testimonial[] = [
     name: "Tariq Sohail",
     designation: "Pakistan",
     content:
-      "I’ve imported several cars through Rayan Trading and can confidently say their service is outstanding. They’re honest, transparent and clear every step of the way. No hidden fees, no surprises, just smooth, reliable service. I trust them and recommend them to anyone looking for hassle-free vehicle imports. I’ll definitely use them again.",
+      "I am their customer since 2017 and have imported many cars from them, they are cooperative and I can confidently say their services is reliable. They are honest and clear every step of the way. I recommend them to anyone looking for smooth cars imports.",
     image: "/images/testimonials/auth-01.png",
     star: 5,
   },
   {
     id: 2,
-    name: "John Smith",
+    name: "Mohsin Raza",
     designation: "UK",
     content:
       "I have imported and still import cars from Rayan Trading. They are reliable and I am satisfied with their team and service.",
@@ -22,7 +22,7 @@ const testimonialData: Testimonial[] = [
   },
   {
     id: 3,
-    name: "Farhan",
+    name: "Inam Ullah",
     designation: "Australia",
     content:
       "I am more than satisfied with their service and the cars they have shipped me, highly recommended and happy to answer any questions anyone might have.",
@@ -31,10 +31,19 @@ const testimonialData: Testimonial[] = [
   },
   {
     id: 4,
-    name: "Rahman Ali",
+    name: "Khalfan",
     designation: "Tanzania",
     content:
-      "I am more than satisfied with their service and the cars they have shipped me, highly recommended and happy to answer any questions anyone might have.",
+      "I highly recommend Rayan Trading for their service. They are my first choice for car imports to Tanzania and they have never disappointed me.",
+    image: "/images/testimonials/auth-03.png",
+    star: 5,
+  },
+  {
+    id: 5,
+    name: "Abood",
+    designation: "Lebanon",
+    content:
+      "Rayan Trading staff is trustworthy and friendly. I will always use their service.",
     image: "/images/testimonials/auth-03.png",
     star: 5,
   },

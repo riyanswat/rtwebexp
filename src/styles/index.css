@@ -133,3 +133,19 @@ layer(base);
     @apply inline-flex;
   }
 }
+
+
+
+/* ---------------------------------- */
+
+/* === Marquee for Countries strip === */
+@keyframes rt-scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.rt-marquee {
+  animation: rt-scroll 28s linear infinite;
+  will-change: transform;
+}
+/* Optional: pause on hover */
+/* .rt-marquee:hover { animation-play-state: paused; } */
