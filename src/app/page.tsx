@@ -4,7 +4,7 @@ import AboutSectionTwo from "@/components/About/AboutSectionTwo";
 // import Brands from "@/components/Brands";
 import ScrollUp from "@/components/Common/ScrollUp";
 // import Contact from "@/components/Contact";
-import Features from "@/components/Features";
+// import Features from "@/components/Features";
 import Hero from "@/components/Hero";
 // import Pricing from "@/components/Pricing";
 import Testimonials from "@/components/Testimonials";
@@ -12,6 +12,7 @@ import Testimonials from "@/components/Testimonials";
 import { Metadata } from "next";
 import { motion } from "framer-motion"
 // import HowWeWork from "@/components/HowWeWork";
+import Work from "@/components/Work";
 
 
 export const metadata: Metadata = {
@@ -27,11 +28,12 @@ export default function Home() {
       <ScrollUp />
       <Hero />
       {/* <HowWeWork /> */}
-      <Features />
+      <Work />
+      {/* <Features /> */}
       {/* <Video /> */}
       {/* <Brands /> */}
-      <AboutSectionOne />
-      <AboutSectionTwo />
+      {/* <AboutSectionOne /> */}
+      {/* <AboutSectionTwo /> */}
       <Testimonials />
       {/* <Pricing />
       <Blog /> */}
