@@ -25,8 +25,42 @@ const Footer = () => {
                 </Link> */}
 
 
+                {/* ====================================================== */}
+                {/* ====================================================== */}
+
+
+                <p className="mb-6 flex items-center text-base text-body-color dark:text-body-color-dark">
+                  {/* Address Icon */}
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="mr-2 h-10 w-10 text-primary"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    strokeWidth={2}
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M12 11c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 
+         1.343-3 3 1.343 3 3 3z"
+                    />
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M12 22s8-4.5 8-12a8 8 0 10-16 0c0 7.5 8 12 8 12z"
+                    />
+                  </svg>
+                  1917-12 Horikucho, Tatebayashi, Gunma 374-0033, Japan.
+                </p>
+
+
+
+                {/* ====================================================== */}
+                {/* ====================================================== */}
+
                 <p className="mb-9 text-base leading-relaxed text-body-color dark:text-body-color-dark">
-                  Hiiii.
+                  {/* any text below the address goes here */}
                 </p>
                 <div className="flex items-center">
                   <a
@@ -90,8 +124,8 @@ const Footer = () => {
               </div>
             </div>
 
-{/* hidden links */}
-{/* ============================= */}
+            {/* hidden links */}
+            {/* ============================= */}
             {/* <div className="w-full px-4 sm:w-1/2 md:w-1/2 lg:w-2/12 xl:w-2/12">
               <div className="mb-12 lg:mb-16">
                 <h2 className="mb-10 text-xl font-bold text-black dark:text-white">
@@ -125,9 +159,9 @@ const Footer = () => {
                 </ul>
               </div>
             </div> */}
-{/* ============================= */}
-{/* ============================= */}
-{/* 
+            {/* ============================= */}
+            {/* ============================= */}
+            {/* 
             <div className="w-full px-4 sm:w-1/2 md:w-1/2 lg:w-2/12 xl:w-2/12">
               <div className="mb-12 lg:mb-16">
                 <h2 className="mb-10 text-xl font-bold text-black dark:text-white">
@@ -161,8 +195,8 @@ const Footer = () => {
                 </ul>
               </div>
             </div> */}
-{/* ============================= */}
-{/* ============================= */}
+            {/* ============================= */}
+            {/* ============================= */}
 
             {/* <div className="w-full px-4 md:w-1/2 lg:w-4/12 xl:w-3/12">
               <div className="mb-12 lg:mb-16">
@@ -197,12 +231,12 @@ const Footer = () => {
                 </ul>
               </div>
             </div> */}
-{/* ============================= */}
+            {/* ============================= */}
 
           </div>
 
           <div className="h-px w-full bg-linear-to-r from-transparent via-[#D2D8E183] to-transparent dark:via-[#959CB183]"></div>
-         
+
           <div className="py-8">
             <p className="text-center text-base text-body-color dark:text-white">
               © 2024 Rayan Trading. All Rights Reserved.
@@ -210,7 +244,7 @@ const Footer = () => {
           </div>
         </div>
 
-        
+
         <div className="absolute right-0 top-14 z-[-1]">
           <svg
             width="55"

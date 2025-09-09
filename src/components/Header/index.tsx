@@ -14,12 +14,35 @@ const Header = () => {
   };
 
   // Sticky Navbar
-  const [sticky, setSticky] = useState(() => {
-    if (typeof window !== "undefined") {
-      return window.scrollY >= 80;
-    }
-    return false;
-  });
+  // const [sticky, setSticky] = useState(() => {
+  //   if (typeof window !== "undefined") {
+  //     return window.scrollY >= 80;
+  //   }
+  //   return false;
+  // });
+// uncomment above if issue not fixed
+
+// changed above to below
+// ================================
+
+const [sticky, setSticky] = useState(false);
+
+useEffect(() => {
+  const onScroll = () => {
+    setSticky(window.scrollY >= 80);
+  };
+
+  window.addEventListener("scroll", onScroll);
+  onScroll(); // run once after mount
+  return () => window.removeEventListener("scroll", onScroll);
+}, []);
+
+
+
+// ================================
+
+
+
 
   useEffect(() => {
     const onScroll = () => {
@@ -57,7 +80,7 @@ const Header = () => {
             <div className="w-60 max-w-full px-4 xl:mr-12">
               <Link href="/" className="header-logo block w-full py-5 lg:py-2">
                 <Image
-                  src="/images/logo/logo-2.svg"
+                  src="/images/logo/rtlogo.svg"
                   alt="logo"
                   width={140}
                   height={30}
@@ -69,10 +92,10 @@ const Header = () => {
                   Rayan Trading
                 </span> */}
                 <Image
-                  src="/images/logo/logo.svg"
+                  src="/images/logo/rtlogo3.svg"
                   alt="logo"
-                  width={140}
-                  height={30}
+                  width={280}
+                  height={60}
                   priority
                   className="hidden dark:block"
                 />
