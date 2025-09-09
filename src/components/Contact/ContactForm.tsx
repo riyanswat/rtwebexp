@@ -1,77 +1,104 @@
 "use client";
 
-import { useTheme } from "next-themes";
+import { PhoneIcon } from "@heroicons/react/24/outline";
 
 export default function ContactForm() {
-  const { theme } = useTheme();
-
   return (
-    <div className="shadow-three dark:bg-gray-dark relative z-10 rounded-xs bg-white p-8 sm:p-11 lg:p-8 xl:p-11">
-      {/* Google Map */}
-      <div className="w-full overflow-hidden rounded-xs">
-        <iframe
-          title="Rayan Trading Location"
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3218.735220346897!2d139.52298457466603!3d36.22163020010164!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x601f2f0072eb430f%3A0x8b58636648491ce9!2zUkFZQU4gVFJBRElORyDmoKrlvI_kvJrnpL4!5e0!3m2!1sen!2sjp!4v1754834384789!5m2!1sen!2sjp"
-          className="h-64 w-full md:h-80"
-          style={{ border: 0 }}
-          loading="lazy"
-          referrerPolicy="no-referrer-when-downgrade"
-          allowFullScreen
-        />
-      </div>
+    <div className="shadow-three rounded-xs bg-white p-8 sm:p-11 lg:p-8 xl:p-11 dark:bg-gray-dark">
+      <h3 className="mb-6 text-2xl font-bold text-black dark:text-white">
+        Contact Information
+      </h3>
 
-      {/* Spacing */}
-      <div className="my-4" />
+      <div className="grid grid-cols-1 gap-6">
+        {/* Phone */}
+        <div
+          // href="tel:+819057763690"
+          className="flex items-start rounded-md border border-gray-200 bg-gray-50 p-5 shadow-sm transition hover:shadow-md dark:border-gray-700 dark:bg-[#1e293b]"
+        >
+          <div className="mr-4 flex h-12 w-12 items-center justify-center rounded-md bg-primary/10 text-primary">
+            <PhoneIcon className="h-6 w-6" />
+          </div>
+          <div>
+            <h4 className="text-lg font-semibold text-black dark:text-white">
+              Phone
+            </h4>
+            <p className="text-body-color text-sm">+81-90-5776-3690</p>
+            <p className="text-xs text-gray-500 dark:text-gray-400">
+              Contact us anytime
+              {/* Mon–Fri: 9:00–18:00 JST */}
+            </p>
+          </div>
+        </div>
 
-      {/* Button */}
-      <a
-        href="https://maps.app.goo.gl/WPc28rcV9k9vpZ5P9"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="block"
-      >
-        <button className="bg-primary shadow-submit hover:bg-primary/90 dark:shadow-submit-dark flex w-full items-center justify-center rounded-xs px-9 py-4 text-base font-medium text-white duration-300 cursor-pointer">
-          Open in Google Maps
-        </button>
-      </a>
+        {/* WhatsApp */}
+        <a
+          href="https://wa.me/819057763690"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-start rounded-md border border-gray-200 bg-gray-50 p-5 shadow-sm transition hover:shadow-md dark:border-gray-700 dark:bg-[#1e293b]"
+        >
+          <div className="mr-4 flex h-12 w-12 items-center justify-center rounded-md bg-green-100 text-green-600">
+            {/* WhatsApp icon SVG */}
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-6 w-6"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path d="M20.52 3.48A11.9 11.9 0 0012.06 0C5.45 0 .11 5.34.11 11.93c0 2.1.55 4.13 1.6 5.94L0 24l6.3-1.65a11.9 11.9 0 005.76 1.47h.01c6.61 0 11.95-5.34 11.95-11.93 0-3.19-1.24-6.19-3.5-8.41zM12.07 21.3c-1.84 0-3.63-.5-5.2-1.44l-.37-.22-3.74.98 1-3.65-.24-.38a9.3 9.3 0 01-1.44-4.88c0-5.14 4.19-9.32 9.33-9.32 2.49 0 4.83.97 6.59 2.72a9.26 9.26 0 012.74 6.6c0 5.13-4.2 9.3-9.34 9.3zm5.15-6.92c-.28-.14-1.65-.82-1.91-.91-.26-.1-.45-.14-.65.13-.19.27-.74.91-.91 1.1-.17.18-.34.21-.62.07-.28-.14-1.18-.44-2.25-1.41a8.4 8.4 0 01-1.55-1.92c-.16-.28-.02-.43.12-.57.12-.12.27-.31.41-.46.14-.15.18-.26.27-.43.09-.18.05-.34-.02-.48-.07-.14-.65-1.55-.89-2.12-.23-.55-.47-.47-.65-.48h-.55c-.19 0-.48.07-.73.34-.25.27-.96.94-.96 2.3 0 1.35.99 2.65 1.13 2.84.14.19 1.96 3.14 4.75 4.4.66.29 1.18.46 1.58.59.66.21 1.26.18 1.73.11.53-.08 1.65-.67 1.88-1.31.23-.64.23-1.18.16-1.31-.07-.12-.25-.2-.53-.34z" />
+            </svg>
+          </div>
+          <div>
+            <h4 className="text-lg font-semibold text-black dark:text-white">
+              WhatsApp
+            </h4>
+            <p className="text-body-color text-sm">+81 90 5776 3690</p>
+            <p className="text-xs text-gray-500 dark:text-gray-400">
+              Tap to chat directly
+            </p>
+          </div>
+        </a>
 
-      {/* Decorative SVG */}
-      <div>
-        <span className="absolute top-7 left-2">
-          <svg
-            width="57"
-            height="65"
-            viewBox="0 0 57 65"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              opacity="0.5"
-              d="M0.407629 15.9573L39.1541 64.0714L56.4489 0.160793L0.407629 15.9573Z"
-              fill="url(#paint0_linear_1028_600)"
-            />
-            <defs>
-              <linearGradient
-                id="paint0_linear_1028_600"
-                x1="-18.3187"
-                y1="55.1044"
-                x2="37.161"
-                y2="15.3509"
-                gradientUnits="userSpaceOnUse"
-              >
-                <stop
-                  stopColor={theme === "light" ? "#4A6CF7" : "#fff"}
-                  stopOpacity="0.62"
-                />
-                <stop
-                  offset="1"
-                  stopColor={theme === "light" ? "#4A6CF7" : "#fff"}
-                  stopOpacity="0"
-                />
-              </linearGradient>
-            </defs>
-          </svg>
-        </span>
+        {/* Address */}
+        <a
+          href="https://share.google/LsSPrMWTFdnT0ZbEI"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-start rounded-md border border-gray-200 bg-gray-50 p-5 shadow-sm transition hover:shadow-md dark:border-gray-700 dark:bg-[#1e293b]"
+        >
+          <div className="mr-4 flex h-12 w-12 items-center justify-center rounded-md bg-primary/10 text-primary">
+            {/* Location icon */}
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M12 11c1.657 0 3-1.343 3-3S13.657 5 12 5s-3 1.343-3 3 1.343 3 3 3z"
+              />
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M12 22s8-4.5 8-11a8 8 0 10-16 0c0 6.5 8 11 8 11z"
+              />
+            </svg>
+          </div>
+          <div>
+            <h4 className="text-lg font-semibold text-black dark:text-white">
+              Address
+            </h4>
+            <p className="text-body-color text-sm">Tatebayashi, Japan</p>
+            <p className="text-xs text-gray-500 dark:text-gray-400">
+              Click to view on Google Maps
+            </p>
+          </div>
+        </a>
       </div>
     </div>
   );
@@ -79,149 +106,47 @@ export default function ContactForm() {
 
 
 
+
+// old
+
 // "use client";
 
 // import { useTheme } from "next-themes";
 
-// const ContactForm = () => {
+// export default function ContactForm() {
 //   const { theme } = useTheme();
 
 //   return (
 //     <div className="shadow-three dark:bg-gray-dark relative z-10 rounded-xs bg-white p-8 sm:p-11 lg:p-8 xl:p-11">
-//       <h3 className="mb-4 text-2xl leading-tight font-bold text-black dark:text-white">
-//         Find Us
-//       </h3>
+//       {/* Google Map */}
+//       <div className="w-full overflow-hidden rounded-xs">
+//         <iframe
+//           title="Rayan Trading Location"
+//           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3218.735220346897!2d139.52298457466603!3d36.22163020010164!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x601f2f0072eb430f%3A0x8b58636648491ce9!2zUkFZQU4gVFJBRElORyDmoKrlvI_kvJrnpL4!5e0!3m2!1sen!2sjp!4v1754834384789!5m2!1sen!2sjp"
+//           className="h-64 w-full md:h-80"
+//           style={{ border: 0 }}
+//           loading="lazy"
+//           referrerPolicy="no-referrer-when-downgrade"
+//           allowFullScreen
+//         />
+//       </div>
 
-//       <a
-//         href="https://share.google/iZO5VJK5bMfPGnF5H"
-//         target="_blank"
-//         rel="noopener noreferrer"
-//         className="block"
-//       >
-//         <button className="bg-primary shadow-submit hover:bg-primary/90 dark:shadow-submit-dark flex w-full items-center justify-center rounded-xs px-9 py-4 text-base font-medium text-white duration-300 cursor-pointer">
-//           Find us on Google
-//         </button>
-        
-//       </a>
+//       {/* Spacing */}
 //       <div className="my-4" />
+
+//       {/* Button */}
 //       <a
-//         href="https://www.facebook.com/rtjapan"
+//         href="https://maps.app.goo.gl/WPc28rcV9k9vpZ5P9"
 //         target="_blank"
 //         rel="noopener noreferrer"
 //         className="block"
 //       >
 //         <button className="bg-primary shadow-submit hover:bg-primary/90 dark:shadow-submit-dark flex w-full items-center justify-center rounded-xs px-9 py-4 text-base font-medium text-white duration-300 cursor-pointer">
-//           Find us on Facebook
+//           Open in Google Maps
 //         </button>
-        
 //       </a>
 
-//       {/* Background decoration SVGs */}
-//       <div>
-//         <span className="absolute top-7 left-2">
-//           {/* SVG #1 */}
-//           <svg
-//             width="57"
-//             height="65"
-//             viewBox="0 0 57 65"
-//             fill="none"
-//             xmlns="http://www.w3.org/2000/svg"
-//           >
-//             <path
-//               opacity="0.5"
-//               d="M0.407629 15.9573L39.1541 64.0714L56.4489 0.160793L0.407629 15.9573Z"
-//               fill="url(#paint0_linear_1028_600)"
-//             />
-//             <defs>
-//               <linearGradient
-//                 id="paint0_linear_1028_600"
-//                 x1="-18.3187"
-//                 y1="55.1044"
-//                 x2="37.161"
-//                 y2="15.3509"
-//                 gradientUnits="userSpaceOnUse"
-//               >
-//                 <stop
-//                   stopColor={theme === "light" ? "#4A6CF7" : "#fff"}
-//                   stopOpacity="0.62"
-//                 />
-//                 <stop
-//                   offset="1"
-//                   stopColor={theme === "light" ? "#4A6CF7" : "#fff"}
-//                   stopOpacity="0"
-//                 />
-//               </linearGradient>
-//             </defs>
-//           </svg>
-//         </span>
-
-//         {/* (Keep your other SVGs exactly the same) */}
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default ContactForm;
-
-
-// ======================================================
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// Old version
-
-
-// "use client";
-
-// import { useTheme } from "next-themes";
-
-// const NewsLatterBox = () => {
-//   const { theme } = useTheme();
-
-//   return (
-//     <div className="shadow-three dark:bg-gray-dark relative z-10 rounded-xs bg-white p-8 sm:p-11 lg:p-8 xl:p-11">
-//       <h3 className="mb-4 text-2xl leading-tight font-bold text-black dark:text-white">
-//         Subscribe to receive future updates
-//       </h3>
-//       <p className="border-body-color/25 text-body-color mb-11 border-b pb-11 text-base leading-relaxed dark:border-white/25">
-//         Contact us anytime.
-//       </p>
-//       {/* <div>
-//         <input
-//           type="text"
-//           name="name"
-//           placeholder="Enter your name"
-//           className="border-stroke text-body-color focus:border-primary dark:text-body-color-dark dark:shadow-two dark:focus:border-primary mb-4 w-full rounded-xs border bg-[#f8f8f8] px-6 py-3 text-base outline-hidden dark:border-transparent dark:bg-[#2C303B] dark:focus:shadow-none"
-//         />
-//         <input
-//           type="email"
-//           name="email"
-//           placeholder="Enter your email"
-//           className="border-stroke text-body-color focus:border-primary dark:text-body-color-dark dark:shadow-two dark:focus:border-primary mb-4 w-full rounded-xs border bg-[#f8f8f8] px-6 py-3 text-base outline-hidden dark:border-transparent dark:bg-[#2C303B] dark:focus:shadow-none"
-//         />
-//         <input
-//           type="submit"
-//           value="Subscribe"
-//           className="bg-primary shadow-submit hover:bg-primary/90 dark:shadow-submit-dark mb-5 flex w-full cursor-pointer items-center justify-center rounded-xs px-9 py-4 text-base font-medium text-white duration-300"
-//         />
-//         <p className="text-body-color dark:text-body-color-dark text-center text-base leading-relaxed">
-//           No spam guaranteed, So please don’t send any spam mail.
-//         </p>
-//       </div> */}
-
+//       {/* Decorative SVG */}
 //       <div>
 //         <span className="absolute top-7 left-2">
 //           <svg
@@ -258,188 +183,8 @@ export default function ContactForm() {
 //             </defs>
 //           </svg>
 //         </span>
-
-//         <span className="absolute bottom-24 left-1.5">
-//           <svg
-//             width="39"
-//             height="32"
-//             viewBox="0 0 39 32"
-//             fill="none"
-//             xmlns="http://www.w3.org/2000/svg"
-//           >
-//             <path
-//               opacity="0.5"
-//               d="M14.7137 31.4215L38.6431 4.24115L6.96581e-07 0.624124L14.7137 31.4215Z"
-//               fill="url(#paint0_linear_1028_601)"
-//             />
-//             <defs>
-//               <linearGradient
-//                 id="paint0_linear_1028_601"
-//                 x1="39.1948"
-//                 y1="38.335"
-//                 x2="10.6982"
-//                 y2="10.2511"
-//                 gradientUnits="userSpaceOnUse"
-//               >
-//                 <stop
-//                   stopColor={theme === "light" ? "#4A6CF7" : "#fff"}
-//                   stopOpacity="0.62"
-//                 />
-//                 <stop
-//                   offset="1"
-//                   stopColor={theme === "light" ? "#4A6CF7" : "#fff"}
-//                   stopOpacity="0"
-//                 />
-//               </linearGradient>
-//             </defs>
-//           </svg>
-//         </span>
-
-//         <span className="absolute top-[140px] right-2">
-//           <svg
-//             width="38"
-//             height="38"
-//             viewBox="0 0 38 38"
-//             fill="none"
-//             xmlns="http://www.w3.org/2000/svg"
-//           >
-//             <path
-//               opacity="0.5"
-//               d="M10.6763 35.3091C23.3976 41.6367 38.1681 31.7045 37.107 17.536C36.1205 4.3628 21.9407 -3.46901 10.2651 2.71063C-2.92254 9.69061 -2.68321 28.664 10.6763 35.3091Z"
-//               fill="url(#paint0_linear_1028_602)"
-//             />
-//             <defs>
-//               <linearGradient
-//                 id="paint0_linear_1028_602"
-//                 x1="-0.571054"
-//                 y1="-37.1717"
-//                 x2="28.7937"
-//                 y2="26.7564"
-//                 gradientUnits="userSpaceOnUse"
-//               >
-//                 <stop
-//                   stopColor={theme === "light" ? "#4A6CF7" : "#fff"}
-//                   stopOpacity="0.62"
-//                 />
-//                 <stop
-//                   offset="1"
-//                   stopColor={theme === "light" ? "#4A6CF7" : "#fff"}
-//                   stopOpacity="0"
-//                 />
-//               </linearGradient>
-//             </defs>
-//           </svg>
-//         </span>
-
-//         <span className="absolute top-0 right-0">
-//           <svg
-//             width="162"
-//             height="91"
-//             viewBox="0 0 162 91"
-//             fill="none"
-//             xmlns="http://www.w3.org/2000/svg"
-//           >
-//             <g opacity="0.3">
-//               <path
-//                 opacity="0.45"
-//                 d="M1 89.9999C8 77.3332 27.7 50.7999 50.5 45.9999C79 39.9999 95 41.9999 106 30.4999C117 18.9999 126 -3.50014 149 -3.50014C172 -3.50014 187 4.99986 200.5 -8.50014C214 -22.0001 210.5 -46.0001 244 -37.5001C270.8 -30.7001 307.167 -45 322 -53"
-//                 stroke="url(#paint0_linear_1028_603)"
-//               />
-//               <path
-//                 opacity="0.45"
-//                 d="M43 64.9999C50 52.3332 69.7 25.7999 92.5 20.9999C121 14.9999 137 16.9999 148 5.49986C159 -6.00014 168 -28.5001 191 -28.5001C214 -28.5001 229 -20.0001 242.5 -33.5001C256 -47.0001 252.5 -71.0001 286 -62.5001C312.8 -55.7001 349.167 -70 364 -78"
-//                 stroke="url(#paint1_linear_1028_603)"
-//               />
-//               <path
-//                 opacity="0.45"
-//                 d="M4 73.9999C11 61.3332 30.7 34.7999 53.5 29.9999C82 23.9999 98 25.9999 109 14.4999C120 2.99986 129 -19.5001 152 -19.5001C175 -19.5001 190 -11.0001 203.5 -24.5001C217 -38.0001 213.5 -62.0001 247 -53.5001C273.8 -46.7001 310.167 -61 325 -69"
-//                 stroke="url(#paint2_linear_1028_603)"
-//               />
-//               <path
-//                 opacity="0.45"
-//                 d="M41 40.9999C48 28.3332 67.7 1.79986 90.5 -3.00014C119 -9.00014 135 -7.00014 146 -18.5001C157 -30.0001 166 -52.5001 189 -52.5001C212 -52.5001 227 -44.0001 240.5 -57.5001C254 -71.0001 250.5 -95.0001 284 -86.5001C310.8 -79.7001 347.167 -94 362 -102"
-//                 stroke="url(#paint3_linear_1028_603)"
-//               />
-//             </g>
-//             <defs>
-//               <linearGradient
-//                 id="paint0_linear_1028_603"
-//                 x1="291.35"
-//                 y1="12.1032"
-//                 x2="179.211"
-//                 y2="237.617"
-//                 gradientUnits="userSpaceOnUse"
-//               >
-//                 <stop
-//                   offset="0.328125"
-//                   stopColor={theme === "light" ? "#4A6CF7" : "#fff"}
-//                 />
-//                 <stop
-//                   offset="1"
-//                   stopColor={theme === "light" ? "#4A6CF7" : "#fff"}
-//                   stopOpacity="0"
-//                 />
-//               </linearGradient>
-//               <linearGradient
-//                 id="paint1_linear_1028_603"
-//                 x1="333.35"
-//                 y1="-12.8968"
-//                 x2="221.211"
-//                 y2="212.617"
-//                 gradientUnits="userSpaceOnUse"
-//               >
-//                 <stop
-//                   offset="0.328125"
-//                   stopColor={theme === "light" ? "#4A6CF7" : "#fff"}
-//                 />
-//                 <stop
-//                   offset="1"
-//                   stopColor={theme === "light" ? "#4A6CF7" : "#fff"}
-//                   stopOpacity="0"
-//                 />
-//               </linearGradient>
-//               <linearGradient
-//                 id="paint2_linear_1028_603"
-//                 x1="294.35"
-//                 y1="-3.89678"
-//                 x2="182.211"
-//                 y2="221.617"
-//                 gradientUnits="userSpaceOnUse"
-//               >
-//                 <stop
-//                   offset="0.328125"
-//                   stopColor={theme === "light" ? "#4A6CF7" : "#fff"}
-//                 />
-//                 <stop
-//                   offset="1"
-//                   stopColor={theme === "light" ? "#4A6CF7" : "#fff"}
-//                   stopOpacity="0"
-//                 />
-//               </linearGradient>
-//               <linearGradient
-//                 id="paint3_linear_1028_603"
-//                 x1="331.35"
-//                 y1="-36.8968"
-//                 x2="219.211"
-//                 y2="188.617"
-//                 gradientUnits="userSpaceOnUse"
-//               >
-//                 <stop
-//                   offset="0.328125"
-//                   stopColor={theme === "light" ? "#4A6CF7" : "#fff"}
-//                 />
-//                 <stop
-//                   offset="1"
-//                   stopColor={theme === "light" ? "#4A6CF7" : "#fff"}
-//                   stopOpacity="0"
-//                 />
-//               </linearGradient>
-//             </defs>
-//           </svg>
-//         </span>
 //       </div>
 //     </div>
 //   );
-// };
+// }
 
-// export default NewsLatterBox;
