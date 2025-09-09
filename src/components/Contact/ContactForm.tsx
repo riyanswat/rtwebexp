@@ -2,7 +2,7 @@
 
 import { useTheme } from "next-themes";
 
-const NewsLatterBox = () => {
+const ContactForm = () => {
   const { theme } = useTheme();
 
   return (
@@ -80,7 +80,7 @@ const NewsLatterBox = () => {
   );
 };
 
-export default NewsLatterBox;
+export default ContactForm;
 
 
 

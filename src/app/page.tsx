@@ -11,6 +11,8 @@ import Testimonials from "@/components/Testimonials";
 // import Video from "@/components/Video";
 import { Metadata } from "next";
 import { motion } from "framer-motion"
+// import HowWeWork from "@/components/HowWeWork";
+
 
 export const metadata: Metadata = {
   title: "Rayan Trading, Exporters of all kinds of Vehicles",
@@ -24,6 +26,7 @@ export default function Home() {
     <>
       <ScrollUp />
       <Hero />
+      {/* <HowWeWork /> */}
       <Features />
       {/* <Video /> */}
       {/* <Brands /> */}
