@@ -1,3 +1,6 @@
+
+
+
 import Image from "next/image";
 import Link from "next/link";
 
@@ -8,15 +11,16 @@ const Hero = () => {
         id="home"
         className="relative z-10 overflow-hidden bg-white pb-16 pt-[120px] dark:bg-gray-dark md:pb-[120px] md:pt-[150px] xl:pb-[160px] xl:pt-[180px] 2xl:pb-[200px] 2xl:pt-[210px]"
       >
-{/* background image */}
-      <Image
-        src="/images/hero-bg.png" // Put your image in public/images/
-        alt="Hero Background"
-        fill
-        className="absolute inset-0 object-cover opacity-70 dark:opacity-30"
-        style={{ objectFit: 'cover', filter: 'brightness(0.5)' }}
-        priority
-      />
+        {/* background image */}
+        <Image
+          src="/images/hero-bg.png" // Put your image in public/images/
+          alt="Hero Background"
+          draggable={false}
+          fill
+          className="absolute inset-0 object-cover opacity-70 dark:opacity-30 select-none"
+          style={{ objectFit: 'cover', filter: 'brightness(0.5)' }}
+          priority
+        />
 
         <div className="container relative">
           <div className="-mx-4 flex flex-wrap">
@@ -30,7 +34,7 @@ const Hero = () => {
                 </p>
                 <div className="flex flex-col items-center justify-center space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
                   <Link
-                    href="/get-a-quote"
+                    href="/contact"
                     className="rounded-xs bg-primary px-8 py-4 text-base font-semibold text-white duration-300 ease-in-out hover:bg-primary/80"
                   >
                     Get a Free Quote
@@ -42,6 +46,27 @@ const Hero = () => {
                     Star on GitHub
                   </Link> */}
                 </div>
+
+
+                {/* three bullets below */}
+
+                <div className="mt-10 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-body-color-dark">
+                  <span className="inline-flex items-center gap-2">
+                    <span className="h-1.5 w-1.5 rounded-full bg-primary/70" />
+                    Transparent Pricing
+                  </span>
+                  <span className="inline-flex items-center gap-2">
+                    <span className="h-1.5 w-1.5 rounded-full bg-primary/70" />
+                    Worldwide Shipping
+                  </span>
+                  <span className="inline-flex items-center gap-2">
+                    <span className="h-1.5 w-1.5 rounded-full bg-primary/70" />
+                    Dealer-Trusted Service
+                  </span>
+                </div>
+
+                {/* Three bullets above */}
+
               </div>
             </div>
           </div>

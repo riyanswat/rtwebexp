@@ -138,6 +138,8 @@ useEffect(() => {
                 >
                   <ul className="block lg:flex lg:space-x-12">
                     {menuData.map((menuItem, index) => (
+
+                      // animation for this li is present at the bottom of the file
                       <li key={index} className="group relative">
                         {menuItem.path ? (
                           <Link
@@ -201,3 +203,33 @@ useEffect(() => {
 };
 
 export default Header;
+
+
+
+// animation for the li above
+
+{/* <li key={index} className="group relative">
+  <Link
+    href={menuItem.path}
+    onClick={() => setNavbarOpen(false)}
+    className={`no-underline flex py-2 text-base lg:inline-flex lg:px-0 lg:py-6
+      ${pathname === menuItem.path
+        ? "text-primary dark:text-white"
+        : "text-dark hover:text-primary dark:text-white/70 dark:hover:text-white"
+      }`}
+  >
+    <span
+      className={`
+        relative inline-block
+        after:absolute after:left-0 after:bottom-0 after:h-[2px] after:bg-primary
+        after:content-[''] after:transition-[width] after:duration-250
+        ${pathname === menuItem.path
+          ? "after:w-full"              // keep underline for the active page
+          : "after:w-0 group-hover:after:w-full focus-visible:after:w-full"
+        }
+      `}
+    >
+      {menuItem.title}
+    </span>
+  </Link>
+</li> */}

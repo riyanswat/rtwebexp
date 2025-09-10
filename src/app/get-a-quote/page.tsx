@@ -1,3 +1,5 @@
+// Redundant but can utilize for something else
+
 import Link from "next/link";
 import { Metadata } from "next";
 

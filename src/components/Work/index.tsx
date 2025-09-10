@@ -4,7 +4,7 @@ import workData from "./workData";
 
 const Work = () => {
   return (
-    <section id="how-it-works" className="py-16 md:py-20 lg:py-28">
+    <section id="how-it-works" className="py-6 md:py-20 lg:py-18">
       <div className="container">
         <SectionTitle
           title="How It Works"

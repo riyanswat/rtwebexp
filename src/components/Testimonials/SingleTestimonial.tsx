@@ -7,7 +7,7 @@ const starIcon = (
 );
 
 const SingleTestimonial = ({ testimonial }: { testimonial: Testimonial }) => {
-  const { star, name, image: _image, content, designation } = testimonial;
+  const { star, name, image: _image, content, country } = testimonial;
 
   const ratingIcons = Array.from({ length: star }).map((_, i) => (
     <span key={i} className="text-yellow">
@@ -42,7 +42,7 @@ const SingleTestimonial = ({ testimonial }: { testimonial: Testimonial }) => {
             <h3 className="text-white mb-1 text-lg font-semibold lg:text-base xl:text-lg">
               {name}
             </h3>
-            <p className="text-slate-400 text-sm">{designation}</p>
+            <p className="text-slate-400 text-sm">{country}</p>
           </div>
         </div>
 

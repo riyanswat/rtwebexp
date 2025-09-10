@@ -11,10 +11,7 @@ export default function ContactForm() {
 
       <div className="grid grid-cols-1 gap-6">
         {/* Phone */}
-        <div
-          // href="tel:+819057763690"
-          className="flex items-start rounded-md border border-gray-200 bg-gray-50 p-5 shadow-sm transition hover:shadow-md dark:border-gray-700 dark:bg-[#1e293b]"
-        >
+        <div className="flex items-start rounded-md border border-gray-200 bg-gray-50 p-5 shadow-sm transition hover:shadow-md dark:border-gray-700 dark:bg-[#1e293b]">
           <div className="mr-4 flex h-12 w-12 items-center justify-center rounded-md bg-primary/10 text-primary">
             <PhoneIcon className="h-6 w-6" />
           </div>
@@ -25,7 +22,6 @@ export default function ContactForm() {
             <p className="text-body-color text-sm">+81-90-5776-3690</p>
             <p className="text-xs text-gray-500 dark:text-gray-400">
               Contact us anytime
-              {/* Mon–Fri: 9:00–18:00 JST */}
             </p>
           </div>
         </div>
@@ -37,7 +33,7 @@ export default function ContactForm() {
           rel="noopener noreferrer"
           className="flex items-start rounded-md border border-gray-200 bg-gray-50 p-5 shadow-sm transition hover:shadow-md dark:border-gray-700 dark:bg-[#1e293b]"
         >
-          <div className="mr-4 flex h-12 w-12 items-center justify-center rounded-md bg-green-100 text-green-600">
+          <div className="mr-4 flex h-12 w-12 items-center justify-center rounded-md bg-primary/10 text-primary">
             {/* WhatsApp icon SVG */}
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -67,6 +63,7 @@ export default function ContactForm() {
           className="flex items-start rounded-md border border-gray-200 bg-gray-50 p-5 shadow-sm transition hover:shadow-md dark:border-gray-700 dark:bg-[#1e293b]"
         >
           <div className="mr-4 flex h-12 w-12 items-center justify-center rounded-md bg-primary/10 text-primary">
+          
             {/* Location icon */}
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -103,88 +100,3 @@ export default function ContactForm() {
     </div>
   );
 }
-
-
-
-
-// old
-
-// "use client";
-
-// import { useTheme } from "next-themes";
-
-// export default function ContactForm() {
-//   const { theme } = useTheme();
-
-//   return (
-//     <div className="shadow-three dark:bg-gray-dark relative z-10 rounded-xs bg-white p-8 sm:p-11 lg:p-8 xl:p-11">
-//       {/* Google Map */}
-//       <div className="w-full overflow-hidden rounded-xs">
-//         <iframe
-//           title="Rayan Trading Location"
-//           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3218.735220346897!2d139.52298457466603!3d36.22163020010164!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x601f2f0072eb430f%3A0x8b58636648491ce9!2zUkFZQU4gVFJBRElORyDmoKrlvI_kvJrnpL4!5e0!3m2!1sen!2sjp!4v1754834384789!5m2!1sen!2sjp"
-//           className="h-64 w-full md:h-80"
-//           style={{ border: 0 }}
-//           loading="lazy"
-//           referrerPolicy="no-referrer-when-downgrade"
-//           allowFullScreen
-//         />
-//       </div>
-
-//       {/* Spacing */}
-//       <div className="my-4" />
-
-//       {/* Button */}
-//       <a
-//         href="https://maps.app.goo.gl/WPc28rcV9k9vpZ5P9"
-//         target="_blank"
-//         rel="noopener noreferrer"
-//         className="block"
-//       >
-//         <button className="bg-primary shadow-submit hover:bg-primary/90 dark:shadow-submit-dark flex w-full items-center justify-center rounded-xs px-9 py-4 text-base font-medium text-white duration-300 cursor-pointer">
-//           Open in Google Maps
-//         </button>
-//       </a>
-
-//       {/* Decorative SVG */}
-//       <div>
-//         <span className="absolute top-7 left-2">
-//           <svg
-//             width="57"
-//             height="65"
-//             viewBox="0 0 57 65"
-//             fill="none"
-//             xmlns="http://www.w3.org/2000/svg"
-//           >
-//             <path
-//               opacity="0.5"
-//               d="M0.407629 15.9573L39.1541 64.0714L56.4489 0.160793L0.407629 15.9573Z"
-//               fill="url(#paint0_linear_1028_600)"
-//             />
-//             <defs>
-//               <linearGradient
-//                 id="paint0_linear_1028_600"
-//                 x1="-18.3187"
-//                 y1="55.1044"
-//                 x2="37.161"
-//                 y2="15.3509"
-//                 gradientUnits="userSpaceOnUse"
-//               >
-//                 <stop
-//                   stopColor={theme === "light" ? "#4A6CF7" : "#fff"}
-//                   stopOpacity="0.62"
-//                 />
-//                 <stop
-//                   offset="1"
-//                   stopColor={theme === "light" ? "#4A6CF7" : "#fff"}
-//                   stopOpacity="0"
-//                 />
-//               </linearGradient>
-//             </defs>
-//           </svg>
-//         </span>
-//       </div>
-//     </div>
-//   );
-// }
-
