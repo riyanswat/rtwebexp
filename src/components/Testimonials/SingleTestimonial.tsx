@@ -19,8 +19,9 @@ const SingleTestimonial = ({ testimonial }: { testimonial: Testimonial }) => {
     <div className="w-full">
       {/* backup div */}
       {/* <div className="relative shadow-two hover:shadow-one bg-dark rounded-md p-8 duration-300 lg:px-5 xl:px-8"> */}
-      <div className="relative bg-dark rounded-md p-8 lg:px-5 xl:px-8 
-    shadow-two transition-all duration-100 hover:shadow-[0_0_15px_rgba(74,108,247,0.2)] hover:rotate-1">
+
+      {/* backup div */}
+      <div className="relative bg-dark rounded-md p-8 lg:px-5 xl:px-8 shadow-two transition-all duration-100 hover:shadow-[0_0_15px_rgba(74,108,247,0.2)] hover:rotate-1">
 
         {/* Decorative big quote in background */}
         <span
