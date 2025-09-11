@@ -9,8 +9,10 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
   title: "About Rayan Trading",
   description: "This is About Page for Rayan Trading",
-  // other metadata
+  keywords: ["About Rayan Trading", "Rayan Trading", "car export", "toyota", "honda"],
 };
+
+
 
 const AboutPage = () => {
   return (
