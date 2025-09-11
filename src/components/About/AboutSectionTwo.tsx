@@ -107,7 +107,9 @@ const AboutSectionTwo = () => {
                 {features.map((feature, index) => (
                   <div
   key={index}
-  className="flex items-start space-x-4 bg-white dark:bg-[#1e293b] p-5 rounded-lg shadow transition-transform duration-200 ease-in-out hover:-translate-y-1 hover:shadow-md hover:shadow-primary/20"
+  // className="relative bg-dark rounded-md p-8 lg:px-5 xl:px-8 
+  //   shadow-two transition-all duration-100 hover:shadow-[0_0_15px_rgba(74,108,247,0.2)]
+  className="flex items-start space-x-4 bg-white dark:bg-[#1e293b] p-5 rounded-lg shadow transition-transform duration-200 ease-in-out hover:-translate-y-1 hover:ring-1 hover:ring-primary/50"
 >
   <div className="flex-shrink-0">{feature.icon}</div>
   <div>

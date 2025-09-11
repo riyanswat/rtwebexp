@@ -1,5 +1,6 @@
 import AboutSectionOne from "@/components/About/AboutSectionOne";
 import AboutSectionTwo from "@/components/About/AboutSectionTwo";
+import AboutSectionThree from "@/components/About/AboutSectionThree";
 import Breadcrumb from "@/components/Common/Breadcrumb";
 
 import { Metadata } from "next";
@@ -27,7 +28,10 @@ const AboutPage = () => {
         <h1 className="text-4xl font-bold text-black dark:text-white">About Us</h1>
       </section>
       <AboutSectionOne />
+      <div className="h-px w-full bg-linear-to-r from-transparent via-[#D2D8E183] to-transparent dark:via-[#959CB183]" />
       <AboutSectionTwo />
+      <div className="h-px w-full bg-linear-to-r from-transparent via-[#D2D8E183] to-transparent dark:via-[#959CB183]" />
+      <AboutSectionThree />
     </>
   );
 };

@@ -1,7 +1,7 @@
 import AboutSectionOne from "@/components/About/AboutSectionOne";
 import AboutSectionTwo from "@/components/About/AboutSectionTwo";
 // import Blog from "@/components/Blog";
-import Brands from "@/components/Brands";
+import Countries from "@/components/Countries";
 import ScrollUp from "@/components/Common/ScrollUp";
 // import Contact from "@/components/Contact";
 // import Features from "@/components/Features";
@@ -23,17 +23,24 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    
+
     <>
       <ScrollUp />
       <Hero />
+      <div className="h-px w-full bg-linear-to-r from-transparent via-[#D2D8E183] to-transparent dark:via-[#959CB183]" />
+
       {/* <HowWeWork /> */}
       <Work />
+
+      <div className="h-px w-full bg-linear-to-r from-transparent via-[#D2D8E183] to-transparent dark:via-[#959CB183]" />
+      {/* modify features to shipments */}
       {/* <Features /> */}
       {/* <Video /> */}
-      <Brands />
+      <Countries />
       {/* <AboutSectionOne /> */}
       {/* <AboutSectionTwo /> */}
+
+      <div className="h-px w-full bg-linear-to-r from-transparent via-[#D2D8E183] to-transparent dark:via-[#959CB183]" />
       <Testimonials />
       {/* <Pricing />
       <Blog /> */}

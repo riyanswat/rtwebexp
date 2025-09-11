@@ -1,8 +1,8 @@
 "use client";
 
-import countriesData from "./brandsData";
+import countriesData from "./countriesData";
 
-const Brands = () => {
+const Countries = () => {
   const list = countriesData;
 
   return (
@@ -25,7 +25,7 @@ const Brands = () => {
               {/* Sequence A */}
               <ul className="rt-seq" aria-hidden={false}>
                 {list.map((country, i) => (
-                  <li key={`a-${country}-${i}`} className="rt-item">
+                  <li key={`a-${country}-${i}`} className="rt-item select-none">
                     {country}
                   </li>
                 ))}
@@ -134,7 +134,7 @@ const Brands = () => {
   );
 };
 
-export default Brands;
+export default Countries;
 
 
 
