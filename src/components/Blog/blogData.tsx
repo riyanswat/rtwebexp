@@ -17,17 +17,17 @@ const blogData: Blog[] = [
   // },
   {
     id: 2,
-    title: "9 simple ways to improve your design skills",
+    title: "How to import from Japan to Australia",
     paragraph:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sit amet dictum neque, laoreet dolor.",
     image: "/images/blog/blog-02.jpg",
     author: {
-      name: "Musharof Chy",
+      name: "Rayan Khan",
       image: "/images/blog/author-02.png",
-      designation: "Content Writer",
+      designation: "Owner",
     },
     tags: ["computer"],
-    publishDate: "2025",
+    publishDate: "12-09-2025",
   },
   {
     id: 3,
