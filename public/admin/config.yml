@@ -1,10 +1,13 @@
 backend:
   name: github
-  repo: riyanswat/rtweb   # <— your repo
-  branch: main            # adjust if you use "master"
+  repo: riyanswat/rtweb    # your GitHub repo
+  branch: main             # change if your default is different
+  base_url: https://api.netlify.com
+  auth_endpoint: auth
+  site_id: 1d18dc2b-cdc5-4050-b20f-49818fa0f2a4   # 👈 your Site ID
 
-media_folder: "public/uploads"     # where uploaded images go (inside repo)
-public_folder: "/uploads"          # how the site references them
+media_folder: "public/uploads"   # where uploaded images go in repo
+public_folder: "/uploads"        # how the site accesses them
 
 collections:
   - name: "shipments"
@@ -13,14 +16,14 @@ collections:
     create: true
     slug: "{{slug}}"
     fields:
-      - { name: "title", label: "Car Name", widget: "string" }
-      - { name: "model", label: "Model", widget: "string" }
-      - { name: "year", label: "Year", widget: "number" }
-      - { name: "destination", label: "Destination", widget: "string" }
-      - { name: "showOnHomepage", label: "Show on homepage", widget: "boolean", default: false }
-      - { name: "images", label: "Images", widget: "list", field: { name: image, label: Image, widget: image } }
-      - { name: "defaultImage", label: "Default Image", widget: "image" }
-      - { name: "date", label: "Date", widget: "datetime" }
+      - { label: "Car Name", name: "name", widget: "string" }
+      - { label: "Model", name: "model", widget: "string" }
+      - { label: "Year", name: "year", widget: "number" }
+      - { label: "Destination", name: "destination", widget: "string" }
+      - { label: "Images", name: "images", widget: "list", field: {label: "Image", name: "image", widget: "image"} }
+      - { label: "Default Image", name: "defaultImage", widget: "image" }
+      - { label: "Show on Homepage", name: "showOnHomepage", widget: "boolean", default: false }
+      - { label: "Status", name: "status", widget: "select", options: ["Draft", "Published"], default: "Published" }
 
   - name: "testimonials"
     label: "Testimonials"
@@ -28,8 +31,8 @@ collections:
     create: true
     slug: "{{slug}}"
     fields:
-      - { name: "name", label: "Name", widget: "string" }
-      - { name: "country", label: "Country", widget: "string" }
-      - { name: "quote", label: "Quote", widget: "text" }
-      - { name: "photo", label: "Photo", widget: "image", required: false }
-      - { name: "featured", label: "Featured", widget: "boolean", default: false }
+      - { label: "Client Name", name: "clientName", widget: "string" }
+      - { label: "Country", name: "country", widget: "string" }
+      - { label: "Quote", name: "quote", widget: "text" }
+      - { label: "Photo", name: "photo", widget: "image", required: false }
+      - { label: "Featured", name: "featured", widget: "boolean", default: false }
