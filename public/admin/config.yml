@@ -1,0 +1,35 @@
+backend:
+  name: github
+  repo: riyanswat/rtweb   # <— your repo
+  branch: main            # adjust if you use "master"
+
+media_folder: "public/uploads"     # where uploaded images go (inside repo)
+public_folder: "/uploads"          # how the site references them
+
+collections:
+  - name: "shipments"
+    label: "Shipments"
+    folder: "content/shipments"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { name: "title", label: "Car Name", widget: "string" }
+      - { name: "model", label: "Model", widget: "string" }
+      - { name: "year", label: "Year", widget: "number" }
+      - { name: "destination", label: "Destination", widget: "string" }
+      - { name: "showOnHomepage", label: "Show on homepage", widget: "boolean", default: false }
+      - { name: "images", label: "Images", widget: "list", field: { name: image, label: Image, widget: image } }
+      - { name: "defaultImage", label: "Default Image", widget: "image" }
+      - { name: "date", label: "Date", widget: "datetime" }
+
+  - name: "testimonials"
+    label: "Testimonials"
+    folder: "content/testimonials"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { name: "name", label: "Name", widget: "string" }
+      - { name: "country", label: "Country", widget: "string" }
+      - { name: "quote", label: "Quote", widget: "text" }
+      - { name: "photo", label: "Photo", widget: "image", required: false }
+      - { name: "featured", label: "Featured", widget: "boolean", default: false }
