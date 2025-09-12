@@ -2,9 +2,12 @@ backend:
   name: github
   repo: riyanswat/rtweb
   branch: main
+  base_url: https://api.netlify.com
+  auth_endpoint: auth
+  site_id: 1d18dc2b-cdc5-4050-b20f-49818fa0f2a4
 
-media_folder: "public/uploads"   # where uploaded images go in repo
-public_folder: "/uploads"        # how the site accesses them
+media_folder: "public/uploads"
+public_folder: "/uploads"
 
 collections:
   - name: "shipments"
@@ -17,7 +20,7 @@ collections:
       - { label: "Model", name: "model", widget: "string" }
       - { label: "Year", name: "year", widget: "number" }
       - { label: "Destination", name: "destination", widget: "string" }
-      - { label: "Images", name: "images", widget: "list", field: {label: "Image", name: "image", widget: "image"} }
+      - { label: "Images", name: "images", widget: "list", field: { label: "Image", name: "image", widget: "image" } }
       - { label: "Default Image", name: "defaultImage", widget: "image" }
       - { label: "Show on Homepage", name: "showOnHomepage", widget: "boolean", default: false }
       - { label: "Status", name: "status", widget: "select", options: ["Draft", "Published"], default: "Published" }
