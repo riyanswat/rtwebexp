@@ -1,10 +1,7 @@
 backend:
   name: github
-  repo: riyanswat/rtweb    # your GitHub repo
-  branch: main             # change if your default is different
-  base_url: https://api.netlify.com
-  auth_endpoint: auth
-  site_id: 1d18dc2b-cdc5-4050-b20f-49818fa0f2a4   # 👈 your Site ID
+  repo: riyanswat/rtweb
+  branch: main
 
 media_folder: "public/uploads"   # where uploaded images go in repo
 public_folder: "/uploads"        # how the site accesses them
