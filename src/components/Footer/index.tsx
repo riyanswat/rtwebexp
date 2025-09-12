@@ -224,6 +224,20 @@ const Footer = () => {
 
 
           
+      {/* Fill the footer */}
+        {/* <div className="w-full px-4 md:w-1/2 lg:w-4/12 xl:w-3/12">
+          <div className="mb-12 lg:mb-16">
+            <h4 className="mb-6 text-lg font-semibold text-black dark:text-white">
+              Export Destinations
+            </h4>
+            <p className="text-body-color dark:text-body-color-dark">
+              Tanzania, UK, Australia, Ghana, South Africa, Chile, Peru...
+            </p>
+          </div>
+        </div> */}
+
+
+
         </div>
         {/* Divider */}
         <div className="h-px w-full bg-linear-to-r from-transparent via-[#D2D8E183] to-transparent dark:via-[#959CB183]" />
