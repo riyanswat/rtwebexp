@@ -6,7 +6,8 @@ import testimonialData from "./testimonialsData";
 const Testimonials = () => {
   return (
     // Scope the orange/teal palette to this section only
-    <section className="rt-theme-testimonials dark:bg-bg-color-dark bg-gray-light relative z-10 py-16 md:py-20 lg:py-28">
+    // change background color here:
+    <section className="rt-theme-testimonials dark:bg-[#0F1115] bg-gray-light relative z-10 py-16 md:py-20 lg:py-28">
       <div className="container">
         <SectionTitle
           title="What Our Clients Say"

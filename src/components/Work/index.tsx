@@ -4,7 +4,9 @@ import workData from "./workData";
 
 const Work = () => {
   return (
-    <section id="how-it-works" className="py-6 md:py-20 lg:py-18">
+    // change background color
+    // <section id="how-it-works" className="py-6 md:py-20 lg:py-18 bg-[#0F1115]">
+    <section id="how-it-works" className="py-6 md:py-20 lg:py-18 bg-[#171929]">
       <div className="container">
         <SectionTitle
           title="How It Works"

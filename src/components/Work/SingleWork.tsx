@@ -1,3 +1,4 @@
+// src/components/Work/SingleWork.tsx
 import { Feature } from "@/types/feature";
 
 const SingleWork = ({ item }: { item: Feature }) => {
@@ -5,14 +6,26 @@ const SingleWork = ({ item }: { item: Feature }) => {
 
   return (
     <div className="w-full">
-      <div className="wow fadeInUp" data-wow-delay=".15s">
-        <div className="bg-primary/10 text-primary mb-10 flex h-[70px] w-[70px] items-center justify-center rounded-md">
-          {icon}
+      <div
+        className="
+          relative bg-dark rounded-md p-8 lg:px-5 xl:px-8
+          shadow-two transition-all duration-150
+          hover:ring-1 hover:ring-primary/40
+        "
+      >
+
+        {/* Icon block (styled similar to stars in testimonial) */}
+        <div className="relative mb-5 flex items-center justify-center z-10">
+          <div className="text-primary">{icon}</div>
         </div>
-        <h3 className="mb-5 text-xl font-bold text-black sm:text-2xl lg:text-xl xl:text-2xl dark:text-white">
+
+        {/* Title */}
+        <h3 className="relative z-10 mb-5 text-lg lg:text-xl xl:text-2xl font-semibold text-white">
           {title}
         </h3>
-        <p className="text-body-color pr-[10px] text-base leading-relaxed font-medium">
+
+        {/* Content */}
+        <p className="relative z-10 text-base leading-relaxed font-medium text-body-color border-t border-white/10 pt-6">
           {paragraph}
         </p>
       </div>

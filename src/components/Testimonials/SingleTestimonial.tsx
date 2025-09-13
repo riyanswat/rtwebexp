@@ -22,7 +22,7 @@ const SingleTestimonial = ({ testimonial }: { testimonial: Testimonial }) => {
         className="
           relative bg-dark rounded-md p-8 lg:px-5 xl:px-8
           shadow-two transition-all duration-150
-          hover:shadow-[0_0_10px_rgba(74,108,247,0.2)]
+          hover:shadow-[0_0_10px_rgba(74,108,247,0.4)]
           hover:rotate-1"
       >
         {/* Decorative big quote in background (tinted by burnt orange) */}

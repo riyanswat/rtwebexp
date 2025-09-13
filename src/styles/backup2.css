@@ -166,9 +166,3 @@ layer(base);
     --shadow-feature-2: 0 12px 32px rgba(240,129,15,0.35); /* hover glow */
   }
 }
-
-
-html {
-  scroll-behavior: smooth;
-}
-

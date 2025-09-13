@@ -4,30 +4,25 @@ const Footer = () => {
   return (
     <footer
       className="
-        relative z-10 text-[#E2E8E4]
-        bg-[#102A32]
+        relative z-10 text-slate-200
+        bg-[#0A0D12]
         before:pointer-events-none before:absolute before:inset-0
         before:bg-[radial-gradient(120%_80%_at_50%_-10%,rgba(255,255,255,0.06),transparent_55%),radial-gradient(120%_80%_at_100%_100%,rgba(0,0,0,0.35),transparent_50%)]
         before:opacity-90
       "
     >
-      {/* TOP SEPARATOR */}
-      {/* <div className="absolute inset-x-0 top-0 h-px bg-[linear-gradient(90deg,rgba(255,255,255,0),rgba(255,255,255,0.12),rgba(255,255,255,0))]" /> */}
-
-
+      {/* TOP SEPARATOR (adds clear separation from previous section) */}
       <div className="absolute inset-x-0 top-0 h-px bg-[linear-gradient(90deg,rgba(255,255,255,0),rgba(255,255,255,0.12),rgba(255,255,255,0))]" />
 
-
-
-      <div className="container pt-16 md:pt-20 lg:pt-10">
+      <div className="container pt-16 md:pt-20 lg:pt-24">
         {/* Top row (address + socials) */}
         <div className="-mx-4 flex flex-wrap items-center justify-between gap-y-8">
-          {/* Address */}
+          {/* Address ONLY (with icon on the left) */}
           <div className="w-full px-4 md:w-7/12">
-            <p className="flex items-start text-base leading-relaxed text-[#D0E1F9]">
+            <p className="flex items-start text-base leading-relaxed text-slate-300">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="mr-3 mt-0.5 h-6 w-6 text-[#4D90FE]"   /* icon matches hover blue */
+                className="mr-3 mt-0.5 h-6 w-6 text-[#C8A96A]"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -40,7 +35,7 @@ const Footer = () => {
             </p>
           </div>
 
-          {/* Socials with glowing BLUE ring */}
+          {/* Socials with faded ring animation */}
           <div className="w-full px-4 md:w-5/12">
             <div className="flex items-center justify-start gap-4 md:justify-end">
               {[
@@ -83,14 +78,14 @@ const Footer = () => {
                   aria-label={label}
                   className="
                     group relative inline-flex h-11 w-11 items-center justify-center rounded-full
-                    text-[#E2E8E4]/85 transition-all duration-300
-                    bg-[#0E1218] ring-1 ring-white/10
-                    hover:text-[#4D90FE]                          /* hover text color */
-                    focus:outline-none focus-visible:ring-2 focus-visible:ring-[#4D90FE]/40
+                    text-slate-300 transition-all duration-300
+                    bg-[#0E1218] ring-1 ring-white/5
+                    hover:text-[#C8A96A]
+                    focus:outline-none focus-visible:ring-2 focus-visible:ring-[#C8A96A]/40
                     before:absolute before:inset-0 before:rounded-full before:content-['']
-                    before:ring-4 before:ring-[#4D90FE]/0 before:transition-all before:duration-300
-                    hover:before:ring-[#4D90FE]/25                 /* glowing blue ring */
-                    hover:shadow-[0_0_14px_rgba(77,144,254,0.25)]  /* soft blue outer glow */
+                    before:ring-4 before:ring-[#C8A96A]/0 before:ring-offset-0 before:transition-all before:duration-300
+                    hover:before:ring-[#C8A96A]/18 hover:before:ring-offset-1
+                    hover:shadow-[0_0_14px_rgba(200,169,106,0.20)]
                   "
                 >
                   <svg
@@ -107,12 +102,12 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Divider */}
+        {/* Middle divider (subtle, keeps things tidy) */}
         <div className="mt-12 h-px w-full bg-[linear-gradient(90deg,rgba(255,255,255,0),rgba(255,255,255,0.08),rgba(255,255,255,0))]" />
 
-        {/* Copyright */}
+        {/* Bottom row — centered copyright, NO colorful bar */}
         <div className="py-8">
-          <p className="text-center text-[13px] text-[#D0E1F9]/70">
+          <p className="text-center text-[13px] text-slate-400">
             © {new Date().getFullYear()} Rayan Trading. All Rights Reserved.
           </p>
         </div>

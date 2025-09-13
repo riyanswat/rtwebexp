@@ -55,7 +55,7 @@ const Header = () => {
         <div className="container">
           <div className="relative -mx-4 flex items-center justify-between">
             {/* Logo */}
-            <div className="w-70 max-w-full px-4 xl:mr-12">
+            <div className="w-60 max-w-full px-4 xl:mr-12">
               <Link
                 href="/"
                 className="header-logo block w-full py-5 lg:py-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/50 rounded-md"
@@ -159,7 +159,7 @@ const Header = () => {
                               className={[
                                 "relative inline-block transition-colors",
                                 // Underline: hover/focus only (removed active w-full state)
-                                "after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:bg-primary after:content-[''] after:transition-[width] after:duration-300",
+                                "after:absolute after:left-0 after:bottom-0 after:h-[2px] after:bg-primary after:content-[''] after:transition-[width] after:duration-300",
                                 "after:w-0 group-hover:after:w-full focus-visible:after:w-full",
                               ].join(" ")}
                             >
