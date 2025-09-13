@@ -1,5 +1,5 @@
-import AboutSectionOne from "@/components/About/AboutSectionOne";
-import AboutSectionTwo from "@/components/About/AboutSectionTwo";
+// import AboutSectionOne from "@/components/About/AboutSectionOne";
+// import AboutSectionTwo from "@/components/About/AboutSectionTwo";
 // import Blog from "@/components/Blog";
 import Countries from "@/components/Countries";
 import ScrollUp from "@/components/Common/ScrollUp";
