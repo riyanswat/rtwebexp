@@ -8,7 +8,7 @@ const Countries = () => {
   return (
     <section className="py-12">
       <div className="container">
-        <div className="rounded-md bg-gray-light dark:bg-gray-dark px-6 py-8 sm:px-10 md:px-[50px] xl:p-[50px] 2xl:px-[70px]">
+        <div className="rounded-md bg-color-accent px-6 py-8 sm:px-10 md:px-[50px] xl:p-[50px] 2xl:px-[70px]">
           {/* Title */}
           <div className="mb-6 text-center">
             <h3 className="text-[18px] font-semibold tracking-[0.18em] text-slate-700 dark:text-slate-200 uppercase select-none">

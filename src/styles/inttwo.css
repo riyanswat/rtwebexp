@@ -21,10 +21,7 @@ layer(base);
   --color-dark: #1d2430;
   --color-primary: #4a6cf7;
   --color-yellow: #fbb040;
-  --color-bg-color-dark: #171c28;
-
-  /* NEW: declare accent so text-accent utilities exist (defaults to blue; overridden in the section) */
-  --color-accent: #4a6cf7;
+  --color-bg-color-dark: #0F1115;
 
   --color-body-color: #788293;
   --color-body-color-dark: #959cb1;
@@ -67,7 +64,14 @@ layer(base);
   padding-inline: 1rem;
 }
 
-/* v4 border default compatibility */
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
 @layer base {
   *,
   ::after,
@@ -82,6 +86,7 @@ layer(base);
   & .header-logo {
     @apply py-5 lg:py-2;
   }
+
   & .menu-scroll.active {
     @apply opacity-70;
   }
@@ -129,7 +134,10 @@ layer(base);
   }
 }
 
+
+
 /* ---------------------------------- */
+
 /* === Marquee for Countries strip === */
 @keyframes rt-scroll {
   0% { transform: translateX(0); }
@@ -139,30 +147,6 @@ layer(base);
   animation: rt-scroll 28s linear infinite;
   will-change: transform;
 }
+/* Optional: pause on hover */
 /* .rt-marquee:hover { animation-play-state: paused; } */
 
-/* ---------------------------------- */
-/* === Scoped palette JUST for the Testimonials section === */
-@layer utilities {
-  .rt-theme-testimonials {
-    /* Core brand for this section */
-    --color-primary: #F0810F;   /* burnt orange */
-    --color-yellow:  #E6DF44;   /* highlight/stars */
-    --color-accent:  #006C84;   /* deep teal (tints the decorative SVGs) */
-
-    /* Surfaces */
-    --color-bg-color-dark: #0F1115; /* section base when dark */
-    --color-gray-light:     #0B0F14; /* section base when not dark */
-    --color-dark:           #12161B; /* card surface */
-
-    /* Text */
-    --color-body-color:      #E2E8E4; /* main copy on card */
-    --color-body-color-dark: #D0E1F9; /* secondary (name/country subtle) */
-
-    /* Shadows tuned for near-black */
-    --shadow-one:   0 2px 6px rgba(0,0,0,0.50);
-    --shadow-two:   0 8px 18px rgba(0,0,0,0.60); /* default card */
-    --shadow-three: 0 20px 40px rgba(0,0,0,0.70);
-    --shadow-feature-2: 0 12px 32px rgba(240,129,15,0.35); /* hover glow */
-  }
-}

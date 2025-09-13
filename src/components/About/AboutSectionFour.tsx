@@ -4,7 +4,7 @@ const offerings = [
   {
     title: "Japanese Used Vehicles",
     description:
-      "Sedans, SUVs, kei cars—sourced from auctions and dealers across Japan with verified mileage and history.",
+      "Sedans, SUVs, kei cars—sourced from the biggest auctions in Japan with verified mileage and auction sheets.",
     icon: (
       // 🚗
       <svg viewBox="0 0 24 24" className="h-6 w-6 text-primary" fill="none" stroke="currentColor" strokeWidth="1.8">
@@ -15,21 +15,11 @@ const offerings = [
       </svg>
     ),
   },
-  {
-    title: "JDM & Performance Cars",
-    description:
-      "Sought-after Japanese performance models—carefully inspected for condition, tuning, and documentation.",
-    icon: (
-      // 🏁
-      <svg viewBox="0 0 24 24" className="h-6 w-6 text-primary" fill="none" stroke="currentColor" strokeWidth="1.8">
-        <path d="M4 20V6M4 6c4-3 8 3 12 0v10c-4 3-8-3-12 0" />
-      </svg>
-    ),
-  },
+
   {
     title: "Trucks, Buses & Machinery",
     description:
-      "Commercial vehicles and equipment for work fleets—condition-checked, with export docs handled by us.",
+      "Commercial vehicles and heavy equipment for work fleets—fully inspected, with all export documents managed by us.",
     icon: (
       // 🚚
       <svg viewBox="0 0 24 24" className="h-6 w-6 text-primary" fill="none" stroke="currentColor" strokeWidth="1.8">
@@ -40,9 +30,9 @@ const offerings = [
     ),
   },
   {
-    title: "European/American Imports",
+    title: "European Imports",
     description:
-      "Premium imports available inside Japan—German luxury, British classics, American SUVs, and more.",
+      "Imported cars in Japan — German, British, American, and more.",
     icon: (
       // 🌐
       <svg viewBox="0 0 24 24" className="h-6 w-6 text-primary" fill="none" stroke="currentColor" strokeWidth="1.8">
@@ -52,9 +42,9 @@ const offerings = [
     ),
   },
   {
-    title: "Classic & Collector (On Request)",
+    title: "Classic & Collector",
     description:
-      "Selective sourcing of classics with provenance. We share detailed photos, records, and expert notes.",
+      "Sourcing of classic and collectible vehicles upon request.",
     icon: (
       // ⭐
       <svg viewBox="0 0 24 24" className="h-6 w-6 text-primary" fill="currentColor">
@@ -108,15 +98,19 @@ const AboutSectionFour = () => {
           {/* Image (opposite side for balance) */}
           <div className="w-full px-4 lg:w-1/2">
             <div className="relative mx-auto max-w-[500px]">
+
+              {/* i think the following is redundant - start */}
               <Image
-                src="/images/about/what-we-do.jpg" // add your clean composite (cars + categories) here
+                src="/images/about/about4.png" // add your clean composite (cars + categories) here
                 alt="What we do at Rayan Trading"
                 width={500}
                 height={500}
                 className="rounded-lg shadow-lg object-contain dark:hidden"
               />
+              {/* redundant end  */}
+
               <Image
-                src="/images/about/what-we-do.jpg"
+                src="/images/about/about4.png"
                 alt="What we do at Rayan Trading"
                 width={500}
                 height={500}

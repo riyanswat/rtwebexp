@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap') layer(base);
+@import 'tailwindcss';
+
+@custom-variant dark (&:is(.dark *));
+
+/* ===== NEW THEME — Teal/Green, clean & professional ===== */
+@theme {
+  /* Breakpoints */
+  --breakpoint-*: initial;
+  --breakpoint-xs: 450px;
+  --breakpoint-sm: 575px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 992px;
+  --breakpoint-xl: 1200px;
+  --breakpoint-2xl: 1400px;
+
+  /* Base tokens */
+  --color-current: currentColor;
+  --color-transparent: transparent;
+  --color-white: #ffffff;
+
+  /* Palette (from your swatches) */
+  --color-deep-ink: #021C1E;   /* Blue Black */
+  --color-cadet:    #004445;   /* Cadet Blue */
+  --color-rain:     #2C7873;   /* Rain */
+  --color-greenery: #6FB98F;   /* Greenery */
+
+  /* Brand + surfaces */
+  --color-black: #0e1819;                 /* refined deep backdrop */
+  --color-dark:  var(--color-deep-ink);   /* section bg for dark mode */
+  --color-bg-color-dark: #0f1e1f;         /* page background (dark) */
+
+  --color-primary:        var(--color-cadet);
+  --color-primary-600:    #003c3d;
+  --color-primary-700:    #003233;
+  --color-primary-soft:   rgba(0,68,69,.14);
+
+  --color-accent:         var(--color-greenery);
+  --color-accent-600:     #5fa680;
+
+  --color-support:        var(--color-rain);
+
+  /* Text */
+  --color-body-color:      #6d8686;   /* light mode body */
+  --color-body-color-dark: #9fb4b3;   /* dark mode body */
+
+  /* Strokes */
+  --color-stroke-stroke: #dbe5e5;
+  --color-stroke-dark:   #223031;
+
+  /* Neutral grays (kept, slightly cooled) */
+  --color-gray-50:  #f6faf9;
+  --color-gray-100: #edf5f4;
+  --color-gray-200: #dbe5e5;
+  --color-gray-300: #c2d1d0;
+  --color-gray-400: #9fb4b3;
+  --color-gray-500: #7b9190;
+  --color-gray-600: #5e7372;
+  --color-gray-700: #415655;
+  --color-gray-800: #2a3a39;
+  --color-gray-900: #182524;
+  --color-gray-950: #0e1819;
+
+  --color-gray-dark:  #0f1e1f;  /* dark section panels */
+  --color-gray-light: #eef5f2;  /* light cards */
+
+  /* Keep star color */
+  --color-yellow: #fbb040;
+
+  /* Shadows tuned to teal/green */
+  --shadow-one:   0 2px 4px rgba(1, 17, 18, .10);
+  --shadow-two:   0 8px 18px rgba(1, 17, 18, .18);
+  --shadow-three: 0 18px 40px rgba(1, 17, 18, .22);
+
+  --shadow-sticky:       inset 0 -1px 0 0 rgba(0,0,0,.10);
+  --shadow-sticky-dark:  inset 0 -1px 0 0 rgba(255,255,255,.06);
+
+  --shadow-feature-2: 0 12px 44px rgba(0,68,69,.22);
+  --shadow-submit:    0 6px 24px rgba(44,120,115,.28);
+  --shadow-submit-dark: 0 6px 24px rgba(44,120,115,.28);
+
+  --shadow-btn:       0 1px 2px rgba(0,0,0,.20);
+  --shadow-btn-hover: 0 2px 12px rgba(0,68,69,.35);
+
+  --drop-shadow-three: 0 12px 28px rgba(0, 20, 21, .28);
+}
+
+/* Container */
+@utility container { margin-inline: auto; padding-inline: 1rem; }
+
+/* v3 border compat */
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button { border-color: var(--color-gray-200, currentcolor); }
+
+  body {
+    font-family: "Inter", sans-serif;
+    background-color: var(--color-bg-color-dark);
+    color: var(--color-body-color-dark);
+  }
+}
+
+/* Sticky helpers */
+@utility sticky {
+  & .header-logo { @apply py-5 lg:py-2; }
+  & .menu-scroll.active { @apply opacity-70; }
+}
+@utility header-logo { .sticky & { @apply py-5 lg:py-2; } }
+@utility menu-scroll { .sticky &.active { @apply opacity-70; } }
+@utility active { .sticky &.menu-scroll { @apply opacity-70; } }
+@utility dot { input#togglePlan:checked ~ & { @apply translate-x-full; } }
+@utility box { input#checkboxLabel:checked ~ & span { @apply opacity-100; } }
+
+/* Components */
+@layer components {
+  /* Checked icon helper */
+  input[type="checkbox"]:checked ~ label span svg { @apply inline-flex; }
+
+  /* Teal ring/glow utilities you can add to buttons/cards */
+  .ring-primary-soft { box-shadow: 0 0 0 1px var(--color-primary-soft); }
+  .hover-glow-teal:hover {
+    box-shadow:
+      0 0 0 2px rgba(0,68,69,.45),
+      0 0 20px rgba(44,120,115,.35);
+  }
+}
+
+/* === Marquee for Countries strip === */
+@keyframes rt-scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+.rt-marquee { animation: rt-scroll 28s linear infinite; will-change: transform; }
+/* .rt-marquee:hover { animation-play-state: paused; } */

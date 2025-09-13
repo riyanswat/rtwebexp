@@ -1,3 +1,4 @@
+// src/components/Testimonials/SingleTestimonial.tsx
 import { Testimonial } from "@/types/testimonial";
 
 const starIcon = (
@@ -17,16 +18,17 @@ const SingleTestimonial = ({ testimonial }: { testimonial: Testimonial }) => {
 
   return (
     <div className="w-full">
-      {/* backup div */}
-      {/* <div className="relative shadow-two hover:shadow-one bg-dark rounded-md p-8 duration-300 lg:px-5 xl:px-8"> */}
-
-      {/* backup div */}
-      <div className="relative bg-dark rounded-md p-8 lg:px-5 xl:px-8 shadow-two transition-all duration-100 hover:shadow-[0_0_15px_rgba(74,108,247,0.2)] hover:rotate-1">
-
-        {/* Decorative big quote in background */}
+      <div
+        className="
+          relative bg-dark rounded-md p-8 lg:px-5 xl:px-8
+          shadow-two transition-all duration-150
+          hover:shadow-[0_0_10px_rgba(74,108,247,0.2)]
+          hover:rotate-1"
+      >
+        {/* Decorative big quote in background (tinted by burnt orange) */}
         <span
           aria-hidden="true"
-          className="absolute -top-2 -left-1 text-[130px] text-primary/10 font-serif leading-none select-none pointer-events-none"
+          className="absolute -top-2 -left-1 text-[130px] text-blue-500/10 font-serif leading-none select-none pointer-events-none"
         >
           &ldquo;
         </span>
@@ -37,7 +39,7 @@ const SingleTestimonial = ({ testimonial }: { testimonial: Testimonial }) => {
         </div>
 
         {/* Testimonial content */}
-        <p className="relative z-10 mb-8 pb-8 text-base leading-relaxed font-medium text-slate-200 border-b border-slate-700">
+        <p className="relative z-10 mb-8 pb-8 text-base leading-relaxed font-medium text-body-color border-b border-white/10">
           {content}
         </p>
 
@@ -47,23 +49,16 @@ const SingleTestimonial = ({ testimonial }: { testimonial: Testimonial }) => {
             <h3 className="text-white mb-1 text-lg font-semibold lg:text-base xl:text-lg">
               {name}
             </h3>
-            <p className="text-slate-400 text-sm">{country}</p>
+            <p className="text-body-color-dark/80 text-sm">{country}</p>
           </div>
         </div>
-
-        {/* Closing quote in corner */}
-        {/* <span
-          aria-hidden="true"
-          className="absolute bottom-2 right-3 text-[60px] text-primary/10 font-serif leading-none select-none pointer-events-none"
-        >
-          &rdquo;
-        </span> */}
       </div>
     </div>
   );
 };
 
 export default SingleTestimonial;
+
 
 
 

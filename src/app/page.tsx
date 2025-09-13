@@ -32,7 +32,7 @@ export default function Home() {
       {/* <HowWeWork /> */}
       <Work />
 
-      <div className="h-px w-full bg-linear-to-r from-transparent via-[#D2D8E183] to-transparent dark:via-[#959CB183]" />
+      {/* <div className="h-px w-full bg-linear-to-r from-transparent via-[#D2D8E183] to-transparent dark:via-[#959CB183]" /> */}
       {/* modify features to shipments */}
       {/* <Features /> */}
       {/* <Video /> */}

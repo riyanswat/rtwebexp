@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap') layer(base);
+@import 'tailwindcss';
+
+@custom-variant dark (&:is(.dark *));
+
+/* ===== THEME (pro navy + teal with orange accent) ===== */
+@theme {
+  /* Breakpoints (unchanged) */
+  --breakpoint-*: initial;
+  --breakpoint-xs: 450px;
+  --breakpoint-sm: 575px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 992px;
+  --breakpoint-xl: 1200px;
+  --breakpoint-2xl: 1400px;
+
+  /* Base */
+  --color-current: currentColor;
+  --color-transparent: transparent;
+  --color-white: #ffffff;
+
+  /* Brand core */
+  /* Dark foundation from “Midnight/Indigo” palette */
+  --color-black: #0b1320;              /* deep navy-black */
+  --color-dark:  #111827;              /* neutral dark */
+  --color-bg-color-dark: #0f1722;      /* page background (dark mode) */
+
+  /* Primary & accents from the palettes you shared */
+  --color-primary: #2C7873;            /* teal (from “Rain/Greenery”) */
+  --color-primary-600: #256863;
+  --color-primary-700: #1f5854;
+
+  --color-accent:  #F0810F;            /* tangerine (CTA) */
+  --color-accent-600: #d86f0e;
+
+  /* Supporting blues (from “Indigo Ink/Blueberry”) */
+  --color-navy-700: #1E1F26;           /* midnight */
+  --color-navy-600: #283655;           /* indigo ink */
+  --color-navy-500: #4D648D;           /* blueberry */
+
+  /* Text colors */
+  --color-body-color:       #8fa0b4;   /* light mode body */
+  --color-body-color-dark:  #A9B6C7;   /* dark mode body text */
+
+  /* Strokes */
+  --color-stroke-stroke: #e3e8ef;
+  --color-stroke-dark:   #2a3342;
+
+  /* Grays (kept, slightly tuned) */
+  --color-gray-50:  #f9fafb;
+  --color-gray-100: #f3f4f6;
+  --color-gray-200: #e5e7eb;
+  --color-gray-300: #d1d5db;
+  --color-gray-400: #9ca3af;
+  --color-gray-500: #6b7280;
+  --color-gray-600: #4b5563;
+  --color-gray-700: #374151;
+  --color-gray-800: #1f2937;
+  --color-gray-900: #111827;
+  --color-gray-950: #0b1320;
+  --color-gray-dark:  #0f1722;         /* section bg (dark) */
+  --color-gray-light: #eef3f7;         /* soft card bg (light) */
+
+  /* Yellows kept for star ratings */
+  --color-yellow: #fbb040;
+
+  /* Shadows (cooler, crisper for dark UI) */
+  --shadow-one:   0 2px 4px rgba(3,7,18,.12);
+  --shadow-two:   0 8px 16px rgba(3,7,18,.18);
+  --shadow-three: 0 16px 40px rgba(3,7,18,.22);
+
+  --shadow-sticky:       inset 0 -1px 0 0 rgba(0,0,0,.12);
+  --shadow-sticky-dark:  inset 0 -1px 0 0 rgba(255,255,255,.06);
+
+  /* Feature & button glows that match teal */
+  --shadow-feature-2: 0 10px 40px rgba(44,120,115,.22);
+  --shadow-submit:    0 6px 24px rgba(44,120,115,.24);
+  --shadow-submit-dark: 0 6px 24px rgba(44,120,115,.24);
+  --shadow-btn:         0 1px 2px rgba(0,0,0,.25);
+  --shadow-btn-hover:   0 2px 10px rgba(44,120,115,.35);
+  --shadow-btn-light:   0 1px 3px rgba(0,0,0,.12);
+
+  /* Soft drop shadow used by images */
+  --drop-shadow-three: 0 10px 25px rgba(0,0,0,.25);
+}
+
+/* Container utility (unchanged) */
+@utility container {
+  margin-inline: auto;
+  padding-inline: 1rem;
+}
+
+/* Keep v3 border behavior compatible */
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
+  }
+
+  body {
+    font-family: "Inter", sans-serif;
+    background-color: var(--color-bg-color-dark);
+  }
+}
+
+/* Sticky helpers (unchanged behavior) */
+@utility sticky {
+  & .header-logo { @apply py-5 lg:py-2; }
+  & .menu-scroll.active { @apply opacity-70; }
+}
+@utility header-logo { .sticky & { @apply py-5 lg:py-2; } }
+@utility menu-scroll { .sticky &.active { @apply opacity-70; } }
+@utility active { .sticky &.menu-scroll { @apply opacity-70; } }
+@utility dot { input#togglePlan:checked ~ & { @apply translate-x-full; } }
+@utility box { input#checkboxLabel:checked ~ & span { @apply opacity-100; } }
+
+@layer components {
+  /* Checked icon helper (unchanged) */
+  input[type="checkbox"]:checked ~ label span svg { @apply inline-flex; }
+
+  /* Reusable pro glow for icons/buttons on hover */
+  .hover-glow-teal:hover {
+    box-shadow: 0 0 0 2px rgba(44,120,115,.45), 0 0 22px rgba(44,120,115,.35);
+  }
+
+  /* Subtle ring helper used on cards */
+  .ring-primary-soft { box-shadow: 0 0 0 1px rgba(44,120,115,.35); }
+}
+
+/* === Marquee for Countries strip (unchanged) === */
+@keyframes rt-scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.rt-marquee {
+  animation: rt-scroll 28s linear infinite;
+  will-change: transform;
+}
+/* .rt-marquee:hover { animation-play-state: paused; } */

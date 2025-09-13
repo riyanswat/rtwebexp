@@ -1,57 +1,21 @@
-// import { Testimonial } from "@/types/testimonial";
+// src/components/Testimonials/index.tsx
 import SectionTitle from "../Common/SectionTitle";
 import SingleTestimonial from "./SingleTestimonial";
 import testimonialData from "./testimonialsData";
-// const testimonialData: Testimonial[] = [
-//   {
-//     id: 1,
-//     name: "Tariq Sohail",
-//     designation: "Pakistan",
-//     content:
-//       "I’ve imported several cars through Rayan Trading and can confidently say their service is outstanding. They’re honest, transparent and clear every step of the way. No hidden fees, no surprises, just smooth, reliable service. I trust them and recommend them to anyone looking for hassle-free vehicle imports. I’ll definitely use them again.",
-//     image: "/images/testimonials/auth-01.png",
-//     star: 5,
-//   },
-//   {
-//     id: 2,
-//     name: "John Smith",
-//     designation: "UK",
-//     content:
-//       "I have imported and still import cars from Rayan Trading. They are reliable and I am satisfied with their team and service.",
-//     image: "/images/testimonials/auth-02.png",
-//     star: 5,
-//   },
-//   {
-//     id: 3,
-//     name: "Farhan",
-//     designation: "Australia",
-//     content:
-//       "I am more than satisfied with their service and the cars they have shipped me, highly recommended and happy to answer any questions anyone might have.",
-//     image: "/images/testimonials/auth-03.png",
-//     star: 5,
-//   },
-//   {
-//     id: 4,
-//     name: "Rahman",
-//     designation: "Tanzania",
-//     content:
-//       "I am more than satisfied with their service and the cars they have shipped me, highly recommended and happy to answer any questions anyone might have.",
-//     image: "/images/testimonials/auth-03.png",
-//     star: 5,
-//   },
-// ];
 
 const Testimonials = () => {
   return (
-    <section className="dark:bg-bg-color-dark bg-gray-light relative z-10 py-16 md:py-20 lg:py-28">
+    // Scope the orange/teal palette to this section only
+    <section className="rt-theme-testimonials dark:bg-bg-color-dark bg-gray-light relative z-10 py-16 md:py-20 lg:py-28">
       <div className="container">
         <SectionTitle
           title="What Our Clients Say"
           paragraph={
             <>
-            Dealers and individual buyers alike trust us for reliable service, transparent pricing and smooth <span className="font-bold">worldwide</span> shipping.
+              Dealers and individual buyers alike trust us for reliable service, transparent pricing and smooth{" "}
+              <span className="font-bold">worldwide</span> shipping.
             </>
-          } 
+          }
           center
         />
 
@@ -61,7 +25,9 @@ const Testimonials = () => {
           ))}
         </div>
       </div>
-      <div className="absolute right-0 top-5 z-[-1]">
+
+      {/* Top-right diagonal glow — tinted by text-accent */}
+      <div className="absolute right-0 top-5 z-[-1] text-accent/60">
         <svg
           width="238"
           height="531"
@@ -90,6 +56,7 @@ const Testimonials = () => {
             fill="url(#paint1_linear_83:2)"
           />
           <defs>
+            {/* Use currentColor so it picks up .text-accent/60 */}
             <linearGradient
               id="paint0_linear_83:2"
               x1="517.152"
@@ -98,8 +65,8 @@ const Testimonials = () => {
               y2="459.865"
               gradientUnits="userSpaceOnUse"
             >
-              <stop stopColor="#4A6CF7" />
-              <stop offset="1" stopColor="#4A6CF7" stopOpacity="0" />
+              <stop stopColor="currentColor" />
+              <stop offset="1" stopColor="currentColor" stopOpacity="0" />
             </linearGradient>
             <linearGradient
               id="paint1_linear_83:2"
@@ -109,13 +76,15 @@ const Testimonials = () => {
               y2="675.565"
               gradientUnits="userSpaceOnUse"
             >
-              <stop stopColor="#4A6CF7" />
-              <stop offset="1" stopColor="#4A6CF7" stopOpacity="0" />
+              <stop stopColor="currentColor" />
+              <stop offset="1" stopColor="currentColor" stopOpacity="0" />
             </linearGradient>
           </defs>
         </svg>
       </div>
-      <div className="absolute bottom-5 left-0 z-[-1]">
+
+      {/* Bottom-left waves — also tinted by accent */}
+      <div className="absolute bottom-5 left-0 z-[-1] text-accent/50">
         <svg
           width="279"
           height="106"
@@ -142,6 +111,7 @@ const Testimonials = () => {
             />
           </g>
           <defs>
+            {/* Replace the blue with currentColor so it follows .text-accent/50 */}
             <linearGradient
               id="paint0_linear_72:302"
               x1="256.267"
@@ -150,8 +120,8 @@ const Testimonials = () => {
               y2="8.15715"
               gradientUnits="userSpaceOnUse"
             >
-              <stop stopColor="#4A6CF7" stopOpacity="0" />
-              <stop offset="1" stopColor="#4A6CF7" />
+              <stop stopColor="currentColor" stopOpacity="0" />
+              <stop offset="1" stopColor="currentColor" />
             </linearGradient>
             <linearGradient
               id="paint1_linear_72:302"
@@ -161,8 +131,8 @@ const Testimonials = () => {
               y2="-2.84285"
               gradientUnits="userSpaceOnUse"
             >
-              <stop stopColor="#4A6CF7" stopOpacity="0" />
-              <stop offset="1" stopColor="#4A6CF7" />
+              <stop stopColor="currentColor" stopOpacity="0" />
+              <stop offset="1" stopColor="currentColor" />
             </linearGradient>
             <linearGradient
               id="paint2_linear_72:302"
@@ -172,8 +142,8 @@ const Testimonials = () => {
               y2="19.1572"
               gradientUnits="userSpaceOnUse"
             >
-              <stop stopColor="#4A6CF7" stopOpacity="0" />
-              <stop offset="1" stopColor="#4A6CF7" />
+              <stop stopColor="currentColor" stopOpacity="0" />
+              <stop offset="1" stopColor="currentColor" />
             </linearGradient>
             <linearGradient
               id="paint3_linear_72:302"
@@ -183,8 +153,8 @@ const Testimonials = () => {
               y2="31.1572"
               gradientUnits="userSpaceOnUse"
             >
-              <stop stopColor="#4A6CF7" stopOpacity="0" />
-              <stop offset="1" stopColor="#4A6CF7" />
+              <stop stopColor="currentColor" stopOpacity="0" />
+              <stop offset="1" stopColor="currentColor" />
             </linearGradient>
           </defs>
         </svg>

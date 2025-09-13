@@ -1,7 +1,7 @@
 import AboutSectionOne from "@/components/About/AboutSectionOne";
 import AboutSectionTwo from "@/components/About/AboutSectionTwo";
 import AboutSectionThree from "@/components/About/AboutSectionThree";
-// import AboutSectionFour from "@/components/About/AboutSectionFour";
+import AboutSectionFour from "@/components/About/AboutSectionFour";
 import Breadcrumb from "@/components/Common/Breadcrumb";
 
 import { Metadata } from "next";
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 const AboutPage = () => {
   return (
     <>
-    {/* <Breadcrumb
+      {/* <Breadcrumb
         pageName="About Us"
       /> */}
 
@@ -32,11 +32,12 @@ const AboutPage = () => {
       </section>
       <AboutSectionOne />
       <div className="h-px w-full bg-linear-to-r from-transparent via-[#D2D8E183] to-transparent dark:via-[#959CB183]" />
+      <AboutSectionFour />
+      <div className="h-px w-full bg-linear-to-r from-transparent via-[#D2D8E183] to-transparent dark:via-[#959CB183]" />
       <AboutSectionTwo />
       <div className="h-px w-full bg-linear-to-r from-transparent via-[#D2D8E183] to-transparent dark:via-[#959CB183]" />
       <AboutSectionThree />
-      {/* <div className="h-px w-full bg-linear-to-r from-transparent via-[#D2D8E183] to-transparent dark:via-[#959CB183]" /> */}
-      {/* <AboutSectionFour /> */}
+
     </>
   );
 };
