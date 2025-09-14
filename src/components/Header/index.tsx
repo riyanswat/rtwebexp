@@ -129,7 +129,7 @@ const Header = () => {
                 id="navbarCollapse"
                 className={[
                   // Mobile panel --- modify border/shade etc of navbar buttons
-                  "navbar absolute right-4 z-30 w-[260px] rounded-md border border-white/10 bg-transparent p-4 backdrop-blur-none",
+                  "navbar absolute right-4 z-30 w-[260px] rounded-md border border-white/10 bg-[#000000]/88 p-4 backdrop-blur-none",
                   "transition-all duration-300",
                   navbarOpen
                     ? "visible top-[calc(100%+12px)] opacity-100"
@@ -152,6 +152,7 @@ const Header = () => {
                               "relative flex py-2 text-base lg:inline-flex lg:px-0 lg:py-6",
                               // Active = color only (NO persistent underline anymore)
                               isActive
+                              // change color of navbar button when active
                                 ? "text-white"
                                 : "text-black hover:text-primary dark:text-white/80 dark:hover:text-white",
                             ].join(" ")}
@@ -159,8 +160,9 @@ const Header = () => {
                             <span
                               className={[
                                 "relative inline-block transition-colors",
-                                // Underline: hover/focus only (removed active w-full state)
-                                "after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:bg-primary after:content-[''] after:transition-[width] after:duration-300",
+                                // Underline: hover/focus only
+                                // change after:bg-[#ecba00] to after:bg-primary for the color-primary in main css
+                                "after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:bg-[#ecba00] after:content-[''] after:transition-[width] after:duration-300",
                                 "after:w-0 group-hover:after:w-full focus-visible:after:w-full",
                               ].join(" ")}
                             >

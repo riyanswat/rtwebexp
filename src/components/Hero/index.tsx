@@ -33,7 +33,8 @@ const Hero = () => {
               <div className="flex flex-wrap gap-4">
                 <Link
                     href="/contact"
-                    className="rounded-md bg-primary/60 px-8 py-4 text-base font-semibold text-white duration-300 ease-in-out hover:bg-primary/75"
+                    // change bg-[#ecba00] to bg-primary to inherit the color primary from main css
+                    className="rounded-md bg-[#ecba00]/60 px-8 py-4 text-base font-semibold text-white duration-300 ease-in-out hover:bg-[#ecba00]/50"
                   >
                     Get a Free Quote
                   </Link>
