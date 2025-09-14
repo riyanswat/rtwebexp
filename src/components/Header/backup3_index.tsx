@@ -62,7 +62,7 @@ const Header = () => {
                 aria-label="Rayan Trading Home"
               >
                 <Image
-                  src="/images/logo/rtlogo.svg"
+                  src="/images/logo/rtlogo3.svg"
                   alt="logo"
                   width={140}
                   height={30}

@@ -39,7 +39,8 @@ const Header = () => {
           "header top-0 left-0 z-[9999] flex w-full items-center transition-all duration-300",
           // No real border here (removes the flash). We simulate a hairline with a fading overlay below.
           sticky
-            ? "fixed bg-[rgba(12,15,22,0.75)] dark:bg-[rgba(12,15,22,0.75)] backdrop-blur-md shadow-[0_8px_30px_rgba(0,0,0,0.35)]"
+          // change color/ shade/ transparency etc of the header
+            ? "fixed bg-[rgba(12,15,22,0.75)] dark:bg-[rgba(12,15,22,0.75)] backdrop-blur-lg shadow-[0_8px_30px_rgba(0,0,0,0.35)]"
             : "absolute bg-transparent",
         ].join(" ")}
       >
@@ -62,7 +63,7 @@ const Header = () => {
                 aria-label="Rayan Trading Home"
               >
                 <Image
-                  src="/images/logo/rtlogo.svg"
+                  src="/images/logo/rtlogo3.svg"
                   alt="logo"
                   width={140}
                   height={30}
@@ -127,8 +128,8 @@ const Header = () => {
               <nav
                 id="navbarCollapse"
                 className={[
-                  // Mobile panel
-                  "navbar absolute right-4 z-30 w-[260px] rounded-md border border-white/10 bg-[rgba(14,18,26,0.98)] p-4 shadow-[0_20px_50px_rgba(0,0,0,0.5)] backdrop-blur",
+                  // Mobile panel --- modify border/shade etc of navbar buttons
+                  "navbar absolute right-4 z-30 w-[260px] rounded-md border border-white/10 bg-transparent p-4 backdrop-blur-none",
                   "transition-all duration-300",
                   navbarOpen
                     ? "visible top-[calc(100%+12px)] opacity-100"

@@ -80,7 +80,7 @@ useEffect(() => {
             <div className="w-60 max-w-full px-4 xl:mr-12">
               <Link href="/" className="header-logo block w-full py-5 lg:py-2">
                 <Image
-                  src="/images/logo/rtlogo.svg"
+                  src="/images/logo/rtlogo3.svg"
                   alt="logo"
                   width={140}
                   height={30}

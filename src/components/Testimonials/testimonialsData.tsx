@@ -13,7 +13,7 @@ const testimonialData: Testimonial[] = [
   },
   {
     id: 2,
-    name: "Mohsin Raza",
+    name: "Hassan",
     country: "UK",
     content:
       "I have imported and still import cars from Rayan Trading. They are reliable and I am satisfied with their team and service.",
@@ -31,7 +31,7 @@ const testimonialData: Testimonial[] = [
   },
   {
     id: 4,
-    name: "Khalfan",
+    name: "Abdullah",
     country: "Tanzania",
     content:
       "I highly recommend Rayan Trading for their service. They are my first choice for car imports to Tanzania and they have never disappointed me.",
@@ -40,7 +40,7 @@ const testimonialData: Testimonial[] = [
   },
   {
     id: 5,
-    name: "Abood",
+    name: "Abbas",
     country: "Lebanon",
     content:
       "Rayan Trading staff is trustworthy and friendly. I will always use their service.",

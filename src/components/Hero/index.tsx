@@ -8,11 +8,13 @@ const Hero = () => {
       className="
         relative z-10 overflow-hidden
         bg-[#0F172A] text-white
-        pt-[120px] md:pt-[150px] lg:pt-[180px]
+        pt-[150px] md:pt-[150px] lg:pt-[180px]
         pb-16 md:pb-[120px] lg:pb-[150px]
       "
     >
       {/* Background accent glow */}
+      {/* modify the following to see interesting gradients */}
+      {/* <div className="absolute inset-0 bg-gradient-to-br from-[#0F172A] via-[#121723] to-[#0E1A26]" /> */}
       <div className="absolute inset-0 bg-gradient-to-br from-[#0F172A] via-[#121723] to-[#0E1A26]" />
 
       <div className="container relative">
@@ -20,7 +22,7 @@ const Hero = () => {
           {/* LEFT: Headline + CTA */}
           <div className="w-full px-4 lg:w-1/2">
             <div className="max-w-[500px]">
-              <h1 className="mb-6 text-4xl font-extrabold leading-tight sm:text-5xl md:text-5xl">
+              <h1 className="mb-6 text-3xl font-extrabold leading-tight sm:text-5xl md:text-5xl">
                 Your Trusted Car Exporter from Japan
               </h1>
 
