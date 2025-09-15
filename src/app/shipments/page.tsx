@@ -9,7 +9,7 @@ export default function ShipmentsPage() {
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
-                background: "#121723",
+                background: "#0F1115",
             }}
         >
 

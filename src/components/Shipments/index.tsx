@@ -27,7 +27,7 @@ const Shipments = ({
 
   return (
     <section className={[
-      "dark:bg-black bg-gray-light relative z-10",
+      "dark:bg-[#0F1115] bg-gray-light relative z-10",
       paddingTop,
       "pb-16 md:pb-20 lg:pb-28",
     ].join(" ")}

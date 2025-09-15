@@ -15,7 +15,7 @@ const Hero = () => {
       {/* Background accent glow */}
       {/* modify the following to see interesting gradients */}
       {/* <div className="absolute inset-0 bg-gradient-to-br from-[#0F172A] via-[#121723] to-[#0E1A26]" /> */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#0F172A] via-[#121723] to-[#0E1A26]" />
+      <div className="absolute inset-0 bg-gradient-to-br from-[#0F172A] via-[#121723] to-[#0F1115]" />
 
       <div className="container relative">
         <div className="flex flex-wrap items-center -mx-4">

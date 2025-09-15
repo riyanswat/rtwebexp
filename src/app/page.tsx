@@ -27,7 +27,7 @@ export default function Home() {
     <>
       <ScrollUp />
       <Hero />
-      <div className="h-px w-full bg-linear-to-r from-transparent via-[#D2D8E183] to-transparent dark:via-[#959CB183]" />
+      {/* <div className="h-px w-full bg-linear-to-r from-transparent via-[#D2D8E183] to-transparent dark:via-[#959CB183]" /> */}
 
 
       <Shipments title="Recent Shipments" limit={3} paddingTop="pt-18 md:pt-32 lg:pt-16" />
