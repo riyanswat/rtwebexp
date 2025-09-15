@@ -1,4 +1,5 @@
 import React from "react";
+import Shipments from "@/components/Shipments";
 
 export default function ShipmentsPage() {
     return (
@@ -8,18 +9,11 @@ export default function ShipmentsPage() {
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
-                background: "#23272f",
+                background: "#121723",
             }}
         >
-            <h1
-                style={{
-                    color: "#f5f7fa", // light heading color for dark background
-                    fontSize: "2rem",
-                    fontWeight: 600,
-                }}
-            >
-                Page under maintenance
-            </h1>
+
+            <Shipments limit={6} />
         </div>
-    );
+    )
 }

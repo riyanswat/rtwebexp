@@ -5,6 +5,7 @@ const Footer = () => {
     <footer
       className="
         relative z-10 text-[#E2E8E4]
+        // #ecba00
         bg-[#102A32]
         before:pointer-events-none before:absolute before:inset-0
         before:bg-[radial-gradient(120%_80%_at_50%_-10%,rgba(255,255,255,0.06),transparent_55%),radial-gradient(120%_80%_at_100%_100%,rgba(0,0,0,0.35),transparent_50%)]

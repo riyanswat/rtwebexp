@@ -13,7 +13,7 @@ import { Metadata } from "next";
 import { motion } from "framer-motion"
 // import HowWeWork from "@/components/HowWeWork";
 import Work from "@/components/Work";
-
+import Shipments from "@/components/Shipments";
 
 export const metadata: Metadata = {
   title: "Rayan Trading, Exporters of all kinds of Vehicles",
@@ -29,6 +29,8 @@ export default function Home() {
       <Hero />
       <div className="h-px w-full bg-linear-to-r from-transparent via-[#D2D8E183] to-transparent dark:via-[#959CB183]" />
 
+
+      <Shipments title="Recent Shipments" limit={3} paddingTop="pt-18 md:pt-32 lg:pt-16" />
       {/* <HowWeWork /> */}
       <Work />
 

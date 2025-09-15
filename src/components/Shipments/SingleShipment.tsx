@@ -1,0 +1,281 @@
+// src/components/Shipments/SingleShipment.tsx
+"use client";
+
+import Image from "next/image";
+import { useEffect, useRef, useState, useCallback } from "react";
+import { createPortal } from "react-dom";
+import type { Shipment } from "@/types/shipment";
+
+type Props = { item: Shipment };
+
+const SingleShipment = ({ item }: Props) => {
+  const { title, model, year, destination, cover, images } = item;
+
+  const [open, setOpen] = useState(false);
+  const [index, setIndex] = useState(0);
+  const [mounted, setMounted] = useState(false);
+
+  const prevBodyOverflow = useRef<string>("");
+  const prevHtmlOverflow = useRef<string>("");
+  const frameRef = useRef<HTMLDivElement>(null); // NEW: reference to the modal frame
+
+  useEffect(() => setMounted(true), []);
+
+  const close = useCallback(() => setOpen(false), []);
+
+  // Lock scroll + kb shortcuts
+  useEffect(() => {
+    if (!open || !mounted) return;
+
+    const docEl = document.documentElement;
+    prevBodyOverflow.current = document.body.style.overflow;
+    prevHtmlOverflow.current = docEl.style.overflow;
+    document.body.style.overflow = "hidden";
+    docEl.style.overflow = "hidden";
+
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") close();
+      if (e.key === "ArrowLeft") setIndex((i) => (i - 1 + images.length) % images.length);
+      if (e.key === "ArrowRight") setIndex((i) => (i + 1) % images.length);
+    };
+
+    window.addEventListener("keydown", onKey);
+    return () => {
+      window.removeEventListener("keydown", onKey);
+      document.body.style.overflow = prevBodyOverflow.current;
+      docEl.style.overflow = prevHtmlOverflow.current;
+    };
+  }, [open, mounted, images.length, close]);
+
+  // swipe-to-change
+  const startX = useRef(0);
+  const deltaX = useRef(0);
+
+  const onTouchStart = (e: React.TouchEvent) => {
+    startX.current = e.touches[0].clientX;
+    deltaX.current = 0;
+  };
+  const onTouchMove = (e: React.TouchEvent) => {
+    deltaX.current = e.touches[0].clientX - startX.current;
+  };
+  const onTouchEnd = () => {
+    const THRESHOLD = 50;
+    if (Math.abs(deltaX.current) > THRESHOLD) {
+      deltaX.current < 0 ? next() : prev();
+    }
+    startX.current = 0;
+    deltaX.current = 0;
+  };
+
+  const openAt = (i: number) => {
+    setIndex(i);
+    setOpen(true);
+  };
+
+  const next = (e?: React.MouseEvent) => {
+    e?.stopPropagation();
+    setIndex((i) => (i + 1) % images.length);
+  };
+
+  const prev = (e?: React.MouseEvent) => {
+    e?.stopPropagation();
+    setIndex((i) => (i - 1 + images.length) % images.length);
+  };
+
+  return (
+    <div className="w-full">
+      {/* Card */}
+      <div
+        className="
+          relative bg-dark rounded-md p-6 lg:px-5 xl:px-6
+          shadow-two transition-all duration-150
+          hover:scale-102 
+        "
+      >
+        {/* Image */}
+        <button
+          type="button"
+          onClick={() => openAt(0)}
+          className="
+            group relative block w-full overflow-hidden rounded-md
+            ring-1 ring-white/10
+            focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/50 cursor-pointer
+          "
+          aria-label={`Open gallery for ${title}`}
+        >
+          <div className="relative aspect-[16/9] w-full">
+            <Image
+              src={cover}
+              alt={`${title}${year ? ` ${year}` : ""} — shipped to ${destination}`}
+              fill
+              sizes="(min-width: 1024px) 33vw, 100vw"
+              className="object-cover transition-transform duration-300 group-hover:scale-[1.02]"
+            />
+          </div>
+          <span className="pointer-events-none absolute right-2 bottom-2 rounded bg-black/50 px-2 py-1 text-[11px] text-white">
+            View gallery
+          </span>
+        </button>
+
+        {/* Details */}
+        <div className="mt-5">
+          <h3 className="text-white text-lg font-semibold">
+            {title}
+            {model ? <span className="text-white/70">{` — ${model}`}</span> : null}
+          </h3>
+
+          {/* pretty chips */}
+          <div className="mt-3 flex flex-wrap gap-2">
+            {year ? (
+              <span className="inline-flex items-center rounded-full bg-white/5 px-3 py-1 text-[12px] text-white/90 ring-1 ring-white/10">
+                <svg viewBox="0 0 24 24" className="mr-1.5 h-4 w-4 opacity-80" fill="currentColor">
+                  <path d="M19 4h-1V2h-2v2H8V2H6v2H5a2 2 0 00-2 2v11a3 3 0 003 3h12a3 3 0 003-3V6a2 2 0 00-2-2Zm0 13a1 1 0 01-1 1H6a1 1 0 01-1-1V9h14v8Z" />
+                </svg>
+                Year: {year}
+              </span>
+            ) : null}
+            <span className="inline-flex items-center rounded-full bg-white/5 px-3 py-1 text-[12px] text-white/90 ring-1 ring-white/10">
+              <svg viewBox="0 0 24 24" className="mr-1.5 h-4 w-4 opacity-80" fill="currentColor">
+                <path d="M12 22s8-4.5 8-12a8 8 0 10-16 0c0 7.5 8 12 8 12z" />
+              </svg>
+              {destination}
+            </span>
+          </div>
+        </div>
+      </div>
+
+      {/* Modal (portal to escape header stacking) */}
+      {open && mounted &&
+        createPortal(
+          <div
+            className="fixed inset-0 z-[10000] flex items-center justify-center p-3 pt-[88px] sm:pt-0"
+            // NEW: close when clicking anywhere outside the frame (including padded edges)
+            onMouseDown={(e) => {
+              const node = frameRef.current;
+              if (node && !node.contains(e.target as Node)) {
+                close();
+              }
+            }}
+          >
+            {/* Backdrop */}
+            <div className="absolute inset-0 bg-black/10 backdrop-blur-[8px]" />
+
+            {/* Frame (keeps clear of header) */}
+            <div className="relative mx-auto mt-[max(env(safe-area-inset-top),15px)] mb-1 w-[min(92vw,1100px)] px-0 sm:px-20">
+              <div
+                ref={frameRef} // NEW: anchor for outside-click detection
+                className="relative rounded-xl bg-[#0B0F14]/70 ring-1 ring-white/15 shadow-[0_10px_60px_rgba(0,0,0,0.7)] p-2 md:p-3"
+              >
+                {/* Close button – sits ABOVE paddles */}
+                <button
+                  type="button"
+                  onClick={(e) => { e.stopPropagation(); close(); }}
+                  aria-label="Close gallery"
+                  className="
+                    absolute top-3 right-3 sm:right-3 z-30 inline-flex h-10 w-10 items-center justify-center
+                    rounded-full bg-black/60 text-white/90 backdrop-blur-sm ring-1 ring-white/15
+                    transition-all duration-200 hover:bg-white/20
+                    focus:outline-none focus-visible:ring-2 focus-visible:ring-primary
+                    active:rotate-90 active:scale-90 cursor-pointer
+                  "
+                >
+                  <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path strokeLinecap="round" d="M6 6l12 12M18 6L6 18" />
+                  </svg>
+                </button>
+
+                {/* Main image + paddles */}
+                <div
+                  className="relative w-full h-[min(70vh,65vw)] overflow-hidden rounded-lg"
+                  onTouchStart={onTouchStart}
+                  onTouchMove={onTouchMove}
+                  onTouchEnd={onTouchEnd}
+                >
+                  <Image
+                    src={images[index] ?? cover}
+                    alt={`${title} — image ${index + 1}`}
+                    fill
+                    sizes="(min-width: 1024px) 60vw, 100vw"
+                    className="object-contain"
+                    priority
+                  />
+
+                  {images.length > 1 && (
+                    <>
+                      {/* Left paddle */}
+                      <button
+                        type="button"
+                        onClick={prev}
+                        className="
+                          absolute inset-y-0 left-0 z-10 w-[22%] sm:w-[18%]
+                          flex items-center justify-start pl-2
+                          bg-gradient-to-r from-black/20 to-transparent
+                          text-white/90 hover:text-white cursor-pointer
+                          focus:outline-none hover:bg-black/50 active:bg-black/10
+                        "
+                        aria-label="Previous image"
+                      >
+                        <svg viewBox="0 0 24 24" className="h-10 w-10 sm:h-12 sm:w-12" fill="currentColor">
+                          <path d="M15.5 19 8.5 12l7-7 1.5 1.5L11.5 12l5.5 5.5L15.5 19z" />
+                        </svg>
+                      </button>
+
+                      {/* Right paddle — sits BELOW the close (z-10 vs z-30) */}
+                      <button
+                        type="button"
+                        onClick={next}
+                        className="
+                          absolute inset-y-0 right-0 z-10 w-[22%] sm:w-[18%]
+                          flex items-center justify-end pr-2
+                          bg-gradient-to-l from-black/20 to-transparent
+                          text-white/90 hover:text-white cursor-pointer
+                          focus:outline-none hover:bg-black/50 active:bg-black/10
+                        "
+                        aria-label="Next image"
+                      >
+                        <svg viewBox="0 0 24 24" className="h-10 w-10 sm:h-12 sm:w-12" fill="currentColor">
+                          <path d="m8.5 5 7 7-7 7-1.5-1.5L13.5 12 7 6.5 8.5 5z" />
+                        </svg>
+                      </button>
+                    </>
+                  )}
+                </div>
+
+                {/* Thumbnails */}
+                {images.length > 1 && (
+                  <div className="mt-4 grid grid-cols-4 gap-3 sm:grid-cols-6">
+                    {images.map((src, i) => (
+                      <button
+                        key={src + i}
+                        type="button"
+                        onClick={(e) => { e.stopPropagation(); setIndex(i); }}
+                        className={`
+                          relative aspect-[4/3] overflow-hidden rounded ring-2
+                          ${i === index ? "ring-primary" : "ring-white/10"}
+                          focus:outline-none focus-visible:ring-2 focus-visible:ring-primary
+                        `}
+                        aria-label={`Go to image ${i + 1}`}
+                      >
+                        <Image
+                          src={src}
+                          alt={`${title} thumbnail ${i + 1}`}
+                          fill
+                          className="object-cover"
+                          sizes="(min-width: 640px) 10vw, 22vw"
+                          loading="lazy"
+                        />
+                      </button>
+                    ))}
+                  </div>
+                )}
+              </div>
+            </div>
+          </div>,
+          document.body
+        )
+      }
+    </div>
+  );
+};
+
+export default SingleShipment;
