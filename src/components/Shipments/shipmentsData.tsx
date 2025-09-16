@@ -45,20 +45,6 @@ const shipmentsData: Shipment[] = [
     ],
     createdAt: "2025-07-12",
   },
-    {
-    id: "toyota-corolla-2021-uae",
-    title: "Toyota Corolla",
-    model: "XSE",
-    year: 2021,
-    destination: "Australia",
-    cover: "/images/shipments/toyota-corolla/01.jpg",
-    images: [
-      "/images/shipments/toyota-corolla/01.jpg",
-      "/images/shipments/toyota-corolla/02.jpg",
-      "/images/shipments/toyota-corolla/03.jpg",
-    ],
-    createdAt: "2025-09-11",
-  },
 ];
 
 export default shipmentsData;

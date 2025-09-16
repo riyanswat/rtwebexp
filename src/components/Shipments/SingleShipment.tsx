@@ -122,25 +122,30 @@ const SingleShipment = ({ item }: Props) => {
           <h3 className="text-white text-lg font-semibold">
             {title}
             {model ? <span className="text-white/70">{` — ${model}`}</span> : null}
+            {year != null && <span className="text-white/60"> · {year}</span>}
           </h3>
 
           {/* pretty chips */}
           <div className="mt-3 flex flex-wrap gap-2">
-            {year ? (
-              <span className="inline-flex items-center rounded-full bg-white/5 px-3 py-1 text-[12px] text-white/90 ring-1 ring-white/10">
-                <svg viewBox="0 0 24 24" className="mr-1.5 h-4 w-4 opacity-80" fill="currentColor">
-                  <path d="M19 4h-1V2h-2v2H8V2H6v2H5a2 2 0 00-2 2v11a3 3 0 003 3h12a3 3 0 003-3V6a2 2 0 00-2-2Zm0 13a1 1 0 01-1 1H6a1 1 0 01-1-1V9h14v8Z" />
-                </svg>
-                Year: {year}
-              </span>
-            ) : null}
             <span className="inline-flex items-center rounded-full bg-white/5 px-3 py-1 text-[12px] text-white/90 ring-1 ring-white/10">
-              <svg viewBox="0 0 24 24" className="mr-1.5 h-4 w-4 opacity-80" fill="currentColor">
-                <path d="M12 22s8-4.5 8-12a8 8 0 10-16 0c0 7.5 8 12 8 12z" />
+              {/* Updated location icon */}
+              <svg
+                viewBox="0 0 40 40"
+                className="mr-1.5 h-4 w-4 opacity-80 text-current"
+                fill="none"
+              >
+                <path
+                  d="M20 6c-6.1 0-11 4.9-11 11 0 8 11 19 11 19s11-11 11-19c0-6.1-4.9-11-11-11z"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  fill="none"
+                />
+                <circle cx="20" cy="17" r="3" fill="currentColor" />
               </svg>
               {destination}
             </span>
           </div>
+
         </div>
       </div>
 
