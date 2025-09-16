@@ -90,7 +90,7 @@ const features = [
 
 const AboutSectionTwo = () => {
   return (
-    <section className="py-16 md:py-20 lg:py-28 bg-gray-50 dark:bg-gray-900">
+    <section className="py-16 md:py-20 lg:py-28 bg-gray-50 dark:bg-[#0F1115]">
       <div className="container">
         <div className="-mx-4 flex flex-wrap items-center">
           {/* Text content */}

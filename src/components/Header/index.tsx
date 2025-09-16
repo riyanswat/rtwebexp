@@ -63,7 +63,7 @@ const Header = () => {
                 aria-label="Rayan Trading Home"
               >
                 <Image
-                  src="/images/logo/rtlogo3.svg"
+                  src="/images/logo/rtlogo3.png"
                   alt="logo"
                   width={140}
                   height={30}
@@ -196,9 +196,8 @@ const Header = () => {
                                 </svg>
                               </span>
                             </button>
-
                             {/* Submenu */}
-                            <div
+                            {/* <div
                               className={[
                                 "submenu transition-all duration-300",
                                 // Mobile: toggle with state
@@ -219,14 +218,16 @@ const Header = () => {
                                   {submenuItem.title}
                                 </Link>
                               ))}
-                            </div>
+                            </div> */}
                           </>
                         )}
                       </li>
                     );
                   })}
                 </ul>
+
               </nav>
+
             </div>
           </div>
         </div>

@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const AboutSectionOne = () => {
   return (
-    <section id="about" className="pt-16 md:pt-20 lg:pt-28">
+    <section id="about" className="pt-16 md:pt-20 lg:pt-28 bg-[#0F1115]">
       <div className="container">
         {/* removed the border-b wrapper that created the thin line */}
         <div className="-mx-4 flex flex-wrap items-center">

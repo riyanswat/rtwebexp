@@ -73,7 +73,7 @@ const steps = [
 
 const AboutSectionThree = () => {
   return (
-    <section className="py-16 md:py-20 lg:py-28">
+    <section className="py-16 md:py-20 lg:py-28 dark:bg-gray-900">
       <div className="container">
         <div className="-mx-4 flex flex-wrap items-center">
           {/* Image (swap sides vs Section Two for variety) */}

@@ -5,11 +5,13 @@ import countriesData from "./countriesData";
 const Countries = () => {
   const list = countriesData;
 
+  // change the following bg to #2563eb for light mode
   return (
     <section className="py-12 bg-[#171929]">
     {/* <section id="how-it-works" className="py-6 md:py-20 lg:py-18 bg-[#171929]"> */}
 
       <div className="container">
+        {/* change the following bg to #2563eb for light mode */}
         <div className="rounded-md bg-[#171929] px-6 py-8 sm:px-10 md:px-[50px] xl:p-[50px] 2xl:px-[70px]">
           {/* Title */}
           <div className="mb-6 text-center">

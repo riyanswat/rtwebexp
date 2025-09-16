@@ -70,7 +70,7 @@ const Hero = () => {
           <div className="relative mt-12 w-full px-4 lg:mt-0 lg:w-1/2">
             <div className="relative mx-auto max-w-[520px]">
               <Image
-                src="/images/hero-bg.png" // replace with a strong vehicle/export image
+                src="/images/hero-bg.jpg" // replace with a strong vehicle/export image
                 alt="Luxury JDM car"
                 width={600}
                 height={400}

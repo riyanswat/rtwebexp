@@ -27,15 +27,15 @@ const AboutPage = () => {
         description="A trusted Japan-based Car Exporting company."
       /> */}
       {/* <div className="pt-20"></div> */}
-      <section className="pt-32 pb-4 text-center bg-gray-100 dark:bg-gray-900">
-        <h1 className="text-4xl font-bold text-black dark:text-white">About Us</h1>
+      <section className="pt-32 pb-4 text-center bg-gray-100 dark:bg-[#0F1115]">
+        <h1 className="text-4xl font-bold text-black dark:text-white pt-4">About Us</h1>
       </section>
       <AboutSectionOne />
-      <div className="h-px w-full bg-linear-to-r from-transparent via-[#D2D8E183] to-transparent dark:via-[#959CB183]" />
+      {/* <div className="h-px w-full bg-linear-to-r from-transparent via-[#D2D8E183] to-transparent dark:via-[#959CB183]" /> */}
       <AboutSectionFour />
-      <div className="h-px w-full bg-linear-to-r from-transparent via-[#D2D8E183] to-transparent dark:via-[#959CB183]" />
+      {/* <div className="h-px w-full bg-linear-to-r from-transparent via-[#D2D8E183] to-transparent dark:via-[#959CB183]" /> */}
       <AboutSectionTwo />
-      <div className="h-px w-full bg-linear-to-r from-transparent via-[#D2D8E183] to-transparent dark:via-[#959CB183]" />
+      {/* <div className="h-px w-full bg-linear-to-r from-transparent via-[#D2D8E183] to-transparent dark:via-[#959CB183]" /> */}
       <AboutSectionThree />
 
     </>
