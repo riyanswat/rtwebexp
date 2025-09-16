@@ -11,6 +11,7 @@ const countriesData: string[] = [
   "Afghanistan",
   "Iran",
   "Ghana",
+  "Germany",
   "Chile",
   "Peru",
   "Ireland",

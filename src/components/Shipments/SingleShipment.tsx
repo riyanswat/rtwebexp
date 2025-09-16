@@ -17,10 +17,14 @@ const SingleShipment = ({ item }: Props) => {
 
   const prevBodyOverflow = useRef<string>("");
   const prevHtmlOverflow = useRef<string>("");
-  const frameRef = useRef<HTMLDivElement>(null); // NEW: reference to the modal frame
+  const frameRef = useRef<HTMLDivElement>(null);
+
+  // NEW: refs for thumbnail strip + items
+  const stripRef = useRef<HTMLDivElement>(null);
+  // const thumbRefs = useRef<(HTMLButtonElement | null)[]>([]);
+  const thumbRefs = useRef<Array<HTMLButtonElement | null>>([]);
 
   useEffect(() => setMounted(true), []);
-
   const close = useCallback(() => setOpen(false), []);
 
   // Lock scroll + kb shortcuts
@@ -47,10 +51,9 @@ const SingleShipment = ({ item }: Props) => {
     };
   }, [open, mounted, images.length, close]);
 
-  // swipe-to-change
+  // Swipe-to-change
   const startX = useRef(0);
   const deltaX = useRef(0);
-
   const onTouchStart = (e: React.TouchEvent) => {
     startX.current = e.touches[0].clientX;
     deltaX.current = 0;
@@ -82,6 +85,18 @@ const SingleShipment = ({ item }: Props) => {
     setIndex((i) => (i - 1 + images.length) % images.length);
   };
 
+  // NEW: keep the active thumbnail visible in the strip
+  useEffect(() => {
+    if (!open || !mounted) return;
+    const btn = thumbRefs.current[index];
+    // scroll into view horizontally, gently centering if possible
+    btn?.scrollIntoView({
+      behavior: "smooth",
+      block: "nearest",
+      inline: "center",
+    });
+  }, [index, open, mounted]);
+
   return (
     <div className="w-full">
       {/* Card */}
@@ -89,7 +104,7 @@ const SingleShipment = ({ item }: Props) => {
         className="
           relative bg-dark rounded-md p-6 lg:px-5 xl:px-6
           shadow-two transition-all duration-150
-          hover:scale-102 
+          hover:scale-102
         "
       >
         {/* Image */}
@@ -125,15 +140,9 @@ const SingleShipment = ({ item }: Props) => {
             {year != null && <span className="text-white/60"> · {year}</span>}
           </h3>
 
-          {/* pretty chips */}
           <div className="mt-3 flex flex-wrap gap-2">
             <span className="inline-flex items-center rounded-full bg-white/5 px-3 py-1 text-[12px] text-white/90 ring-1 ring-white/10">
-              {/* Updated location icon */}
-              <svg
-                viewBox="0 0 40 40"
-                className="mr-1.5 h-4 w-4 opacity-80 text-current"
-                fill="none"
-              >
+              <svg viewBox="0 0 40 40" className="mr-1.5 h-4 w-4 opacity-80 text-current" fill="none">
                 <path
                   d="M20 6c-6.1 0-11 4.9-11 11 0 8 11 19 11 19s11-11 11-19c0-6.1-4.9-11-11-11z"
                   stroke="currentColor"
@@ -145,7 +154,6 @@ const SingleShipment = ({ item }: Props) => {
               {destination}
             </span>
           </div>
-
         </div>
       </div>
 
@@ -154,24 +162,21 @@ const SingleShipment = ({ item }: Props) => {
         createPortal(
           <div
             className="fixed inset-0 z-[10000] flex items-center justify-center p-3 pt-[88px] sm:pt-0"
-            // NEW: close when clicking anywhere outside the frame (including padded edges)
             onMouseDown={(e) => {
               const node = frameRef.current;
-              if (node && !node.contains(e.target as Node)) {
-                close();
-              }
+              if (node && !node.contains(e.target as Node)) close();
             }}
           >
             {/* Backdrop */}
             <div className="absolute inset-0 bg-black/10 backdrop-blur-[8px]" />
 
-            {/* Frame (keeps clear of header) */}
+            {/* Frame */}
             <div className="relative mx-auto mt-[max(env(safe-area-inset-top),15px)] mb-1 w-[min(92vw,1100px)] px-0 sm:px-20">
               <div
-                ref={frameRef} // NEW: anchor for outside-click detection
+                ref={frameRef}
                 className="relative rounded-xl bg-[#0B0F14]/70 ring-1 ring-white/15 shadow-[0_10px_60px_rgba(0,0,0,0.7)] p-2 md:p-3"
               >
-                {/* Close button – sits ABOVE paddles */}
+                {/* Close */}
                 <button
                   type="button"
                   onClick={(e) => { e.stopPropagation(); close(); }}
@@ -225,7 +230,7 @@ const SingleShipment = ({ item }: Props) => {
                         </svg>
                       </button>
 
-                      {/* Right paddle — sits BELOW the close (z-10 vs z-30) */}
+                      {/* Right paddle */}
                       <button
                         type="button"
                         onClick={next}
@@ -246,33 +251,50 @@ const SingleShipment = ({ item }: Props) => {
                   )}
                 </div>
 
-                {/* Thumbnails */}
+                {/* Thumbnails — horizontal scroller with auto-centering on active */}
                 {images.length > 1 && (
-                  <div className="mt-4 grid grid-cols-4 gap-3 sm:grid-cols-6">
-                    {images.map((src, i) => (
-                      <button
-                        key={src + i}
-                        type="button"
-                        onClick={(e) => { e.stopPropagation(); setIndex(i); }}
-                        className={`
-                          relative aspect-[4/3] overflow-hidden rounded ring-2
-                          ${i === index ? "ring-primary" : "ring-white/10"}
-                          focus:outline-none focus-visible:ring-2 focus-visible:ring-primary
-                        `}
-                        aria-label={`Go to image ${i + 1}`}
-                      >
-                        <Image
-                          src={src}
-                          alt={`${title} thumbnail ${i + 1}`}
-                          fill
-                          className="object-cover"
-                          sizes="(min-width: 640px) 10vw, 22vw"
-                          loading="lazy"
-                        />
-                      </button>
-                    ))}
+                  <div className="mt-4 -mx-2">
+                    <div
+                      ref={stripRef}
+                      className="
+                        flex gap-3 px-2 overflow-x-auto overscroll-x-contain scroll-smooth
+                        snap-x snap-mandatory
+                        [scrollbar-width:none] [-ms-overflow-style:none]
+                        [&::-webkit-scrollbar]:hidden
+                      "
+                      role="listbox"
+                      aria-label="Image thumbnails"
+                    >
+                      {images.map((src, i) => (
+                        <button
+                          key={src + i}
+                          // ref={(el) => (thumbRefs.current[i] = el)}
+                          ref={(el) => { thumbRefs.current[i] = el; }}
+                          type="button"
+                          onClick={(e) => { e.stopPropagation(); setIndex(i); }}
+                          className={`
+                            relative shrink-0 snap-start w-28 h-20 sm:w-32 sm:h-24 overflow-hidden rounded
+                            ring-2 ${i === index ? "ring-primary" : "ring-white/10"}
+                            focus:outline-none focus-visible:ring-2 focus-visible:ring-primary
+                          `}
+                          aria-label={`Go to image ${i + 1}`}
+                          role="option"
+                          aria-selected={i === index}
+                        >
+                          <Image
+                            src={src}
+                            alt={`${title} thumbnail ${i + 1}`}
+                            fill
+                            className="object-cover"
+                            sizes="128px"
+                            loading="lazy"
+                          />
+                        </button>
+                      ))}
+                    </div>
                   </div>
                 )}
+                {/* thumbnail end */}
               </div>
             </div>
           </div>,

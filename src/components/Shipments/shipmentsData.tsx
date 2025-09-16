@@ -3,7 +3,7 @@ import { Shipment } from "@/types/shipment";
 
 const shipmentsData: Shipment[] = [
     {
-    id: "toyota-corolla-2021-uae",
+    id: "1",
     title: "Toyota Corolla",
     model: "XSE",
     year: 2021,
@@ -16,17 +16,20 @@ const shipmentsData: Shipment[] = [
     ],
   },
   {
-    id: "lexus-es-2021-tanzania",
-    title: "Lexus ES",
-    model: "ES300h",
-    year: 2021,
+    id: "2",
+    title: "Toyota CH-R",
+    model: "",
+    year: 2019,
     destination: "Tanzania",
-    cover: "/images/shipments/lexus-es/01.jpg",
+    cover: "/images/shipments/toyota-chr-tanzania/1.jpg",
     images: [
-      "/images/shipments/lexus-es/01.jpg",
-      "/images/shipments/lexus-es/02.jpg",
-      "/images/shipments/lexus-es/03.jpg",
-      "/images/shipments/lexus-es/04.jpg",
+      "/images/shipments/toyota-chr-tanzania/1.jpg",
+      "/images/shipments/toyota-chr-tanzania/2.jpg",
+      "/images/shipments/toyota-chr-tanzania/3.jpg",
+      "/images/shipments/toyota-chr-tanzania/4.jpg",
+      "/images/shipments/toyota-chr-tanzania/5.jpg",
+      "/images/shipments/toyota-chr-tanzania/6.jpg",
+      "/images/shipments/toyota-chr-tanzania/7.jpg",
     ],
   },
   {
