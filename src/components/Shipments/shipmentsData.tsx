@@ -2,6 +2,19 @@
 import { Shipment } from "@/types/shipment";
 
 const shipmentsData: Shipment[] = [
+    {
+    id: "toyota-corolla-2021-uae",
+    title: "Toyota Corolla",
+    model: "XSE",
+    year: 2021,
+    destination: "UK",
+    cover: "/images/shipments/toyota-corolla/01.jpg",
+    images: [
+      "/images/shipments/toyota-corolla/01.jpg",
+      "/images/shipments/toyota-corolla/02.jpg",
+      "/images/shipments/toyota-corolla/03.jpg",
+    ],
+  },
   {
     id: "lexus-es-2021-tanzania",
     title: "Lexus ES",
@@ -15,7 +28,6 @@ const shipmentsData: Shipment[] = [
       "/images/shipments/lexus-es/03.jpg",
       "/images/shipments/lexus-es/04.jpg",
     ],
-    createdAt: "2025-08-20",
   },
   {
     id: "toyota-landcruiser-2019-kenya",
@@ -29,7 +41,6 @@ const shipmentsData: Shipment[] = [
       "/images/shipments/landcruiser/02.jpg",
       "/images/shipments/landcruiser/03.jpg",
     ],
-    createdAt: "2025-07-30",
   },
   {
     id: "hino-dutro-2020-uae",
@@ -43,8 +54,8 @@ const shipmentsData: Shipment[] = [
       "/images/shipments/hino-dutro/02.jpg",
       "/images/shipments/hino-dutro/03.jpg",
     ],
-    createdAt: "2025-07-12",
   },
+
 ];
 
 export default shipmentsData;

@@ -7,5 +7,4 @@ export interface Shipment {
   destination: string;   // "Tanzania"
   cover: string;         // main card image: "/images/shipments/lexus-es/cover.jpg"
   images: string[];      // gallery images (absolute paths in /public)
-  createdAt: string;     // ISO date used for sorting "recent"
 }
