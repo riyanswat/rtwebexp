@@ -31,10 +31,10 @@ const testimonialData: Testimonial[] = [
   },
   {
     id: 4,
-    name: "Abdullah",
-    country: "Tanzania",
+    name: "Harmoosh",
+    country: "Lebanon",
     content:
-      "I highly recommend Rayan Trading for their service. They are my first choice for car imports to Tanzania and they have never disappointed me.",
+      "I highly recommend Rayan Trading for their service. They are my first choice for car and machinery import to Lebanon and they have never disappointed me.",
     image: "/images/testimonials/auth-03.png",
     star: 5,
   },
