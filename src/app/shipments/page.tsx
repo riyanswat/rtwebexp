@@ -13,7 +13,7 @@ export default function ShipmentsPage() {
             }}
         >
 
-            <Shipments limit={6} />
+            <Shipments limit={100} />
         </div>
     )
 }
