@@ -12,6 +12,7 @@ const Hero = () => {
         pb-16 md:pb-[120px] lg:pb-[150px]
       "
     >
+      {/* 027848 12ad2b */}
       {/* Background accent glow */}
       {/* modify the following to see interesting gradients */}
       {/* <div className="absolute inset-0 bg-gradient-to-br from-[#0F172A] via-[#121723] to-[#0E1A26]" /> */}

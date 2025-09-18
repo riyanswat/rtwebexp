@@ -2,13 +2,19 @@
 const nextConfig = {
   images: {
     remotePatterns: [
+      // keep your existing sanity domain if you still use it
       {
         protocol: "https",
         hostname: "cdn.sanity.io",
-        port: "",
+      },
+      // add Vercel Blob public URLs
+      {
+        protocol: "https",
+        hostname: "*.public.blob.vercel-storage.com",
       },
     ],
   },
 };
 
 module.exports = nextConfig;
+
