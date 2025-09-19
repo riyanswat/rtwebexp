@@ -1,51 +1,62 @@
+// src/components/Contact/index.tsx
 "use client";
 
-import { useRef, useState } from "react";
+import { useState } from "react";
 import Link from "next/link";
 import ContactForm from "./ContactForm";
 
+// Sonner toast
+import { Toaster, toast } from "sonner";
+
 const Contact = () => {
-  const [submitted, setSubmitted] = useState(false);
-  const alertRef = useRef<HTMLDivElement | null>(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    if (isSubmitting) return;
+
     const form = e.currentTarget;
     const formData = new FormData(form);
 
     try {
-      // Send to Formspree API
-      await fetch("https://formspree.io/f/xvgbvyvl", {
+      setIsSubmitting(true);
+
+      const res = await fetch("https://formspree.io/f/xvgbvyvl", {
         method: "POST",
         body: formData,
         headers: { Accept: "application/json" },
       });
 
-      setSubmitted(true);
-      setTimeout(() => {
-        setSubmitted(false);
-      }, 5000);
-      
-      form.reset();
+      if (!res.ok) {
+        throw new Error(`Formspree error: ${res.status}`);
+      }
 
-      // Scroll to the alert with an offset for the fixed header
-      setTimeout(() => {
-        if (alertRef.current) {
-          const yOffset = -120; // adjust this value based on your header height
-          const y =
-            alertRef.current.getBoundingClientRect().top +
-            window.pageYOffset +
-            yOffset;
-          window.scrollTo({ top: y, behavior: "smooth" });
-        }
-      }, 100);
+      // Success toast
+      toast.success("Thank you! Your request has been submitted.", {
+        description: "We’ll get back to you shortly.",
+      });
+
+      form.reset();
     } catch (error) {
       console.error("Form submission error:", error);
+      toast.error("Something went wrong submitting the form.", {
+        description: "Please try again in a moment.",
+      });
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
   return (
     <section id="contact" className="overflow-hidden py-16 md:py-20 lg:py-28">
+      {/* Local toaster for this page (you can move this to layout if you prefer) */}
+      <Toaster
+        position="top-center"
+        richColors
+        closeButton
+        toastOptions={{ duration: 5000 }}
+      />
+
       <div className="container">
         <div className="-mx-4 flex flex-wrap">
           {/* Left column */}
@@ -61,16 +72,7 @@ const Contact = () => {
                 Fill out the form below and we’ll get back to you as soon as possible.
               </p>
 
-              {/* Success alert */}
-              {submitted && (
-                <div
-                  ref={alertRef}
-                  className="mb-6 rounded-md bg-green-100 p-4 text-green-800"
-                >
-                  ✅ Thank you! Your request has been submitted.
-                </div>
-              )}
-
+              {/* Form (no inline success div; we use toasts instead) */}
               <form onSubmit={handleSubmit}>
                 {/* Name */}
                 <div className="mb-8">
@@ -114,13 +116,14 @@ const Contact = () => {
                     htmlFor="country"
                     className="text-dark mb-3 block text-sm dark:text-white"
                   >
-                    Country
+                    Country*
                   </label>
                   <input
                     type="text"
                     name="country"
                     id="country"
                     placeholder="Enter your country"
+                    required
                     className="border-stroke dark:text-body-color-dark dark:shadow-two text-body-color focus:border-primary dark:focus:border-primary w-full rounded-xs border bg-[#f8f8f8] px-6 py-3 text-base outline-hidden transition-all duration-300 dark:border-transparent dark:bg-[#2C303B]"
                   />
                 </div>
@@ -147,9 +150,37 @@ const Contact = () => {
                 <div className="mb-6">
                   <button
                     type="submit"
-                    className="shadow-submit dark:shadow-submit-dark bg-primary hover:bg-primary/90 flex w-full items-center justify-center rounded-xs px-9 py-4 text-base font-medium text-white duration-300 cursor-pointer"
+                    disabled={isSubmitting}
+                    aria-busy={isSubmitting}
+                    className="shadow-submit dark:shadow-submit-dark bg-primary hover:bg-primary/90 flex w-full items-center justify-center rounded-xs px-9 py-4 text-base font-medium text-white duration-300 cursor-pointer disabled:opacity-70 disabled:cursor-not-allowed"
                   >
-                    Submit Request
+                    {isSubmitting ? (
+                      <span className="inline-flex items-center gap-2">
+                        <svg
+                          className="h-5 w-5 animate-spin"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          aria-hidden="true"
+                        >
+                          <circle
+                            className="opacity-25"
+                            cx="12"
+                            cy="12"
+                            r="10"
+                            stroke="currentColor"
+                            strokeWidth="4"
+                          />
+                          <path
+                            className="opacity-75"
+                            fill="currentColor"
+                            d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"
+                          />
+                        </svg>
+                        Sending…
+                      </span>
+                    ) : (
+                      "Submit Request"
+                    )}
                   </button>
                 </div>
               </form>
@@ -174,6 +205,12 @@ const Contact = () => {
 };
 
 export default Contact;
+
+
+
+
+
+
 
 
 

@@ -1,4 +1,4 @@
-// Redundant but can utilize for something else
+// src/app/get-a-quote/page.tsx
 
 import Link from "next/link";
 import { Metadata } from "next";
@@ -9,6 +9,17 @@ export const metadata: Metadata = {
 };
 
 const QuotePage = () => {
+  // ===== WhatsApp number config =====
+  // Put your JP mobile in local format with leading 0 (e.g. "09012345678")
+  const WHATSAPP_NUMBER_LOCAL = "090xxxxxxxx";
+
+  // Convert "090..." -> "8190..." for wa.me (Japan country code)
+  const waNumber = WHATSAPP_NUMBER_LOCAL.replace(/[^0-9]/g, "").replace(/^0/, "81");
+  const waText = encodeURIComponent(
+    "Hi Rayan Trading — I’d like a vehicle quote."
+  );
+  const waHref = `https://wa.me/${waNumber}?text=${waText}`;
+
   return (
     <>
       <section className="relative z-10 overflow-hidden pt-36 pb-16 md:pb-20 lg:pt-[180px] lg:pb-28">
@@ -23,10 +34,7 @@ const QuotePage = () => {
                   Fill out the form below and we’ll get back to you with your quote.
                 </p>
 
-                <form
-                  action="https://formspree.io/f/xvgbvyvl"
-                  method="POST"
-                >
+                <form action="https://formspree.io/f/xvgbvyvl" method="POST">
                   {/* Name */}
                   <div className="mb-8">
                     <label
@@ -59,7 +67,7 @@ const QuotePage = () => {
                       id="email"
                       placeholder="Enter your email address"
                       required
-                      pattern="^[^\s@]+@[^\s@]+\.[^\s@]+$"
+                      pattern="^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$"
                       className="border-stroke dark:text-body-color-dark dark:shadow-two text-body-color focus:border-primary dark:focus:border-primary w-full rounded-xs border bg-[#f8f8f8] px-6 py-3 text-base outline-hidden transition-all duration-300 dark:border-transparent dark:bg-[#2C303B] dark:focus:shadow-none"
                     />
                   </div>
@@ -70,13 +78,14 @@ const QuotePage = () => {
                       htmlFor="country"
                       className="text-dark mb-3 block text-sm dark:text-white"
                     >
-                      Country
+                      Country*
                     </label>
                     <input
                       type="text"
                       name="country"
                       id="country"
                       placeholder="Enter your country"
+                      required
                       className="border-stroke dark:text-body-color-dark dark:shadow-two text-body-color focus:border-primary dark:focus:border-primary w-full rounded-xs border bg-[#f8f8f8] px-6 py-3 text-base outline-hidden transition-all duration-300 dark:border-transparent dark:bg-[#2C303B] dark:focus:shadow-none"
                     />
                   </div>
@@ -180,9 +189,34 @@ const QuotePage = () => {
           </svg>
         </div>
       </section>
+
+      {/* Floating WhatsApp Button */}
+{/* Floating WhatsApp Button */}
+<div className="fixed bottom-46 right-6 z-[999]">
+  <a
+    href={waHref}
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Chat on WhatsApp"
+    title="Chat on WhatsApp"
+    className="relative flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-lg transition duration-300 ease-out hover:scale-110 hover:bg-[#1ebe57] focus:outline-hidden active:ring-4 ring-[#25D366]/40 dark:ring-[#25D366]/30 leading-none cursor-pointer select-none"
+  >
+    {/* WhatsApp SVG Icon */}
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      className="h-7 w-7 pointer-events-none shrink-0"
+      fill="currentColor"
+      aria-hidden="true"
+    >
+      <path d="M20.52 3.48A11.9 11.9 0 0 0 12 0C5.37 0 0 5.37 0 12c0 2.1.55 4.15 1.59 5.95L0 24l6.3-1.65A11.9 11.9 0 0 0 12 24c6.63 0 12-5.37 12-12 0-3.2-1.25-6.22-3.48-8.52zM12 21.5c-1.9 0-3.73-.52-5.33-1.5l-.38-.23-3.74.98 1-3.65-.24-.37A9.5 9.5 0 0 1 2.5 12c0-5.25 4.25-9.5 9.5-9.5 2.54 0 4.93.99 6.72 2.78a9.45 9.45 0 0 1 2.78 6.72c0 5.25-4.25 9.5-9.5 9.5zm5.22-7.6c-.28-.14-1.64-.81-1.9-.9-.26-.1-.45-.14-.64.14s-.74.9-.9 1.08c-.16.18-.33.2-.62.07-.28-.14-1.19-.44-2.26-1.4a8.27 8.27 0 0 1-1.53-1.9c-.16-.28-.02-.44.12-.58.12-.12.28-.3.42-.46.14-.16.18-.28.28-.46.1-.18.05-.34-.02-.48-.07-.14-.62-1.48-.84-2.03-.22-.55-.45-.48-.62-.49h-.53c-.18 0-.47.07-.72.34s-.95.93-.95 2.25c0 1.32.96 2.6 1.1 2.78.14.18 1.93 2.95 4.67 4.07.65.28 1.16.47 1.56.6.65.2 1.23.18 1.68.11.5-.08 1.58-.65 1.8-1.28.22-.63.22-1.16.15-1.28-.07-.11-.24-.18-.5-.32z" />
+    </svg>
+  </a>
+</div>
+
+
     </>
   );
 };
 
 export default QuotePage;
-

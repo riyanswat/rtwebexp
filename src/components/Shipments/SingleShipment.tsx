@@ -6,22 +6,50 @@ import { useEffect, useRef, useState, useCallback } from "react";
 import { createPortal } from "react-dom";
 import type { Shipment } from "@/types/shipment";
 
+
+// Embla
+import useEmblaCarousel, { UseEmblaCarouselType } from "embla-carousel-react";
+import type {
+  EmblaCarouselType,
+  EmblaEventType,
+  EmblaOptionsType,
+} from "embla-carousel";
+
 type Props = { item: Shipment };
+
+/* ---------------- Embla Parallax config (same as sandbox) ---------------- */
+const TWEEN_FACTOR_BASE = 0.2; // base factor used in example
+
+const emblaOptions: EmblaOptionsType = {
+  loop: true,
+  align: "center",
+  skipSnaps: true,
+  dragFree: false,
+  duration: 40, // higher => slower/more “luxury”
+};
 
 const SingleShipment = ({ item }: Props) => {
   const { title, model, year, destination, cover, images } = item;
 
   const [open, setOpen] = useState(false);
-  const [index, setIndex] = useState(0);
   const [mounted, setMounted] = useState(false);
 
   const prevBodyOverflow = useRef<string>("");
   const prevHtmlOverflow = useRef<string>("");
   const frameRef = useRef<HTMLDivElement>(null);
 
-  // NEW: refs for thumbnail strip + items
+  // Embla
+  const [emblaRef, emblaApi] = useEmblaCarousel(emblaOptions) as UseEmblaCarouselType;
+
+  // Parallax tween bookkeeping (same pattern as sandbox)
+  const tweenFactor = useRef(0);
+  const tweenNodes = useRef<HTMLElement[]>([]);
+
+  // Track selected index for thumb highlighting
+  const [selectedIndex, setSelectedIndex] = useState(0);
+
+  // Thumbnail strip auto-centering
   const stripRef = useRef<HTMLDivElement>(null);
-  // const thumbRefs = useRef<(HTMLButtonElement | null)[]>([]);
   const thumbRefs = useRef<Array<HTMLButtonElement | null>>([]);
 
   useEffect(() => setMounted(true), []);
@@ -39,8 +67,8 @@ const SingleShipment = ({ item }: Props) => {
 
     const onKey = (e: KeyboardEvent) => {
       if (e.key === "Escape") close();
-      if (e.key === "ArrowLeft") setIndex((i) => (i - 1 + images.length) % images.length);
-      if (e.key === "ArrowRight") setIndex((i) => (i + 1) % images.length);
+      if (e.key === "ArrowLeft") emblaApi?.scrollPrev();
+      if (e.key === "ArrowRight") emblaApi?.scrollNext();
     };
 
     window.addEventListener("keydown", onKey);
@@ -49,53 +77,103 @@ const SingleShipment = ({ item }: Props) => {
       document.body.style.overflow = prevBodyOverflow.current;
       docEl.style.overflow = prevHtmlOverflow.current;
     };
-  }, [open, mounted, images.length, close]);
+  }, [open, mounted, close, emblaApi]);
 
-  // Swipe-to-change
-  const startX = useRef(0);
-  const deltaX = useRef(0);
-  const onTouchStart = (e: React.TouchEvent) => {
-    startX.current = e.touches[0].clientX;
-    deltaX.current = 0;
-  };
-  const onTouchMove = (e: React.TouchEvent) => {
-    deltaX.current = e.touches[0].clientX - startX.current;
-  };
-  const onTouchEnd = () => {
-    const THRESHOLD = 50;
-    if (Math.abs(deltaX.current) > THRESHOLD) {
-      deltaX.current < 0 ? next() : prev();
-    }
-    startX.current = 0;
-    deltaX.current = 0;
-  };
+  const openAt = () => setOpen(true);
 
-  const openAt = (i: number) => {
-    setIndex(i);
-    setOpen(true);
-  };
-
-  const next = (e?: React.MouseEvent) => {
-    e?.stopPropagation();
-    setIndex((i) => (i + 1) % images.length);
-  };
-
-  const prev = (e?: React.MouseEvent) => {
-    e?.stopPropagation();
-    setIndex((i) => (i - 1 + images.length) % images.length);
-  };
-
-  // NEW: keep the active thumbnail visible in the strip
-  useEffect(() => {
-    if (!open || !mounted) return;
-    const btn = thumbRefs.current[index];
-    // scroll into view horizontally, gently centering if possible
-    btn?.scrollIntoView({
-      behavior: "smooth",
-      block: "nearest",
-      inline: "center",
+  /* ---------------- Parallax tween (1:1 with sandbox approach) ---------------- */
+  const setTweenNodes = useCallback((api: EmblaCarouselType): void => {
+    tweenNodes.current = api.slideNodes().map((slide) => {
+      return slide.querySelector(".embla__parallax__layer") as HTMLElement;
     });
-  }, [index, open, mounted]);
+  }, []);
+
+  const setTweenFactor = useCallback((api: EmblaCarouselType) => {
+    tweenFactor.current = TWEEN_FACTOR_BASE * api.scrollSnapList().length;
+  }, []);
+
+  const tweenParallax = useCallback(
+    (api: EmblaCarouselType, eventName?: EmblaEventType) => {
+      const engine = api.internalEngine();
+      const scrollProgress = api.scrollProgress();
+      const slidesInView = api.slidesInView();
+      const isScrollEvent = eventName === "scroll";
+
+      api.scrollSnapList().forEach((scrollSnap, snapIndex) => {
+        let diffToTarget = scrollSnap - scrollProgress;
+        const slidesInSnap = engine.slideRegistry[snapIndex];
+
+        slidesInSnap.forEach((slideIndex) => {
+          if (isScrollEvent && !slidesInView.includes(slideIndex)) return;
+
+          if (engine.options.loop) {
+            engine.slideLooper.loopPoints.forEach((loopItem) => {
+              const target = loopItem.target();
+              if (slideIndex === loopItem.index && target !== 0) {
+                const sign = Math.sign(target);
+                if (sign === -1) diffToTarget = scrollSnap - (1 + scrollProgress);
+                if (sign === 1) diffToTarget = scrollSnap + (1 - scrollProgress);
+              }
+            });
+          }
+
+          const translate = diffToTarget * (-1 * tweenFactor.current) * 100;
+          const tweenNode = tweenNodes.current[slideIndex];
+          if (tweenNode) tweenNode.style.transform = `translateX(${translate}%)`;
+        });
+      });
+    },
+    []
+  );
+
+  // Init/wire parallax, selection + thumb auto-center
+  useEffect(() => {
+    if (!emblaApi) return;
+
+    setTweenNodes(emblaApi);
+    setTweenFactor(emblaApi);
+    tweenParallax(emblaApi);
+
+    const onSelect = () => {
+      const i = emblaApi.selectedScrollSnap();
+      setSelectedIndex(i);
+      tweenParallax(emblaApi);
+
+      // Auto-center active thumb
+      const btn = thumbRefs.current[i];
+      btn?.scrollIntoView({
+        behavior: "smooth",
+        block: "nearest",
+        inline: "center",
+      });
+    };
+
+    emblaApi
+      .on("reInit", setTweenNodes)
+      .on("reInit", setTweenFactor)
+      .on("reInit", tweenParallax)
+      .on("scroll", tweenParallax)
+      .on("slideFocus", tweenParallax)
+      .on("select", onSelect);
+
+    // Apply selection immediately
+    onSelect();
+
+    return () => {
+      emblaApi
+        .off("reInit", setTweenNodes)
+        .off("reInit", setTweenFactor)
+        .off("reInit", tweenParallax)
+        .off("scroll", tweenParallax)
+        .off("slideFocus", tweenParallax)
+        .off("select", onSelect);
+    };
+  }, [emblaApi, setTweenNodes, setTweenFactor, tweenParallax]);
+
+  // Thumbnail click handler
+  const goTo = (i: number) => {
+    emblaApi?.scrollTo(i);
+  };
 
   return (
     <div className="w-full">
@@ -110,7 +188,7 @@ const SingleShipment = ({ item }: Props) => {
         {/* Image */}
         <button
           type="button"
-          onClick={() => openAt(0)}
+          onClick={openAt}
           className="
             group relative block w-full overflow-hidden rounded-md
             ring-1 ring-white/10
@@ -157,8 +235,9 @@ const SingleShipment = ({ item }: Props) => {
         </div>
       </div>
 
-      {/* Modal (portal to escape header stacking) */}
-      {open && mounted &&
+      {/* Modal (portal) */}
+      {open &&
+        mounted &&
         createPortal(
           <div
             className="fixed inset-0 z-[10000] flex items-center justify-center p-3 pt-[88px] sm:pt-0"
@@ -174,76 +253,107 @@ const SingleShipment = ({ item }: Props) => {
             <div className="relative mx-auto mt-[max(env(safe-area-inset-top),15px)] mb-1 w-[min(92vw,1100px)] px-0 sm:px-20">
               <div
                 ref={frameRef}
-                className="relative rounded-xl bg-[#0B0F14]/70 ring-1 ring-white/15 shadow-[0_10px_60px_rgba(0,0,0,0.7)] p-2 md:p-3"
+                className="relative rounded-xl bg-[#0B0F14]/70 ring-1 ring-white/15 shadow-[0_10px_60px_rgba(0,0,0,0.7)] p-3"
               >
                 {/* Close */}
                 <button
                   type="button"
-                  onClick={(e) => { e.stopPropagation(); close(); }}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    close();
+                  }}
                   aria-label="Close gallery"
                   className="
-                    absolute top-3 right-3 sm:right-3 z-30 inline-flex h-10 w-10 items-center justify-center
-                    rounded-full bg-black/60 text-white/90 backdrop-blur-sm ring-1 ring-white/15
-                    transition-all duration-200 hover:bg-white/20
+                    absolute top-3 right-3 z-30 inline-flex h-10 w-10 items-center justify-center
+                    rounded-full bg-black/60 text-white/90 
+                    transition-all duration-200 hover:bg-black/40
                     focus:outline-none focus-visible:ring-2 focus-visible:ring-primary
                     active:rotate-90 active:scale-90 cursor-pointer
                   "
                 >
-                  <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="2">
+                  <svg
+                    viewBox="0 0 24 24"
+                    className="h-5 w-5"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth={2}
+                  >
                     <path strokeLinecap="round" d="M6 6l12 12M18 6L6 18" />
                   </svg>
                 </button>
 
-                {/* Main image + paddles */}
-                <div
-                  className="relative w-full h-[min(70vh,65vw)] overflow-hidden rounded-lg"
-                  onTouchStart={onTouchStart}
-                  onTouchMove={onTouchMove}
-                  onTouchEnd={onTouchEnd}
-                >
-                  <Image
-                    src={images[index] ?? cover}
-                    alt={`${title} — image ${index + 1}`}
-                    fill
-                    sizes="(min-width: 1024px) 60vw, 100vw"
-                    className="object-contain"
-                    priority
-                  />
+                {/* Main image area: Embla with PARALLAX */}
+                <div className="relative w-full h-[min(70vh,65vw)] overflow-hidden rounded-lg">
+                  <div className="embla__viewport h-full overflow-hidden" ref={emblaRef}>
+                    <div className="embla__container flex h-full touch-pan-y touch-pinch-zoom">
+                      {(images.length ? images : [cover]).map((src, i) => (
+                        <div
+                          key={src + i}
+                          className="
+                            embla__slide
+                            min-w-0 px-1 sm:px-2
+                            flex-[0_0_75%] md:flex-[0_0_70%] lg:flex-[0_0_65%]
+                            overflow-hidden
+                          "
+                        >
+                          <div className="embla__parallax relative h-full w-full overflow-hidden">
+                            <div
+                              className="
+                                embla__parallax__layer
+                                h-full w-full will-change-transform transition-transform duration-150 ease-out
+                              "
+                              style={{ transform: "translateX(0%)" }}
+                            >
+                              <div className="relative h-full w-full">
+                                <Image
+                                  src={src}
+                                  alt={`${title} — image ${i + 1}`}
+                                  fill
+                                  sizes="(min-width: 1024px) 60vw, 100vw"
+                                  className="embla__slide__img embla__parallax__img object-contain select-none"
+                                  priority={i === selectedIndex}
+                                />
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
 
-                  {images.length > 1 && (
+                  {/* BIG vertical paddles (overlay, easy to click) */}
+                  { (images.length ? images : [cover]).length > 1 && (
                     <>
-                      {/* Left paddle */}
                       <button
                         type="button"
-                        onClick={prev}
+                        onClick={(e) => { e.stopPropagation(); emblaApi?.scrollPrev(); }}
                         className="
                           absolute inset-y-0 left-0 z-10 w-[22%] sm:w-[18%]
                           flex items-center justify-start pl-2
-                          bg-gradient-to-r from-black/20 to-transparent
+                          bg-gradient-to-r from-black/30 to-transparent
                           text-white/90 hover:text-white cursor-pointer
-                          focus:outline-none hover:bg-black/50 active:bg-black/10
+                          focus:outline-none hover:bg-black/40/0 active:bg-black/20
                         "
                         aria-label="Previous image"
                       >
-                        <svg viewBox="0 0 24 24" className="h-10 w-10 sm:h-12 sm:w-12" fill="currentColor">
+                        <svg viewBox="0 0 24 24" className="h-12 w-12 sm:h-14 sm:w-14" fill="currentColor">
                           <path d="M15.5 19 8.5 12l7-7 1.5 1.5L11.5 12l5.5 5.5L15.5 19z" />
                         </svg>
                       </button>
 
-                      {/* Right paddle */}
                       <button
                         type="button"
-                        onClick={next}
+                        onClick={(e) => { e.stopPropagation(); emblaApi?.scrollNext(); }}
                         className="
                           absolute inset-y-0 right-0 z-10 w-[22%] sm:w-[18%]
                           flex items-center justify-end pr-2
-                          bg-gradient-to-l from-black/20 to-transparent
+                          bg-gradient-to-l from-black/30 to-transparent
                           text-white/90 hover:text-white cursor-pointer
-                          focus:outline-none hover:bg-black/50 active:bg-black/10
+                          focus:outline-none hover:bg-black/40/0 active:bg-black/20
                         "
                         aria-label="Next image"
                       >
-                        <svg viewBox="0 0 24 24" className="h-10 w-10 sm:h-12 sm:w-12" fill="currentColor">
+                        <svg viewBox="0 0 24 24" className="h-12 w-12 sm:h-14 sm:w-14" fill="currentColor">
                           <path d="m8.5 5 7 7-7 7-1.5-1.5L13.5 12 7 6.5 8.5 5z" />
                         </svg>
                       </button>
@@ -251,8 +361,8 @@ const SingleShipment = ({ item }: Props) => {
                   )}
                 </div>
 
-                {/* Thumbnails — horizontal scroller with auto-centering on active */}
-                {images.length > 1 && (
+                {/* Thumbnails (images below) */}
+                { (images.length ? images : [cover]).length > 1 && (
                   <div className="mt-4 -mx-2">
                     <div
                       ref={stripRef}
@@ -265,21 +375,20 @@ const SingleShipment = ({ item }: Props) => {
                       role="listbox"
                       aria-label="Image thumbnails"
                     >
-                      {images.map((src, i) => (
+                      {(images.length ? images : [cover]).map((src, i) => (
                         <button
                           key={src + i}
-                          // ref={(el) => (thumbRefs.current[i] = el)}
                           ref={(el) => { thumbRefs.current[i] = el; }}
                           type="button"
-                          onClick={(e) => { e.stopPropagation(); setIndex(i); }}
+                          onClick={(e) => { e.stopPropagation(); goTo(i); }}
                           className={`
                             relative shrink-0 snap-start w-28 h-20 sm:w-32 sm:h-24 overflow-hidden rounded
-                            ring-2 ${i === index ? "ring-primary" : "ring-white/10"}
+                            ring-2 ${i === selectedIndex ? "ring-primary" : "ring-white/10"}
                             focus:outline-none focus-visible:ring-2 focus-visible:ring-primary
                           `}
                           aria-label={`Go to image ${i + 1}`}
                           role="option"
-                          aria-selected={i === index}
+                          aria-selected={i === selectedIndex}
                         >
                           <Image
                             src={src}
@@ -294,13 +403,12 @@ const SingleShipment = ({ item }: Props) => {
                     </div>
                   </div>
                 )}
-                {/* thumbnail end */}
+                {/* /thumbnails */}
               </div>
             </div>
           </div>,
           document.body
-        )
-      }
+        )}
     </div>
   );
 };
