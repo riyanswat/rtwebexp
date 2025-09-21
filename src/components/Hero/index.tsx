@@ -81,7 +81,7 @@ const Hero = () => {
                 priority
                 className="
         rounded-lg object-cover
-        shadow-[0_14px_40px_rgba(2,6,23,.12)]
+        shadow-[0_14px_40px_rgba(2,6,23,.22)]
       "
               />
             </div>

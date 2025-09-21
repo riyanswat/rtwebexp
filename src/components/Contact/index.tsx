@@ -1,42 +1,49 @@
+// src/components/Contact/index.tsx
 "use client";
 
-import { useRef, useState } from "react";
+import { useState } from "react";
 import Link from "next/link";
 import ContactForm from "./ContactForm";
 
+// Sonner toast
+import { Toaster, toast } from "sonner";
+
 const Contact = () => {
-  const [submitted, setSubmitted] = useState(false);
-  const alertRef = useRef<HTMLDivElement | null>(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    if (isSubmitting) return;
+
     const form = e.currentTarget;
     const formData = new FormData(form);
 
     try {
-      await fetch("https://formspree.io/f/xvgbvyvl", {
+      setIsSubmitting(true);
+
+      const res = await fetch("https://formspree.io/f/xvgbvyvl", {
         method: "POST",
         body: formData,
         headers: { Accept: "application/json" },
       });
 
-      setSubmitted(true);
-      setTimeout(() => setSubmitted(false), 5000);
+      if (!res.ok) {
+        throw new Error(`Formspree error: ${res.status}`);
+      }
+
+      // Success toast
+      toast.success("Thank you! Your request has been submitted.", {
+        description: "We’ll get back to you shortly.",
+      });
 
       form.reset();
-
-      setTimeout(() => {
-        if (alertRef.current) {
-          const yOffset = -120;
-          const y =
-            alertRef.current.getBoundingClientRect().top +
-            window.pageYOffset +
-            yOffset;
-          window.scrollTo({ top: y, behavior: "smooth" });
-        }
-      }, 100);
     } catch (error) {
       console.error("Form submission error:", error);
+      toast.error("Something went wrong submitting the form.", {
+        description: "Please try again in a moment.",
+      });
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -45,6 +52,9 @@ const Contact = () => {
       id="contact"
       className="rt-section-a overflow-hidden py-16 md:py-20 lg:py-28"
     >
+      {/* Local toaster for this page (you can move to layout if you prefer) */}
+      <Toaster position="top-center" richColors closeButton toastOptions={{ duration: 5000 }} />
+
       <div className="container">
         <div className="-mx-4 flex flex-wrap">
           {/* Left column */}
@@ -67,20 +77,7 @@ const Contact = () => {
                 possible.
               </p>
 
-              {/* Success alert */}
-              {submitted && (
-                <div
-                  ref={alertRef}
-                  className="
-                    mb-6 rounded-md px-4 py-3
-                    text-[color:#0B5B2E] bg-[color:#D7F2E3]
-                    border border-[color:#9DDDBB]
-                  "
-                >
-                  ✅ Thank you! Your request has been submitted.
-                </div>
-              )}
-
+              {/* Form */}
               <form onSubmit={handleSubmit}>
                 {/* Name */}
                 <div className="mb-8">
@@ -178,14 +175,17 @@ const Contact = () => {
                 <div className="mb-6">
                   <button
                     type="submit"
+                    disabled={isSubmitting}
+                    aria-busy={isSubmitting}
                     className="
                       flex w-full cursor-pointer items-center justify-center rounded-xs px-9 py-4 text-base font-semibold
                       text-white bg-[var(--rt-primary)] hover:bg-[var(--rt-primary-600)]
                       [box-shadow:var(--shadow-submit)]
                       focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--rt-primary)]
+                      disabled:opacity-70 disabled:cursor-not-allowed
                     "
                   >
-                    Submit Request
+                    {isSubmitting ? "Sending…" : "Submit Request"}
                   </button>
                 </div>
               </form>
