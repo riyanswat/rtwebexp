@@ -1,0 +1,201 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap') layer(base);
+@import 'tailwindcss';
+
+@custom-variant dark (&:is(.dark *));
+
+/* ─────────────────────────────────────────
+   IMPERIAL COBALT & CHARCOAL — HIGH-CONTRAST LUXE
+   Edit ONLY the variables inside :root.
+   ───────────────────────────────────────── */
+:root {
+  /* Brand core (deeper, richer, zero-pastel) */
+  --rt-primary: #2338E8;        /* deep imperial cobalt */
+  --rt-primary-600: #1728CB;    /* darker hover */
+  --rt-gold: #C99E3C;           /* warm, luxe brass */
+  --rt-ink: #0A0E1A;            /* body text (near-black) */
+  --rt-ink-dim: #2C3A5E;        /* secondary text: deeper slate */
+  --rt-surface: #FFFFFF;        /* cards / pure surface */
+  --rt-page: #E1E7FF;           /* page backdrop: darker ice blue */
+  --rt-muted: #D4DEFF;          /* alt section: visible, still elegant */
+  --rt-ring: rgba(11, 15, 26, .14); /* slightly stronger keylines */
+
+  /* Header glass + hairline */
+  --rt-header-glass: rgba(255,255,255,.88);
+  --rt-header-hairline: rgba(11, 15, 26, .14);
+
+  /* Footer (deeper navy) */
+  --rt-footer-bg: #0A1221;      /* near-black navy */
+  --rt-footer-ink: #E6EEF8;     /* clean ink on dark */
+  --rt-footer-ink-dim: #9FB1CC; /* muted ink on dark */
+  --rt-footer-accent: #5B79FF;  /* subtle glow blue */
+
+  /* Hero (more pronounced) */
+  --rt-hero-sky: rgba(35, 56, 232, .40);   /* stronger blue glow */
+  --rt-hero-gold: rgba(201, 158, 60, .26); /* richer brass glow */
+  --rt-hero-top:  #D7DFFF;                 /* darker top wash */
+  --rt-hero-bottom:#C7D2FF;                /* deeper bottom wash */
+}
+
+@theme {
+  /* Breakpoints */
+  --breakpoint-*: initial;
+  --breakpoint-xs: 450px;
+  --breakpoint-sm: 575px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 992px;
+  --breakpoint-xl: 1200px;
+  --breakpoint-2xl: 1400px;
+
+  /* Tailwind color mappings → our tokens */
+  --color-current: currentColor;
+  --color-transparent: transparent;
+
+  --color-white: var(--rt-surface);
+  --color-black: #0B0F1A;
+
+  /* Keep “dark” utility semantic; background tint stays light theme */
+  --color-dark: #0B0F1A;
+  --color-bg-color-dark: var(--rt-page);
+
+  --color-primary: var(--rt-primary);
+  --color-yellow: var(--rt-gold);
+  --color-accent: var(--rt-primary);
+
+  --color-body-color: var(--rt-ink-dim);
+  --color-body-color-dark: #5C6C8C;
+
+  /* Grays (unchanged scale; complements the deeper brand) */
+  --color-gray-50: #F8FAFC;
+  --color-gray-100: #F1F5F9;
+  --color-gray-200: #E2E8F0;
+  --color-gray-300: #CBD5E1;
+  --color-gray-400: #94A3B8;
+  --color-gray-500: #64748B;
+  --color-gray-600: #475569;
+  --color-gray-700: #334155;
+  --color-gray-800: #1F2937;
+  --color-gray-900: #0F172A;
+  --color-gray-950: #020617;
+
+  /* Shadows: slightly stronger to match higher contrast */
+  --shadow-one: 0 1px 2px rgba(2, 6, 23, .06);
+  --shadow-two: 0 12px 28px rgba(2, 6, 23, .12);
+  --shadow-three: 0 26px 54px rgba(2, 6, 23, .14);
+  --shadow-feature-2: 0 16px 36px rgba(35, 56, 232, .18);
+  --shadow-sticky: inset 0 -1px 0 0 var(--rt-header-hairline);
+  --shadow-sticky-dark: inset 0 -1px 0 0 var(--rt-header-hairline);
+  --shadow-submit: 0 12px 28px rgba(35, 56, 232, .22);
+  --shadow-submit-dark: 0 12px 28px rgba(35, 56, 232, .22);
+  --shadow-btn: 0 1px 2px rgba(2, 6, 23, .14);
+  --shadow-btn-hover: 0 5px 12px rgba(2, 6, 23, .18);
+  --shadow-btn-light: 0 1px 2px rgba(2, 6, 23, .12);
+
+  --drop-shadow-three: 0 9px 20px rgba(2, 6, 23, .10);
+}
+
+/* ───────── Base ───────── */
+@layer base {
+  body {
+    font-family: "Inter", sans-serif;
+    background: var(--rt-page);
+    color: var(--rt-ink);
+  }
+
+  *,
+  :after,
+  :before,
+  :backdrop,
+  :file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
+  }
+}
+
+/* Container */
+@utility container {
+  margin-inline: auto;
+  padding-inline: 1rem;
+}
+
+/* ───────── Section helpers & visual seams ───────── */
+@layer utilities {
+  /* HERO: deeper luxe blue + brass over richer icy base */
+  .rt-hero {
+    background:
+      radial-gradient(120% 70% at 0% -10%, var(--rt-hero-sky) 0%, rgba(35,56,232,0) 62%),
+      radial-gradient(90% 60% at 100% 0%, var(--rt-hero-gold) 0%, rgba(201,158,60,0) 55%),
+      linear-gradient(180deg, var(--rt-hero-top) 0%, var(--rt-hero-bottom) 100%);
+  }
+
+  /* Alternating sections — clearly distinct without harsh jumps */
+  .rt-section-a {
+    background: var(--rt-page);
+  }
+  .rt-section-b {
+    background:
+      linear-gradient(180deg, rgba(255,255,255,.92), rgba(255,255,255,.92)),
+      radial-gradient(120% 80% at 80% -10%, rgba(35,56,232,.14), transparent 60%),
+      var(--rt-muted);
+  }
+
+  /* Cards */
+  .rt-card {
+    background: var(--rt-surface);
+    box-shadow: var(--shadow-two);
+    border: 1px solid var(--rt-ring);
+    border-radius: 0.75rem;
+  }
+
+  /* Soft divider */
+  .rt-divider {
+    height: 56px;
+    background: linear-gradient(
+      to bottom,
+      rgba(2, 6, 23, 0) 0%,
+      rgba(2, 6, 23, .08) 45%,
+      rgba(2, 6, 23, 0) 100%
+    );
+  }
+}
+
+/* Header helpers (kept) */
+@utility sticky {
+  & .header-logo { @apply py-5 lg:py-2; }
+  & .menu-scroll.active { @apply opacity-70; }
+}
+@utility header-logo { .sticky & { @apply py-5 lg:py-2; } }
+@utility menu-scroll { .sticky &.active { @apply opacity-70; } }
+@utility active { .sticky &.menu-scroll { @apply opacity-70; } }
+@utility dot { input#togglePlan:checked~& { @apply translate-x-full; } }
+@utility box { input#checkboxLabel:checked~& span { @apply opacity-100; } }
+
+/* Marquee */
+@keyframes rt-scroll { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
+.rt-marquee { animation: rt-scroll 28s linear infinite; will-change: transform; }
+
+/* Testimonials scope (uses same palette tokens) */
+@layer utilities {
+  .rt-theme-testimonials {
+    --color-primary: var(--rt-primary);
+    --color-yellow: var(--rt-gold);
+    --color-accent: var(--rt-primary);
+
+    --color-bg-color-dark: var(--rt-muted);
+    --color-gray-light: var(--rt-surface);
+    --color-dark: var(--rt-surface);
+
+    --color-body-color: var(--rt-ink-dim);
+    --color-body-color-dark: #5F6E90;
+
+    --shadow-two: 0 12px 28px rgba(2, 6, 23, .12);
+    --shadow-feature-2: 0 16px 36px rgba(35, 56, 232, .18);
+  }
+}
+
+html { scroll-behavior: smooth; }
+
+/* Countries marquee hover tone */
+@layer utilities {
+  .rt-item:hover { color: var(--rt-primary); }
+}
+
+/* (Optional preset block remains below, unchanged) */
