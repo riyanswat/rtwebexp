@@ -1,11 +1,41 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap')
-layer(base);
-
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap') layer(base);
 @import 'tailwindcss';
 
 @custom-variant dark (&:is(.dark *));
 
+/* ─────────────────────────────────────────
+   SAPPHIRE & ONYX — LUXE LIGHT THEME
+   Edit ONLY the variables inside :root.
+   ───────────────────────────────────────── */
+:root {
+  /* Brand core */
+ --rt-primary:#2F86F6;
+--rt-primary-600:#1E66FF;
+--rt-gold:#D1B16E;
+--rt-ink:#0B0F1A;
+--rt-ink-dim:#3C4B63;
+--rt-surface:#FFFFFF;
+--rt-page:#ECF2FF;
+--rt-muted:#E7EEFE;
+--rt-ring:rgba(11,15,26,.10);
+--rt-header-glass:rgba(255,255,255,.82);
+--rt-header-hairline:rgba(11,15,26,.10);
+--rt-footer-bg:#0E1B2A;
+--rt-footer-ink:#E7EEF6;
+--rt-footer-ink-dim:#A8B6C9;
+--rt-footer-accent:#4D90FE;
+/* --rt-hero-sky:rgba(47,134,246,.22);
+--rt-hero-gold:rgba(209,177,110,.18);
+--rt-hero-top:#F7FAFF;
+--rt-hero-bottom:#EAF1FF; */
+  --rt-hero-sky: rgba(47,134,246,.28);   /* was .22 */
+  --rt-hero-gold: rgba(209,177,110,.22); /* was .18 */
+  --rt-hero-top:  #EAF0FF;               /* was #F7FAFF */
+  --rt-hero-bottom:#DEE7FF;              /* was #EAF1FF */
+}
+
 @theme {
+  /* Breakpoints */
   --breakpoint-*: initial;
   --breakpoint-xs: 450px;
   --breakpoint-sm: 575px;
@@ -14,161 +44,298 @@ layer(base);
   --breakpoint-xl: 1200px;
   --breakpoint-2xl: 1400px;
 
+  /* Tailwind color mappings → our tokens */
   --color-current: currentColor;
   --color-transparent: transparent;
-  --color-white: #ffffff;
-  --color-black: #121723;
-  --color-dark: #1d2430;
-  --color-primary: #4a6cf7;
-  --color-yellow: #fbb040;
-  --color-bg-color-dark: #171c28;
 
-  /* NEW: declare accent so text-accent utilities exist (defaults to blue; overridden in the section) */
-  --color-accent: #4a6cf7;
+  --color-white: var(--rt-surface);
+  --color-black: #0B0F1A;
 
-  --color-body-color: #788293;
-  --color-body-color-dark: #959cb1;
+  /* IMPORTANT: map “dark” utility to a gentle tinted surface
+     so components using bg-dark look premium, not black. */
+  --color-dark: #0B0F1A; /* keep utility meaning; used rarely */
+  --color-bg-color-dark: var(--rt-page);
 
-  --color-stroke-stroke: #e3e8ef;
-  --color-stroke-dark: #353943;
+  --color-primary: var(--rt-primary);
+  --color-yellow: var(--rt-gold);
+  --color-accent: var(--rt-primary);
 
-  --color-gray-50: #f9fafb;
-  --color-gray-100: #f3f4f6;
-  --color-gray-200: #e5e7eb;
-  --color-gray-300: #d1d5db;
-  --color-gray-400: #9ca3af;
-  --color-gray-500: #6b7280;
-  --color-gray-600: #4b5563;
-  --color-gray-700: #374151;
-  --color-gray-800: #1f2937;
-  --color-gray-900: #111827;
-  --color-gray-950: #030712;
-  --color-gray-dark: #1e232e;
-  --color-gray-light: #f0f2f9;
+  --color-body-color: var(--rt-ink-dim);
+  --color-body-color-dark: #62718A;
 
-  --shadow-sign-up: 0px 5px 10px rgba(4, 10, 34, 0.2);
-  --shadow-one: 0px 2px 3px rgba(7, 7, 77, 0.05);
-  --shadow-two: 0px 5px 10px rgba(6, 8, 15, 0.1);
-  --shadow-three: 0px 5px 15px rgba(6, 8, 15, 0.05);
-  --shadow-sticky: inset 0 -1px 0 0 rgba(0, 0, 0, 0.1);
-  --shadow-sticky-dark: inset 0 -1px 0 0 rgba(255, 255, 255, 0.1);
-  --shadow-feature-2: 0px 10px 40px rgba(48, 86, 211, 0.12);
-  --shadow-submit: 0px 5px 20px rgba(4, 10, 34, 0.1);
-  --shadow-submit-dark: 0px 5px 20px rgba(4, 10, 34, 0.1);
-  --shadow-btn: 0px 1px 2px rgba(4, 10, 34, 0.15);
-  --shadow-btn-hover: 0px 1px 2px rgba(0, 0, 0, 0.15);
-  --shadow-btn-light: 0px 1px 2px rgba(0, 0, 0, 0.1);
+  /* Grays: cool / professional */
+  --color-gray-50: #F8FAFC;
+  --color-gray-100: #F1F5F9;
+  --color-gray-200: #E2E8F0;
+  --color-gray-300: #CBD5E1;
+  --color-gray-400: #94A3B8;
+  --color-gray-500: #64748B;
+  --color-gray-600: #475569;
+  --color-gray-700: #334155;
+  --color-gray-800: #1F2937;
+  --color-gray-900: #0F172A;
+  --color-gray-950: #020617;
 
-  --drop-shadow-three: 0px 5px 15px rgba(6, 8, 15, 0.05);
+  /* Shadows tuned for a brighter, visible UI */
+  --shadow-one: 0 1px 2px rgba(2, 6, 23, .05);
+  --shadow-two: 0 10px 26px rgba(2, 6, 23, .08);
+  --shadow-three: 0 22px 48px rgba(2, 6, 23, .10);
+  --shadow-feature-2: 0 14px 34px rgba(47, 134, 246, .16);
+  --shadow-sticky: inset 0 -1px 0 0 var(--rt-header-hairline);
+  --shadow-sticky-dark: inset 0 -1px 0 0 var(--rt-header-hairline);
+  --shadow-submit: 0 10px 26px rgba(47, 134, 246, .18);
+  --shadow-submit-dark: 0 10px 26px rgba(47, 134, 246, .18);
+  --shadow-btn: 0 1px 2px rgba(2, 6, 23, .12);
+  --shadow-btn-hover: 0 4px 10px rgba(2, 6, 23, .16);
+  --shadow-btn-light: 0 1px 2px rgba(2, 6, 23, .10);
+
+  --drop-shadow-three: 0 8px 18px rgba(2, 6, 23, .08);
 }
 
+/* ───────── Base ───────── */
+@layer base {
+  body {
+    font-family: "Inter", sans-serif;
+    background: var(--rt-page);
+    color: var(--rt-ink);
+  }
+
+  *,
+  :after,
+  :before,
+  :backdrop,
+  :file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
+  }
+}
+
+/* Container */
 @utility container {
   margin-inline: auto;
   padding-inline: 1rem;
 }
 
-/* v4 border default compatibility */
-@layer base {
-  *,
-  ::after,
-  ::before,
-  ::backdrop,
-  ::file-selector-button {
-    border-color: var(--color-gray-200, currentcolor);
+/* ───────── Section helpers & visual seams ───────── */
+@layer utilities {
+
+  /* HERO: stronger luxe sky + brass over icy base */
+  .rt-hero {
+    background:
+      radial-gradient(120% 70% at 0% -10%, var(--rt-hero-sky) 0%, rgba(47,134,246,0) 62%),
+      radial-gradient(90% 60% at 100% 0%, var(--rt-hero-gold) 0%, rgba(203,161,67,0) 55%),
+      linear-gradient(180deg, var(--rt-hero-top) 0%, var(--rt-hero-bottom) 100%);
+  }
+
+  /* Alternating section backgrounds — visibly different, not jarring */
+  .rt-section-a {
+    background: var(--rt-page);
+  }
+  .rt-section-b {
+    background:
+      linear-gradient(180deg, rgba(255,255,255,.9), rgba(255,255,255,.9)),
+      radial-gradient(120% 80% at 80% -10%, rgba(47,134,246,.10), transparent 60%),
+      var(--rt-muted);
+  }
+
+  /* Cards */
+  .rt-card {
+    background: var(--rt-surface);
+    box-shadow: var(--shadow-two);
+    border: 1px solid var(--rt-ring);
+    border-radius: 0.75rem;
+  }
+
+  /* Soft divider between sections (prevents “hard” jumps) */
+  .rt-divider {
+    height: 56px;
+    background: linear-gradient(to bottom,
+        rgba(2, 6, 23, 0) 0%,
+        rgba(2, 6, 23, .06) 45%,
+        rgba(2, 6, 23, 0) 100%);
   }
 }
 
+/* Header helpers (kept) */
 @utility sticky {
-  & .header-logo {
-    @apply py-5 lg:py-2;
-  }
-  & .menu-scroll.active {
-    @apply opacity-70;
-  }
+  & .header-logo { @apply py-5 lg:py-2; }
+  & .menu-scroll.active { @apply opacity-70; }
 }
+@utility header-logo { .sticky & { @apply py-5 lg:py-2; } }
+@utility menu-scroll { .sticky &.active { @apply opacity-70; } }
+@utility active { .sticky &.menu-scroll { @apply opacity-70; } }
+@utility dot { input#togglePlan:checked~& { @apply translate-x-full; } }
+@utility box { input#checkboxLabel:checked~& span { @apply opacity-100; } }
 
-@utility header-logo {
-  .sticky & {
-    @apply py-5 lg:py-2;
-  }
-}
+/* Marquee (Countries) */
+@keyframes rt-scroll { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
+.rt-marquee { animation: rt-scroll 28s linear infinite; will-change: transform; }
 
-@utility menu-scroll {
-  .sticky &.active {
-    @apply opacity-70;
-  }
-}
-
-@utility active {
-  .sticky &.menu-scroll {
-    @apply opacity-70;
-  }
-}
-
-@utility dot {
-  input#togglePlan:checked ~ & {
-    @apply translate-x-full;
-  }
-}
-
-@utility box {
-  input#checkboxLabel:checked ~ & span {
-    @apply opacity-100;
-  }
-}
-
-@layer base {
-  body {
-    font-family: "Inter", sans-serif;
-  }
-}
-
-@layer components {
-  input[type="checkbox"]:checked ~ label span svg {
-    @apply inline-flex;
-  }
-}
-
-/* ---------------------------------- */
-/* === Marquee for Countries strip === */
-@keyframes rt-scroll {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
-.rt-marquee {
-  animation: rt-scroll 28s linear infinite;
-  will-change: transform;
-}
-/* .rt-marquee:hover { animation-play-state: paused; } */
-
-/* ---------------------------------- */
-/* === Scoped palette JUST for the Testimonials section === */
+/* Testimonials scope (uses same palette tokens) */
 @layer utilities {
   .rt-theme-testimonials {
-    /* Core brand for this section */
-    --color-primary: #F0810F;   /* burnt orange */
-    --color-yellow:  #E6DF44;   /* highlight/stars */
-    --color-accent:  #006C84;   /* deep teal (tints the decorative SVGs) */
-
-    /* Surfaces */
-    --color-bg-color-dark: #0F1115; /* section base when dark */
-    --color-gray-light:     #0B0F14; /* section base when not dark */
-    --color-dark:           #12161B; /* card surface */
-
-    /* Text */
-    --color-body-color:      #E2E8E4; /* main copy on card */
-    --color-body-color-dark: #D0E1F9; /* secondary (name/country subtle) */
-
-    /* Shadows tuned for near-black */
-    --shadow-one:   0 2px 6px rgba(0,0,0,0.50);
-    --shadow-two:   0 8px 18px rgba(0,0,0,0.60); /* default card */
-    --shadow-three: 0 20px 40px rgba(0,0,0,0.70);
-    --shadow-feature-2: 0 12px 32px rgba(240,129,15,0.35); /* hover glow */
+    --color-primary: var(--rt-primary);
+    --color-yellow: var(--rt-gold);
+    --color-accent: var(--rt-primary);
+    --color-bg-color-dark: var(--rt-muted);
+    --color-gray-light: var(--rt-surface);
+    --color-dark: var(--rt-surface);
+    --color-body-color: var(--rt-ink-dim);
+    --color-body-color-dark: #6B7C92;
+    --shadow-two: 0 10px 26px rgba(2, 6, 23, .08);
+    --shadow-feature-2: 0 14px 34px rgba(47, 134, 246, .16);
   }
 }
 
+html { scroll-behavior: smooth; }
 
-html {
-  scroll-behavior: smooth;
+/* Countries marquee item tone */
+@layer utilities {
+  .rt-item:hover { color: var(--rt-primary); }
 }
 
+/* OPTIONAL THEME PRESETS remain below for quick swapping (unchanged) */
+
+
+/* ─────────────────────────────────────────
+   OPTIONAL THEME PRESETS (copy/paste over :root)
+   ─────────────────────────────────────────
+   1) MIDNIGHT & ICE
+   --rt-primary:#3BA2FF; --rt-primary-600:#147BFF; --rt-gold:#D1B16E;
+   --rt-ink:#0A0E18; --rt-ink-dim:#425168;
+   --rt-surface:#FFFFFF; --rt-page:#F4F7FD; --rt-muted:#ECF2FA; --rt-ring:rgba(10,14,24,.08);
+
+   2) ONYX & SKY (stronger contrast)
+   --rt-primary:#2F86F6; --rt-primary-600:#1E66FF; --rt-gold:#C9A44F;
+   --rt-ink:#0B0F1A; --rt-ink-dim:#3C4B63;
+   --rt-surface:#FFFFFF; --rt-page:#F5F8FF; --rt-muted:#EEF3FA; --rt-ring:rgba(11,15,26,.10);
+*/
+/* 3) SLATE & ICE (softer, more muted)
+   --rt-primary:#4A90E2; --rt-primary-600:#2C6CD1; --rt-gold:#B0A17D;
+   --rt-ink:#1A202E; --rt-ink-dim:#52606D;
+   --rt-surface:#FFFFFF; --rt-page:#F7F9FC; --rt-muted:#F1F4FA; --rt-ring:rgba(26,32,46,.08);
+*/
+/* 4) INDIGO & ICE (modern, techy)
+   --rt-primary:#5C6AC4; --rt-primary-600:#3B46A1; --rt-gold:#A398D1;
+   --rt-ink:#1E2233; --rt-ink-dim:#5B6B8C;
+   --rt-surface:#FFFFFF; --rt-page:#F7F8FC; --rt-muted:#F2F3FA; --rt-ring:rgba(30,34,51,.08);
+*/
+/* 5) EMERALD & ICE (fresh, vibrant)
+   --rt-primary:#10B981; --rt-primary-600:#0E9F6E; --rt-gold:#A3D9C1;
+   --rt-ink:#0B1A14; --rt-ink-dim:#3D5245;
+   --rt-surface:#FFFFFF; --rt-page:#F5FAF8; --rt-muted:#ECF7F4; --rt-ring:rgba(11,26,20,.08);
+*/
+/* 6) ROSE & ICE (warm, approachable)
+   --rt-primary:#EF4444; --rt-primary-600:#D32F2F; --rt-gold:#F7A8A8;
+   --rt-ink:#1A0B0B; --rt-ink-dim:#5C3D3D;
+   --rt-surface:#FFFFFF; --rt-page:#FFFAF9; --rt-muted:#FFF5F4; --rt-ring:rgba(26,11,11,.08);
+*/
+/* 7) VIOLET & ICE (creative, playful)
+   --rt-primary:#8B5CF6; --rt-primary-600:#6D28D9; --rt-gold:#D8B4FE;
+   --rt-ink:#1E0B33; --rt-ink-dim:#5B3D7C;
+   --rt-surface:#FFFFFF; --rt-page:#FAF7FF; --rt-muted:#F5F3FF; --rt-ring:rgba(30,11,51,.08);
+*/
+/* 8) TEAL & ICE (calm, trustworthy)
+   --rt-primary:#14B8A6; --rt-primary-600:#0D9488; --rt-gold:#81E6D9;
+   --rt-ink:#0B1A1A; --rt-ink-dim:#3D5252;
+   --rt-surface:#FFFFFF; --rt-page:#F5FAFA; --rt-muted:#ECF7F7; --rt-ring:rgba(11,26,26,.08);
+*/
+/* 9) CITRUS & ICE (energetic, bold)
+   --rt-primary:#F59E0B; --rt-primary-600:#D97706; --rt-gold:#FCD34D;
+   --rt-ink:#1A140B; --rt-ink-dim:#5C4D3D;
+   --rt-surface:#FFFFFF; --rt-page:#FFFBF5; --rt-muted:#FFFAF0; --rt-ring:rgba(26,20,11,.08);
+*/
+/* 10) AMETHYST & ICE (luxurious, elegant)
+   --rt-primary:#9F7AEA; --rt-primary-600:#7C3AED; --rt-gold:#D8B4FE;
+   --rt-ink:#1E0B33; --rt-ink-dim:#5B3D7C;
+   --rt-surface:#FFFFFF; --rt-page:#FAF7FF; --rt-muted:#F5F3FF; --rt-ring:rgba(30,11,51,.08);
+*/
+
+
+
+
+
+
+/* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+
+
+
+
+
+/* ─────────────────────────────────────────
+   OPTIONAL THEME PRESETS (copy/paste over :root)
+   ───────────────────────────────────────── */
+
+/* A) DEEP EMERALD & IVORY (premium, calm, green-led) */
+/* --rt-primary:#0FA36B; --rt-primary-600:#0C8A5B; --rt-gold:#D1B36E;
+--rt-ink:#0B1210; --rt-ink-dim:#3E4F47;
+--rt-surface:#FFFFFF; --rt-page:#F6FBF8; --rt-muted:#EDF7F1; --rt-ring:rgba(11,18,16,.10); */
+
+/* B) FOREST & BRASS (dark green with warm metal accent) */
+/* --rt-primary:#0C7A55; --rt-primary-600:#086245; --rt-gold:#C6A35A;
+--rt-ink:#0A1210; --rt-ink-dim:#365046;
+--rt-surface:#FFFFFF; --rt-page:#F5FAF7; --rt-muted:#ECF4F0; --rt-ring:rgba(10,18,16,.10); */
+
+/* C) TEAL & PORCELAIN (fresh but not neon) */
+/* --rt-primary:#1098AD; --rt-primary-600:#0D7E8F; --rt-gold:#A7E5DF;
+--rt-ink:#0A1517; --rt-ink-dim:#39565C;
+--rt-surface:#FFFFFF; --rt-page:#F5FBFD; --rt-muted:#EDF6F8; --rt-ring:rgba(10,21,23,.10); */
+
+/* D) COBALT & PORCELAIN (clean corporate blue) */
+/* --rt-primary:#2563EB; --rt-primary-600:#1E40AF; --rt-gold:#C5B37A;
+--rt-ink:#0A0F1A; --rt-ink-dim:#3C4B63;
+--rt-surface:#FFFFFF; --rt-page:#F5F8FF; --rt-muted:#EEF2FF; --rt-ring:rgba(10,15,26,.10); */
+
+/* E) NAVY & SKY (navy body with lighter sky accents) */
+/* --rt-primary:#2580EA; --rt-primary-600:#1F5ECF; --rt-gold:#D2BE87;
+--rt-ink:#0B111C; --rt-ink-dim:#3E4E69;
+--rt-surface:#FFFFFF; --rt-page:#F6FAFF; --rt-muted:#EDF3FF; --rt-ring:rgba(11,17,28,.10); */
+
+/* F) GRAPHITE & CYAN (modern, crisp contrast) */
+/* --rt-primary:#06AED4; --rt-primary-600:#0797B7; --rt-gold:#A6E0EE;
+--rt-ink:#0A0F14; --rt-ink-dim:#3C4A51;
+--rt-surface:#FFFFFF; --rt-page:#F3F9FB; --rt-muted:#ECF5F8; --rt-ring:rgba(10,15,20,.10); */
+
+/* G) MIDNIGHT & MINT (dark-neutral vibe, bright mint brand) */
+/* --rt-primary:#2DD4BF; --rt-primary-600:#14B8A6; --rt-gold:#B7F0E7;
+--rt-ink:#0B0F13; --rt-ink-dim:#3E5056;
+--rt-surface:#FFFFFF; --rt-page:#F4FBFA; --rt-muted:#ECF7F5; --rt-ring:rgba(11,15,19,.10); */
+
+/* H) ROYAL VIOLET & ICE (polished, luxury tech) */
+/* --rt-primary:#6D28D9; --rt-primary-600:#5B21B6; --rt-gold:#D6C3FA;
+--rt-ink:#150A1F; --rt-ink-dim:#4F3F67;
+--rt-surface:#FFFFFF; --rt-page:#F8F6FF; --rt-muted:#F2EEFF; --rt-ring:rgba(21,10,31,.10); */
+
+/* I) INDIGO & STEEL (serious, enterprise) */
+/* --rt-primary:#3F51B5; --rt-primary-600:#303F9F; --rt-gold:#C7BCFF;
+--rt-ink:#0E1122; --rt-ink-dim:#3F4A72;
+--rt-surface:#FFFFFF; --rt-page:#F6F7FD; --rt-muted:#EEF0FB; --rt-ring:rgba(14,17,34,.10); */
+
+/* J) SAPPHIRE & SNOW (bright and airy) */
+/* --rt-primary:#1B9CFC; --rt-primary-600:#1681D1; --rt-gold:#E1C778;
+--rt-ink:#0B1320; --rt-ink-dim:#3E5168;
+--rt-surface:#FFFFFF; --rt-page:#F4FAFF; --rt-muted:#EEF6FF; --rt-ring:rgba(11,19,32,.10); */
+
+/* K) STONE & AZURE (warmer neutrals, cool brand) */
+/* --rt-primary:#3081F1; --rt-primary-600:#2166CF; --rt-gold:#C9B27A;
+--rt-ink:#191713; --rt-ink-dim:#5A554D;
+--rt-surface:#FFFFFF; --rt-page:#FBFAF7; --rt-muted:#F4F2EC; --rt-ring:rgba(25,23,19,.10); */
+
+/* L) CHARCOAL & SKY (black-forward with clean sky) */
+/* --rt-primary:#2F86F6; --rt-primary-600:#1E66FF; --rt-gold:#D3B56A;
+--rt-ink:#0A0B0D; --rt-ink-dim:#3A3E45;
+--rt-surface:#FFFFFF; --rt-page:#F6F8FD; --rt-muted:#EEF1F7; --rt-ring:rgba(10,11,13,.10); */
+
+/* M) ONYX & EMERALD (dark authority, trustworthy green) */
+/* --rt-primary:#0EA05A; --rt-primary-600:#0B7E46; --rt-gold:#BFD8C1;
+--rt-ink:#0A1010; --rt-ink-dim:#3B5046;
+--rt-surface:#FFFFFF; --rt-page:#F3FAF6; --rt-muted:#EAF4EF; --rt-ring:rgba(10,16,16,.10); */
+
+/* N) DENIM & CLOUD (soft, friendly blue) */
+/* --rt-primary:#3D7BF6; --rt-primary-600:#2B63E0; --rt-gold:#D5C48A;
+--rt-ink:#0B1220; --rt-ink-dim:#43506B;
+--rt-surface:#FFFFFF; --rt-page:#F6F9FF; --rt-muted:#EEF3FF; --rt-ring:rgba(11,18,32,.10); */
+
+/* O) SAGE & BRONZE (earthy luxury, subtle) */
+/* --rt-primary:#4FAF7B; --rt-primary-600:#3E9164; --rt-gold:#C9A76A;
+--rt-ink:#13140F; --rt-ink-dim:#4C5246;
+--rt-surface:#FFFFFF; --rt-page:#F7FAF7; --rt-muted:#F1F6F1; --rt-ring:rgba(19,20,15,.10); */

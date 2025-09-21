@@ -1,22 +1,17 @@
-// import Breadcrumb from "@/components/Common/Breadcrumb";
 import Contact from "@/components/Contact";
-
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Contact Page | Rayan Trading",
   description: "This is Contact Page for Rayan Trading",
-  // other metadata
 };
 
 const ContactPage = () => {
   return (
     <>
-      {/* <Breadcrumb
-        pageName="Contact Page"
-        description="Feel free to reach out."
-      /> */}
-      <div className="pt-40"></div>
+      <section className="rt-section-a pt-32 pb-2 text-center">
+        <h1 className="pt-1 text-4xl font-bold text-[var(--rt-ink)]">Contact</h1>
+      </section>
 
       <Contact />
     </>

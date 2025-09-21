@@ -2,8 +2,6 @@ import AboutSectionOne from "@/components/About/AboutSectionOne";
 import AboutSectionTwo from "@/components/About/AboutSectionTwo";
 import AboutSectionThree from "@/components/About/AboutSectionThree";
 import AboutSectionFour from "@/components/About/AboutSectionFour";
-import Breadcrumb from "@/components/Common/Breadcrumb";
-
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -12,32 +10,18 @@ export const metadata: Metadata = {
   keywords: ["About Rayan Trading", "Rayan Trading", "car export", "toyota", "honda"],
 };
 
-
-
 const AboutPage = () => {
   return (
     <>
-      {/* <Breadcrumb
-        pageName="About Us"
-      /> */}
-
-
-      {/* <Breadcrumb
-        pageName="About Us"
-        description="A trusted Japan-based Car Exporting company."
-      /> */}
-      {/* <div className="pt-20"></div> */}
-      <section className="pt-32 pb-4 text-center bg-gray-100 dark:bg-[#0F1115]">
-        <h1 className="text-4xl font-bold text-black dark:text-white pt-4">About Us</h1>
+      {/* Top banner using theme tokens */}
+      <section className="rt-section-a pt-32 pb-6 text-center">
+        <h1 className="pt-1 text-4xl font-bold text-[var(--rt-ink)]">About Us</h1>
       </section>
-      <AboutSectionOne />
-      {/* <div className="h-px w-full bg-linear-to-r from-transparent via-[#D2D8E183] to-transparent dark:via-[#959CB183]" /> */}
-      <AboutSectionFour />
-      {/* <div className="h-px w-full bg-linear-to-r from-transparent via-[#D2D8E183] to-transparent dark:via-[#959CB183]" /> */}
-      <AboutSectionTwo />
-      {/* <div className="h-px w-full bg-linear-to-r from-transparent via-[#D2D8E183] to-transparent dark:via-[#959CB183]" /> */}
-      <AboutSectionThree />
 
+      <AboutSectionOne />
+      <AboutSectionFour />
+      <AboutSectionTwo />
+      <AboutSectionThree />
     </>
   );
 };
