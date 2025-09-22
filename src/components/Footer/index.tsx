@@ -11,6 +11,7 @@ const Footer = () => {
         { label: "About Us", href: "/about" },
         { label: "Contact", href: "/contact" },
         { label: "Shipments", href: "/shipments" },
+        { label: "Exported machinery", href: "/machinery" },
       ],
     },
     {

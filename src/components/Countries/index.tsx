@@ -5,7 +5,7 @@ const Countries = () => {
   const list = countriesData;
 
   return (
-    <section className="py-12 rt-section-a">
+    <section id="countries" className="py-12 rt-section-a">
       <div className="container">
         <div className="rounded-md bg-[var(--rt-surface)] px-6 py-8 sm:px-10 md:px-[50px] xl:p-[50px] 2xl:px-[70px] border border-[var(--rt-ring)] shadow-[0_6px_18px_rgba(2,6,23,.06)]">
           <div className="mb-6 text-center">
