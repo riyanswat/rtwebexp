@@ -19,7 +19,7 @@ const SingleTestimonial = ({ testimonial }: { testimonial: Testimonial }) => {
         className="
           relative rounded-md p-8 lg:px-6 xl:px-8
           rt-card transition-all duration-200
-          hover:shadow-[0_16px_36px_rgba(2,6,23,.10)] hover:-translate-y-[2px]
+          hover:shadow-[0_16px_36px_rgba(2,6,23,.10)] hover:-translate-y-[3px]
         "
       >
         <span

@@ -192,15 +192,38 @@ const SingleShipment = ({ item }: Props) => {
             {year != null && <span className="text-[var(--rt-ink-dim)]"> · {year}</span>}
           </h3>
 
-          <div className="mt-3 flex flex-wrap gap-2">
-            <span className="inline-flex items-center rounded-full bg-[var(--rt-muted)] px-3 py-1 text-[12px] text-[var(--rt-ink)] ring-1 ring-[var(--rt-ring)]">
-              <svg viewBox="0 0 40 40" className="mr-1.5 h-4 w-4 opacity-80 text-current" fill="none">
-                <path d="M20 6c-6.1 0-11 4.9-11 11 0 8 11 19 11 19s11-11 11-19c0-6.1-4.9-11-11-11z" stroke="currentColor" strokeWidth="2" fill="none"/>
-                <circle cx="20" cy="17" r="3" fill="currentColor" />
+          <div className="mt-3 flex flex-wrap items-center gap-2">
+            <span
+              className="
+      inline-flex items-center rounded-full
+      bg-[var(--rt-surface)] px-3 py-1.5 text-[12px]
+      ring-1 ring-[var(--rt-ring)] shadow-[var(--shadow-one)] select-none
+    "
+              aria-label={`Shipped to ${destination}`}
+            >
+              {/* plane (shipping) icon */}
+              <svg
+                viewBox="0 0 24 24"
+                className="mr-1.5 h-3.5 w-3.5 text-[var(--rt-primary)]"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+              >
+                {/* paper-airplane outline */}
+                <path strokeLinecap="round" strokeLinejoin="round" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
               </svg>
-              {destination}
+
+              <span className="text-[var(--rt-ink-dim)]">Shipped to</span>
+
+              <span
+                className="mx-2 inline-block h-1 w-1 rounded-full bg-[var(--rt-ring)]"
+                aria-hidden="true"
+              />
+
+              <strong className="font-semibold text-[var(--rt-ink)] uppercase">{destination}</strong>
             </span>
           </div>
+
         </div>
       </div>
 

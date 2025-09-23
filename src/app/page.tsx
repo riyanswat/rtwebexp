@@ -17,26 +17,17 @@ export default function Home() {
       <ScrollUp />
       <Hero />
 
-      {/* <div className="rt-divider" /> */}
-
       <Shipments
         title="Recent Shipments"
         limit={3}
         paddingTop="pt-18 md:pt-28 lg:pt-20"
         ctaHref="/shipments"
         ctaLabel="View more shipments"
+        showFilters={false}   // ← hide filters on homepage
       />
 
-      {/* <div className="rt-divider" /> */}
-
       <Work />
-
-      {/* <div className="rt-divider" /> */}
-
       <Countries />
-
-      {/* <div className="rt-divider" /> */}
-
       <Testimonials />
     </>
   );
