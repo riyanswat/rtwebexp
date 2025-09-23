@@ -1,6 +1,6 @@
 import SectionTitle from "../Common/SectionTitle";
-import SingleShipment from "./SingleShipment";
-import shipmentsData from "./shipmentsData";
+import SingleShipment from "../Shipments/SingleShipment";
+import machineryData from "./machineryData";
 import type { Shipment } from "@/types/shipment";
 import Link from "next/link";
 
@@ -24,7 +24,7 @@ const Shipments = ({
   ctaLabel = "View more shipments",
 }: Props) => {
   const list: Shipment[] =
-    typeof limit === "number" ? shipmentsData.slice(0, limit) : shipmentsData;
+    typeof limit === "number" ? machineryData.slice(0, limit) : machineryData;
 
   return (
     <section
