@@ -3,19 +3,23 @@ import { Shipment } from "@/types/shipment";
 
 const shipmentsData: Shipment[] = [
   {
-    "id": "1",
-    "title": "Toyota Corolla",
-    "model": "Sedan",
-    "year": 2019,
-    "destination": "Australia",
-    "cover": "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/toyota-corolla-aus/1.png",
+    "id": "6",
+    "title": "Lexus LX 570",
+    "model": "",
+    "year": 2017,
+    "destination": "UK",
+    "cover": "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/lexus-lx570-uk1/1.jpg",
     "images": [
-      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/toyota-corolla-aus/1.png",
-      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/toyota-corolla-aus/2.png",
-      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/toyota-corolla-aus/3.png",
-      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/toyota-corolla-aus/4.png"
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/lexus-lx570-uk1/1.jpg",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/lexus-lx570-uk1/2.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/lexus-lx570-uk1/3.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/lexus-lx570-uk1/4.jpg",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/lexus-lx570-uk1/5.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/lexus-lx570-uk1/6.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/lexus-lx570-uk1/7.jpg"
     ]
   },
+
   {
     "id": "18",
     "title": "Audi A1",
@@ -46,8 +50,39 @@ const shipmentsData: Shipment[] = [
       "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/nissan-truck-tanzania/3.png"
     ]
   },
-    {
-    "id": "26",
+  {
+    "id": "estima5",
+    "title": "Toyota Estima Hybrid",
+    "model": "Aeras Smart",
+    "year": 2019,
+    "destination": "UK",
+    "cover": "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/toyota-estima-uk5/1.png",
+    "images": [
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/toyota-estima-uk5/1.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/toyota-estima-uk5/2.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/toyota-estima-uk5/3.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/toyota-estima-uk5/4.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/toyota-estima-uk5/5.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/toyota-estima-uk5/6.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/toyota-estima-uk5/7.png",
+    ]
+  },
+  {
+    "id": "1",
+    "title": "Toyota Corolla",
+    "model": "Sedan",
+    "year": 2019,
+    "destination": "Australia",
+    "cover": "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/toyota-corolla-aus1/1.png",
+    "images": [
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/toyota-corolla-aus1/1.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/toyota-corolla-aus1/2.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/toyota-corolla-aus1/3.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/toyota-corolla-aus1/4.png"
+    ]
+  },
+  {
+    "id": "estima4",
     "title": "Toyota Estima Hybrid",
     "model": "Aeras Premium G",
     "year": 2018,
@@ -61,6 +96,22 @@ const shipmentsData: Shipment[] = [
       "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/toyota-estima-uk4/5.png",
       "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/toyota-estima-uk4/6.png",
       "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/toyota-estima-uk4/7.png",
+    ]
+  },
+
+  {
+    "id": "prius4",
+    "title": "Toyota Prius",
+    "model": "S Safety Plus",
+    "year": 2018,
+    "destination": "UK",
+    "cover": "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/toyota-prius-uk4/1.png",
+    "images": [
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/toyota-prius-uk4/1.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/toyota-prius-uk4/2.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/toyota-prius-uk4/3.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/toyota-prius-uk4/4.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/toyota-prius-uk4/5.png",
     ]
   },
   {
@@ -78,7 +129,7 @@ const shipmentsData: Shipment[] = [
       "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/audi-a3-uk1/5.jpg"
     ]
   },
-    {
+  {
     "id": "27",
     "title": "Toyota Hiace Van",
     "model": "Wide DX super long, HR",
@@ -113,6 +164,20 @@ const shipmentsData: Shipment[] = [
     ]
   },
   {
+    "id": "raize3",
+    "title": "Toyota Raize",
+    "model": "Z TSS",
+    "year": 2021,
+    "destination": "Pakistan",
+    "cover": "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/toyota-raize-pk3/1.png",
+    "images": [
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/toyota-raize-pk3/1.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/toyota-raize-pk3/2.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/toyota-raize-pk3/3.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/toyota-raize-pk3/4.png",
+    ]
+  },
+  {
     "id": "5",
     "title": "Toyota Raize",
     "model": "G grade",
@@ -130,20 +195,15 @@ const shipmentsData: Shipment[] = [
     ]
   },
   {
-    "id": "6",
-    "title": "Lexus LX 570",
-    "model": "",
-    "year": 2017,
-    "destination": "UK",
-    "cover": "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/lexus-lx570-uk1/1.jpg",
+    "id": "raize4",
+    "title": "Toyota Raize",
+    "model": "Z",
+    "year": 2020,
+    "destination": "Pakistan",
+    "cover": "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/toyota-raize-pk4/1.png",
     "images": [
-      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/lexus-lx570-uk1/1.jpg",
-      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/lexus-lx570-uk1/2.png",
-      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/lexus-lx570-uk1/3.png",
-      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/lexus-lx570-uk1/4.jpg",
-      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/lexus-lx570-uk1/5.png",
-      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/lexus-lx570-uk1/6.png",
-      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/lexus-lx570-uk1/7.jpg"
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/toyota-raize-pk4/1.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/toyota-raize-pk4/2.png",
     ]
   },
   {
@@ -204,6 +264,22 @@ const shipmentsData: Shipment[] = [
     ]
   },
   {
+    "id": "voxy2",
+    "title": "Toyota Voxy Hybrid",
+    "model": "X",
+    "year": 2014,
+    "destination": "UK",
+    "cover": "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/toyota-voxy-uk2/1.png",
+    "images": [
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/toyota-voxy-uk2/1.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/toyota-voxy-uk2/2.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/toyota-voxy-uk2/3.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/toyota-voxy-uk2/4.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/toyota-voxy-uk2/5.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/toyota-voxy-uk2/6.png",
+    ]
+  },
+  {
     "id": "11",
     "title": "Toyota Corolla Touring Hybrid",
     "model": "",
@@ -250,7 +326,7 @@ const shipmentsData: Shipment[] = [
       "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/nissan-note-pk1/6.jpg"
     ]
   },
-    {
+  {
     "id": "21",
     "title": "Toyota Prius",
     "model": "S grade",
@@ -405,7 +481,19 @@ const shipmentsData: Shipment[] = [
       "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/toyota-hiace-pk1/4.png",
     ]
   },
-
+  {
+    "id": "vitz1",
+    "title": "Toyota Vitz",
+    "model": "F, Smile Edition",
+    "year": 2012,
+    "destination": "Ghana",
+    "cover": "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/toyota-vitz-ghana1/1.png",
+    "images": [
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/toyota-vitz-ghana1/1.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/toyota-vitz-ghana1/2.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/toyota-vitz-ghana1/3.png",
+    ]
+  },
 ]
 
 export default shipmentsData;
