@@ -59,17 +59,20 @@ const shipmentsData: Shipment[] = [
   },
 
   {
-    "id": "3",
-    "title": "Nissan Diesel Tanker",
-    "model": "",
-    "year": 2001,
-    "destination": "Tanzania",
-    "cover": "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/nissan-truck-tanzania/1.png",
-    "images": [
-      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/nissan-truck-tanzania/1.png",
-      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/nissan-truck-tanzania/2.png",
-      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/nissan-truck-tanzania/3.png"
-    ]
+    id: "tanker1",
+    title: "Nissan Diesel Tanker",
+    model: undefined,
+    year: 2001,
+    destination: "Tanzania",
+    cover: "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/nissan-diesel-tanker-tz1/1.png",
+    images: [
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/nissan-diesel-tanker-tz1/1.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/nissan-diesel-tanker-tz1/2.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/nissan-diesel-tanker-tz1/3.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/nissan-diesel-tanker-tz1/4.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/nissan-diesel-tanker-tz1/5.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/nissan-diesel-tanker-tz1/6.png"
+    ],
   },
   {
     "id": "estima5",
@@ -185,6 +188,42 @@ const shipmentsData: Shipment[] = [
     ]
   },
   {
+    id: "giga2",
+    title: "Isuzu Giga",
+    model: undefined,
+    year: 2013,
+    destination: "Philippines",
+    cover: "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-giga-ph2/1.png",
+    images: [
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-giga-ph2/1.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-giga-ph2/2.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-giga-ph2/3.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-giga-ph2/4.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-giga-ph2/5.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-giga-ph2/6.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-giga-ph2/7.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-giga-ph2/8.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-giga-ph2/9.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-giga-ph2/10.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-giga-ph2/11.png"
+    ],
+  },
+  {
+    id: "forward1",
+    title: "Isuzu Forward Dump",
+    model: undefined,
+    year: 2014,
+    destination: "Philippines",
+    cover: "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-forward-ph1/1.png",
+    images: [
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-forward-ph1/1.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-forward-ph1/2.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-forward-ph1/3.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-forward-ph1/4.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-forward-ph1/5.png"
+    ],
+  },
+  {
     id: "giga1",
     title: "Isuzu Giga",
     model: undefined,
@@ -214,6 +253,21 @@ const shipmentsData: Shipment[] = [
       "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/toyota-estima-uk1/4.png",
       "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/toyota-estima-uk1/5.png"
     ]
+  },
+  {
+    id: "great1",
+    title: "Mitsubishi Great Dump",
+    model: undefined,
+    year: 1996,
+    destination: "Philippines",
+    cover: "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/mits-great-ph1/1.png",
+    images: [
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/mits-great-ph1/1.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/mits-great-ph1/2.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/mits-great-ph1/3.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/mits-great-ph1/4.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/mits-great-ph1/5.png"
+    ],
   },
   {
     "id": "raize3",
