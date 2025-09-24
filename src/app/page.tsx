@@ -19,7 +19,7 @@ export default function Home() {
 
       <Shipments
         title="Recent Shipments"
-        limit={3}
+        limit={6}
         paddingTop="pt-18 md:pt-28 lg:pt-20"
         ctaHref="/shipments"
         ctaLabel="View more shipments"
