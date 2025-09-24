@@ -36,7 +36,7 @@ const shipmentsData: Shipment[] = [
       "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/audi-a1-uk1/6.png",
     ]
   },
-   {
+  {
     "id": "hino",
     "title": "Hino Liesse 2",
     "model": "HR GX",
@@ -102,7 +102,7 @@ const shipmentsData: Shipment[] = [
       "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/toyota-corolla-aus1/4.png"
     ]
   },
-    {
+  {
     "id": "prius4",
     "title": "Toyota Prius",
     "model": "S Safety Plus",
@@ -185,6 +185,22 @@ const shipmentsData: Shipment[] = [
     ]
   },
   {
+    id: "giga1",
+    title: "Isuzu Giga",
+    model: undefined,
+    year: 1995,
+    destination: "Philippines",
+    cover: "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-giga-ph1/1.png",
+    images: [
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-giga-ph1/1.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-giga-ph1/2.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-giga-ph1/3.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-giga-ph1/4.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-giga-ph1/5.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-giga-ph1/6.png"
+    ],
+  },
+  {
     "id": "4",
     "title": "Toyota Estima Hybrid",
     "model": "Aeras Premium",
@@ -256,6 +272,23 @@ const shipmentsData: Shipment[] = [
       "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/toyota-tacoma-uae/4.png",
       "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/toyota-tacoma-uae/5.png"
     ]
+  },
+  {
+    id: "elf1",
+    title: "Isuzu Elf",
+    model: "Aluminum van turbo 3.65t",
+    year: 1996,
+    destination: "Philippines",
+    cover: "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-elf-ph1/1.png",
+    images: [
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-elf-ph1/1.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-elf-ph1/2.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-elf-ph1/3.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-elf-ph1/4.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-elf-ph1/5.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-elf-ph1/6.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-elf-ph1/7.png"
+    ],
   },
   {
     "id": "8",
