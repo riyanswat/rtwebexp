@@ -240,6 +240,23 @@ const shipmentsData: Shipment[] = [
     ],
   },
   {
+    id: "noahtz1",
+    title: "Toyota Noah",
+    model: undefined,
+    year: 2008,
+    destination: "Tanzania",
+    cover: "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/toyota-noah-tz1/1.jpg",
+    images: [
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/toyota-noah-tz1/1.jpg",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/toyota-noah-tz1/2.jpg",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/toyota-noah-tz1/3.jpg",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/toyota-noah-tz1/4.jpg",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/toyota-noah-tz1/5.jpg",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/toyota-noah-tz1/6.jpg",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/toyota-noah-tz1/7.jpg"
+    ],
+  },
+  {
     "id": "4",
     "title": "Toyota Estima Hybrid",
     "model": "Aeras Premium",
@@ -267,6 +284,22 @@ const shipmentsData: Shipment[] = [
       "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/mits-great-ph1/3.png",
       "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/mits-great-ph1/4.png",
       "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/mits-great-ph1/5.png"
+    ],
+  },
+  {
+    id: "premiotz1",
+    title: "Toyota Premio",
+    model: "F",
+    year: 2015,
+    destination: "Tanzania",
+    cover: "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/toyota-premio-tz1/1.jpg",
+    images: [
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/toyota-premio-tz1/1.jpg",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/toyota-premio-tz1/2.jpg",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/toyota-premio-tz1/3.jpg",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/toyota-premio-tz1/4.jpg",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/toyota-premio-tz1/5.jpg",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/toyota-premio-tz1/6.jpg"
     ],
   },
   {

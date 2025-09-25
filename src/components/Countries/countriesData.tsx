@@ -2,10 +2,10 @@
 const countriesData: string[] = [
   "Tanzania",
   "Pakistan",
-  "Kenya",
+  // "Kenya",
   // "Uganda",
   // "Nigeria",
-  "South Africa",
+  // "South Africa",
   "United Kingdom",
   "Australia",
   "Ghana",
@@ -17,7 +17,7 @@ const countriesData: string[] = [
   "New Zealand",
   "Philippines",
   "UAE",
-  "USA",
+  // "USA",
 ];
 
 export default countriesData;
