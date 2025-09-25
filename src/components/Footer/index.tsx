@@ -81,7 +81,7 @@ const Footer = () => {
           {/* Address / identity */}
           <div className="w-full px-4 md:w-6/12 lg:w-5/12">
             <h4 className="mb-3 text-lg font-semibold text-[var(--rt-footer-ink)]">
-              <a href="/">RAYAN TRADING</a>
+              <Link href="/">RAYAN TRADING</Link>
             </h4>
             <p className="mb-6 text-base leading-relaxed text-[var(--rt-footer-ink-dim)]">
               Exporting Japanese and imported vehicles from Japan with 10+ years of trusted global service.
