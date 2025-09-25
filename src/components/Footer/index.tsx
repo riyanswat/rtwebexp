@@ -6,7 +6,7 @@ const Footer = () => {
 
   const navCols = [
     {
-      title: "Company",
+      title: "Quick Links",
       links: [
         { label: "About Us", href: "/about" },
         { label: "Contact", href: "/contact" },
@@ -139,7 +139,7 @@ const Footer = () => {
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-8">
               {navCols.map((col) => (
                 <div key={col.title}>
-                  <h5 className="mb-4 text-sm font-semibold uppercase tracking-wider text-[var(--rt-footer-ink)]/90">
+                  <h5 className="mb-4 text-sm font-semibold uppercase tracking-wider text-[var(--rt-footer-ink)]/90 select-none">
                     {col.title}
                   </h5>
                   <ul className="space-y-3">
@@ -150,7 +150,7 @@ const Footer = () => {
                           className="
                             text-[var(--rt-footer-ink-dim)]
                             transition-colors duration-150
-                            hover:text-[var(--rt-footer-ink)]
+                            hover:text-[var(--rt-footer-ink)/10]
                           "
                         >
                           {l.label}

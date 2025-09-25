@@ -7,6 +7,7 @@ import SingleShipment from "./SingleShipment";
 import shipmentsData from "./shipmentsData";
 import type { Shipment } from "@/types/shipment";
 import Link from "next/link";
+import Button from "../ui/Button";
 
 /** Small local debounce hook */
 function useDebounce<T>(value: T, delay = 300) {
@@ -89,29 +90,29 @@ const Shipments = ({
 
   // Filtering & default sorting (newest first)
   // Filtering only — preserve original order from shipmentsData
-const filtered = useMemo(() => {
-  const q = debouncedQuery.trim().toLowerCase();
+  const filtered = useMemo(() => {
+    const q = debouncedQuery.trim().toLowerCase();
 
-  return baseList.filter((s) => {
-    const matchesQ =
-      !showFilters || q.length === 0 ||
-      [s.title, s.model, s.destination]
-        .filter(Boolean)
-        .some((v) => String(v).toLowerCase().includes(q));
+    return baseList.filter((s) => {
+      const matchesQ =
+        !showFilters || q.length === 0 ||
+        [s.title, s.model, s.destination]
+          .filter(Boolean)
+          .some((v) => String(v).toLowerCase().includes(q));
 
-    const matchesDest = !showFilters || dest === "__all__" || s.destination === dest;
+      const matchesDest = !showFilters || dest === "__all__" || s.destination === dest;
 
-    const y = typeof s.year === "number" ? s.year : undefined;
-    const yMin = !showFilters ? undefined : (typeof minYear === "number" ? minYear : undefined);
-    const yMax = !showFilters ? undefined : (typeof maxYear === "number" ? maxYear : undefined);
+      const y = typeof s.year === "number" ? s.year : undefined;
+      const yMin = !showFilters ? undefined : (typeof minYear === "number" ? minYear : undefined);
+      const yMax = !showFilters ? undefined : (typeof maxYear === "number" ? maxYear : undefined);
 
-    const matchesYear =
-      (yMin == null || (y != null && y >= yMin)) &&
-      (yMax == null || (y != null && y <= yMax));
+      const matchesYear =
+        (yMin == null || (y != null && y >= yMin)) &&
+        (yMax == null || (y != null && y <= yMax));
 
-    return matchesQ && matchesDest && matchesYear;
-  });
-}, [baseList, debouncedQuery, dest, minYear, maxYear, showFilters]);
+      return matchesQ && matchesDest && matchesYear;
+    });
+  }, [baseList, debouncedQuery, dest, minYear, maxYear, showFilters]);
 
 
   return (
@@ -294,29 +295,20 @@ const filtered = useMemo(() => {
 
         {ctaHref && (
           <div className={`mt-10 ${center ? "text-center" : ""}`}>
-            <Link
-              href={ctaHref}
-              className="
-                inline-flex items-center justify-center
-                rounded-md border border-[var(--rt-ring)] px-6 py-3 text-sm font-semibold
-                text-[var(--rt-ink)] transition-all
-                hover:text-[var(--rt-primary)] hover:border-[var(--rt-primary)]
-                hover:-translate-y-[1px]
-                [box-shadow:var(--shadow-btn)]
-                hover:[box-shadow:var(--shadow-btn-hover)]
-              "
+
+            <Button href={ctaHref} variant="outline" size="md">{ctaLabel} <svg
+              viewBox="0 0 24 24"
+              className="ml-2 h-5 w-5"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
             >
-              {ctaLabel}
-              <svg
-                viewBox="0 0 24 24"
-                className="ml-2 h-5 w-5"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-              >
-                <path strokeLinecap="round" strokeLinejoin="round" d="M5 12h14M13 5l7 7-7 7" />
-              </svg>
-            </Link>
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M5 12h14M13 5l7 7-7 7"
+              />
+            </svg></Button>
           </div>
         )}
       </div>

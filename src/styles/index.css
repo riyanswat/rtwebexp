@@ -208,6 +208,22 @@ html { scroll-behavior: smooth; }
   }
 }
 
+/* drop=in for the above section */
+/* @layer utilities {
+  .rt-section-cta {
+    background: radial-gradient(
+        circle at center,
+        rgba(47,134,246,0.85) 0%,
+        rgba(10,14,24,0.95) 100%
+      ),
+      url('/cta-bg.jpg');
+    background-size: cover;
+    background-position: center;
+  }
+} */
+
+
+
 
 /* OPTIONAL THEME PRESETS remain below for quick swapping (unchanged) */
 

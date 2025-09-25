@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
 
+
 export default function CTA() {
   return (
     <section className="relative py-20 rt-section-cta">
@@ -15,13 +16,19 @@ export default function CTA() {
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Link
             href="/contact"
-            className="px-8 py-4 rounded-xl font-semibold bg-white text-blue-700 shadow-btn hover:shadow-btn-hover transition"
+            className="px-8 py-4 rounded-xl font-semibold bg-white text-blue-700
+              shadow-btn transition-all duration-300 ease-out
+              hover:-translate-y-0.5 hover:scale-102 hover:shadow-btn-hover
+              focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--rt-primary)]/50 active:scale-99"
           >
             Get a Free Quote
           </Link>
           <Link
             href="/contact"
-            className="px-8 py-4 rounded-xl font-semibold border border-white/40 text-white hover:bg-white/10 transition"
+            className="px-8 py-4 rounded-xl font-semibold border border-white/40 text-white
+              transition-all duration-300 ease-out
+              hover:-translate-y-0.5 hover:scale-102 hover:bg-white/10
+              focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--rt-primary)]/50 active:scale-99"
           >
             Contact Us
           </Link>

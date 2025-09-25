@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import Button from "../ui/Button";
 
 const Hero = () => {
   return (
@@ -28,26 +29,9 @@ const Hero = () => {
               </p>
 
               <div className="flex flex-wrap gap-4">
-                <Link
-                  href="/contact"
-                  className="
-                    rounded-md bg-[var(--rt-primary)] px-8 py-4 text-base font-semibold text-white
-                    shadow-[var(--shadow-submit)]
-                    transition-colors duration-200 hover:bg-[var(--rt-primary-600)]
-                  "
-                >
-                  Get a Free Quote
-                </Link>
-                <Link
-                  href="#how-it-works"
-                  className="
-                    inline-flex items-center justify-center
-                    rounded-md border border-[var(--rt-ring)] px-8 py-4 text-base font-semibold
-                    text-[var(--rt-ink)] transition-colors hover:text-[var(--rt-primary)] hover:border-[var(--rt-primary)]
-                  "
-                >
-                  View Our Process
-                </Link>
+                {/* these the are instances  of the custom Button component ive made in components/ui */}
+                <Button href="/contact" variant="primary" size="md">Get a Free Quote</Button>
+                <Button href="#how-it-works" variant="outline" size="md">View Our Process</Button>
               </div>
 
               <div className="mt-10 flex flex-wrap gap-x-6 gap-y-2 text-sm text-[var(--rt-ink-dim)]">

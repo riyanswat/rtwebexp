@@ -10,6 +10,7 @@ const testimonialData: Testimonial[] = [
       "I am their customer since 2017 and have imported many cars from them, they are cooperative and I can confidently say their services is reliable. They are honest and clear every step of the way. I recommend them to anyone looking for smooth cars imports.",
     image: "/images/testimonials/auth-01.png",
     star: 5,
+    // google: true,
   },
   {
     id: 2,
