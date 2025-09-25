@@ -5,6 +5,7 @@ import Testimonials from "@/components/Testimonials";
 import { Metadata } from "next";
 import Work from "@/components/Work";
 import Shipments from "@/components/Shipments";
+import CTA from "@/components/CTA";
 
 export const metadata: Metadata = {
   title: "Rayan Trading, Exporters of all kinds of Vehicles",
@@ -29,6 +30,7 @@ export default function Home() {
       <Work />
       <Countries />
       <Testimonials />
+      <CTA />
     </>
   );
 }

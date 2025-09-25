@@ -193,6 +193,22 @@ html { scroll-behavior: smooth; }
   .rt-item:hover { color: var(--rt-primary); }
 }
 
+
+
+@layer utilities {
+  .rt-section-cta {
+    background: linear-gradient(
+        180deg,
+        rgba(47,134,246,0.9) 0%,
+        rgba(20,102,255,0.9) 100%
+      ),
+      url('/cta-bg.jpg');
+    background-size: cover;
+    background-position: center;
+  }
+}
+
+
 /* OPTIONAL THEME PRESETS remain below for quick swapping (unchanged) */
 
 

@@ -81,10 +81,10 @@ const Footer = () => {
           {/* Address / identity */}
           <div className="w-full px-4 md:w-6/12 lg:w-5/12">
             <h4 className="mb-3 text-lg font-semibold text-[var(--rt-footer-ink)]">
-              Rayan Trading
+              <a href="/">RAYAN TRADING</a>
             </h4>
             <p className="mb-6 text-base leading-relaxed text-[var(--rt-footer-ink-dim)]">
-              1917-12 Horikucho, Tatebayashi, Gunma 374-0033, Japan
+              Exporting Japanese and imported vehicles from Japan with 10+ years of trusted global service.
             </p>
 
             {/* Socials — slightly larger, but very subtle ring glow */}
