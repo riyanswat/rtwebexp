@@ -75,6 +75,24 @@ const shipmentsData: Shipment[] = [
     ],
   },
   {
+    id: "alphard1",
+    title: "Toyota Alphard",
+    model: undefined,
+    year: 2019,
+    destination: "Tanzania",
+    cover: "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/toyota-alphard-tz1/1.png",
+    images: [
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/toyota-alphard-tz1/1.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/toyota-alphard-tz1/2.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/toyota-alphard-tz1/3.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/toyota-alphard-tz1/4.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/toyota-alphard-tz1/5.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/toyota-alphard-tz1/6.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/toyota-alphard-tz1/7.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/toyota-alphard-tz1/8.png"
+    ],
+  },
+  {
     "id": "estima5",
     "title": "Toyota Estima Hybrid",
     "model": "Aeras Smart",
@@ -90,6 +108,22 @@ const shipmentsData: Shipment[] = [
       "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/toyota-estima-uk5/6.png",
       "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/toyota-estima-uk5/7.png",
     ]
+  },
+  {
+    id: "benz1",
+    title: "Mercedes Benz",
+    model: "S 400 HYBRID",
+    year: 2014,
+    destination: "Germany",
+    cover: "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/benz-germany1/1.png",
+    images: [
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/benz-germany1/1.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/benz-germany1/2.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/benz-germany1/3.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/benz-germany1/4.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/benz-germany1/5.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/benz-germany1/6.png"
+    ],
   },
   {
     "id": "1",
@@ -378,6 +412,41 @@ const shipmentsData: Shipment[] = [
     ],
   },
   {
+    id: "bmw1",
+    title: "BMW 6 series",
+    model: " E63 M6",
+    year: 2007,
+    destination: "UAE",
+    cover: "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/bmw-uae1/1.png",
+    images: [
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/bmw-uae1/1.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/bmw-uae1/2.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/bmw-uae1/3.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/bmw-uae1/4.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/bmw-uae1/5.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/bmw-uae1/6.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/bmw-uae1/7.png"
+    ],
+  },
+  {
+  id: "benzuae1",
+  title: "Mercedes Benz G 500",
+  model: "4X4 2850",
+  year: 2001,
+  destination: "UAE",
+  cover: "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/benz-uae1/1.png",
+  images: [
+  "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/benz-uae1/1.png",
+  "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/benz-uae1/2.png",
+  "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/benz-uae1/3.png",
+  "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/benz-uae1/4.png",
+  "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/benz-uae1/5.png",
+  "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/benz-uae1/6.png",
+  "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/benz-uae1/7.png",
+  "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/benz-uae1/8.png"
+],
+},
+  {
     "id": "8",
     "title": "Toyota Prius Alpha",
     "model": "S Tune Black II",
@@ -407,6 +476,22 @@ const shipmentsData: Shipment[] = [
     ]
   },
   {
+    id: "volvo1",
+    title: "Volvo 960 Series",
+    model: undefined,
+    year: 1995,
+    destination: "UAE",
+    cover: "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/volvo-uae1/1.png",
+    images: [
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/volvo-uae1/1.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/volvo-uae1/2.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/volvo-uae1/3.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/volvo-uae1/4.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/volvo-uae1/5.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/volvo-uae1/6.png"
+    ],
+  },
+  {
     "id": "10",
     "title": "Toyota Voxy Hybrid",
     "model": "X",
@@ -418,6 +503,20 @@ const shipmentsData: Shipment[] = [
       "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/toyota-voxy-uk1/2.png",
       "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/toyota-voxy-uk1/3.png"
     ]
+  },
+  {
+    id: "dualis1",
+    title: "Nissan Dualis",
+    model: undefined,
+    year: 2012,
+    destination: "Tanzania",
+    cover: "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/nissan-dualis-tz1/1.png",
+    images: [
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/nissan-dualis-tz1/1.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/nissan-dualis-tz1/2.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/nissan-dualis-tz1/3.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/nissan-dualis-tz1/4.png"
+    ],
   },
   {
     "id": "voxy2",

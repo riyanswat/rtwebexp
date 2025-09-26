@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import shipmentsData from "@/components/Shipments/shipmentsData";
 
 type UploadedFile = { path: string; url: string };
@@ -25,6 +25,12 @@ export default function Upload() {
 
   // Folder input
   const inputRef = useRef<HTMLInputElement | null>(null);
+
+  // 🔎 NEW: password input ref + auto-focus
+  const passwordRef = useRef<HTMLInputElement | null>(null);
+  useEffect(() => {
+    if (!authenticated) passwordRef.current?.focus();
+  }, [authenticated]);
 
   // --- auth step ---
   function handleLogin(e: React.FormEvent) {
@@ -148,7 +154,9 @@ export default function Upload() {
             <h1 className="text-lg font-semibold">Admin Login</h1>
             <input
               type="password"
+              ref={passwordRef}                 
               placeholder="Enter password"
+              autoComplete="current-password"   /* nice-to-have */
               className="
                 w-full rounded-md px-3 py-2 text-sm
                 bg-[var(--rt-surface)] text-[var(--rt-ink)]
@@ -259,7 +267,6 @@ export default function Upload() {
               </div>
 
               {/* destination with suggestions */}
-
               <div>
                 <label className="block text-sm font-medium mb-1">Destination</label>
                 <input
@@ -286,11 +293,7 @@ export default function Upload() {
                     ))}
                 </datalist>
               </div>
-
-
               {/* ^^^ destination */}
-
-
             </div>
 
             {/* Folder picker (webkitdirectory) */}
