@@ -429,23 +429,23 @@ const shipmentsData: Shipment[] = [
     ],
   },
   {
-  id: "benzuae1",
-  title: "Mercedes Benz G 500",
-  model: "4X4 2850",
-  year: 2001,
-  destination: "UAE",
-  cover: "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/benz-uae1/1.png",
-  images: [
-  "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/benz-uae1/1.png",
-  "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/benz-uae1/2.png",
-  "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/benz-uae1/3.png",
-  "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/benz-uae1/4.png",
-  "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/benz-uae1/5.png",
-  "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/benz-uae1/6.png",
-  "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/benz-uae1/7.png",
-  "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/benz-uae1/8.png"
-],
-},
+    id: "benzuae1",
+    title: "Mercedes Benz G 500",
+    model: "4X4 2850",
+    year: 2001,
+    destination: "UAE",
+    cover: "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/benz-uae1/1.png",
+    images: [
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/benz-uae1/1.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/benz-uae1/2.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/benz-uae1/3.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/benz-uae1/4.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/benz-uae1/5.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/benz-uae1/6.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/benz-uae1/7.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/benz-uae1/8.png"
+    ],
+  },
   {
     "id": "8",
     "title": "Toyota Prius Alpha",
@@ -474,6 +474,56 @@ const shipmentsData: Shipment[] = [
       "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/toyota-estima-uk2/3.png",
       "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/toyota-estima-uk2/4.png"
     ]
+  },
+  {
+    id: "civilian1",
+    title: "Nissan Civilian",
+    model: undefined,
+    year: 2001,
+    destination: "Tanzania",
+    cover: "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/nissan-civilian-tz1/1.png",
+    images: [
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/nissan-civilian-tz1/1.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/nissan-civilian-tz1/2.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/nissan-civilian-tz1/3.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/nissan-civilian-tz1/4.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/nissan-civilian-tz1/5.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/nissan-civilian-tz1/6.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/nissan-civilian-tz1/7.png"
+    ],
+  },
+  {
+    id: "forester1",
+    title: "Subaru Forester",
+    model: "2.0 XS Platinum Selection",
+    year: 2007,
+    destination: "Tanzania",
+    cover: "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/subaru-forester-tz1/1.png",
+    images: [
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/subaru-forester-tz1/1.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/subaru-forester-tz1/2.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/subaru-forester-tz1/3.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/subaru-forester-tz1/4.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/subaru-forester-tz1/5.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/subaru-forester-tz1/6.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/subaru-forester-tz1/7.png"
+    ],
+  },
+  {
+    id: "dutro1",
+    title: "Hino Dutro",
+    model: undefined,
+    year: 2010,
+    destination: "Tanzania",
+    cover: "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/hino-dutro-tz1/1.png",
+    images: [
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/hino-dutro-tz1/1.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/hino-dutro-tz1/2.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/hino-dutro-tz1/3.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/hino-dutro-tz1/4.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/hino-dutro-tz1/5.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/hino-dutro-tz1/6.png"
+    ],
   },
   {
     id: "volvo1",
@@ -635,6 +685,22 @@ const shipmentsData: Shipment[] = [
       "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/toyota-chr-pk1/5.jpg",
       "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/toyota-chr-pk1/6.jpg"
     ]
+  },
+  {
+    id: "dutro2",
+    title: "Hino Dutro",
+    model: undefined,
+    year: 2017,
+    destination: "Tanzania",
+    cover: "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/hino-dutro-tz2/1.png",
+    images: [
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/hino-dutro-tz2/1.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/hino-dutro-tz2/2.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/hino-dutro-tz2/3.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/hino-dutro-tz2/4.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/hino-dutro-tz2/5.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/hino-dutro-tz2/6.png"
+    ],
   },
   {
     "id": "15",
