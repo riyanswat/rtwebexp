@@ -19,7 +19,26 @@ const shipmentsData: Shipment[] = [
       "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/lexus-lx570-uk1/7.jpg"
     ]
   },
-
+  {
+    id: "hiluxtz1",
+    title: "Toyota Hilux Pick Up",
+    model: "Z GR Sport",
+    year: 2022,
+    destination: "Tanzania",
+    cover: "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/toyota-hilux-tz1/1.png",
+    images: [
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/toyota-hilux-tz1/1.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/toyota-hilux-tz1/2.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/toyota-hilux-tz1/3.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/toyota-hilux-tz1/4.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/toyota-hilux-tz1/5.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/toyota-hilux-tz1/6.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/toyota-hilux-tz1/7.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/toyota-hilux-tz1/8.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/toyota-hilux-tz1/9.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/toyota-hilux-tz1/10.png"
+    ],
+  },
   {
     "id": "18",
     "title": "Audi A1",
@@ -57,7 +76,47 @@ const shipmentsData: Shipment[] = [
       "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/hino-liesse-pk1/11.png",
     ]
   },
-
+  {
+    id: "touringaus1",
+    title: "Toyota Corolla Touring Hybrid",
+    model: "G-X",
+    year: 2020,
+    destination: "Australia",
+    cover: "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/toyota-corolla-touring-aus1/1.jpg",
+    images: [
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/toyota-corolla-touring-aus1/1.jpg",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/toyota-corolla-touring-aus1/2.jpg",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/toyota-corolla-touring-aus1/3.jpg",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/toyota-corolla-touring-aus1/4.jpg",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/toyota-corolla-touring-aus1/5.jpg",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/toyota-corolla-touring-aus1/6.jpg",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/toyota-corolla-touring-aus1/7.jpg",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/toyota-corolla-touring-aus1/8.jpg",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/toyota-corolla-touring-aus1/9.jpg",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/toyota-corolla-touring-aus1/10.jpg"
+    ],
+  },
+  {
+    id: "giga2",
+    title: "Isuzu Giga",
+    model: undefined,
+    year: 2013,
+    destination: "Philippines",
+    cover: "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-giga-ph2/1.png",
+    images: [
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-giga-ph2/1.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-giga-ph2/2.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-giga-ph2/3.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-giga-ph2/4.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-giga-ph2/5.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-giga-ph2/6.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-giga-ph2/7.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-giga-ph2/8.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-giga-ph2/9.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-giga-ph2/10.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-giga-ph2/11.png"
+    ],
+  },
   {
     id: "tanker1",
     title: "Nissan Diesel Tanker",
@@ -74,6 +133,7 @@ const shipmentsData: Shipment[] = [
       "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/nissan-diesel-tanker-tz1/6.png"
     ],
   },
+
   {
     id: "alphard1",
     title: "Toyota Alphard",
@@ -221,27 +281,7 @@ const shipmentsData: Shipment[] = [
       "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/toyota-hiace-pk2/9.png",
     ]
   },
-  {
-    id: "giga2",
-    title: "Isuzu Giga",
-    model: undefined,
-    year: 2013,
-    destination: "Philippines",
-    cover: "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-giga-ph2/1.png",
-    images: [
-      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-giga-ph2/1.png",
-      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-giga-ph2/2.png",
-      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-giga-ph2/3.png",
-      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-giga-ph2/4.png",
-      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-giga-ph2/5.png",
-      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-giga-ph2/6.png",
-      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-giga-ph2/7.png",
-      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-giga-ph2/8.png",
-      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-giga-ph2/9.png",
-      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-giga-ph2/10.png",
-      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-giga-ph2/11.png"
-    ],
-  },
+
   {
     id: "forward1",
     title: "Isuzu Forward Dump",
@@ -816,6 +856,24 @@ const shipmentsData: Shipment[] = [
     ]
   },
   {
+    id: "elfph3",
+    title: "Isuzu Elf",
+    model: "Double Cab",
+    year: 1996,
+    destination: "Philippines",
+    cover: "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-elf-ph3/1.png",
+    images: [
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-elf-ph3/1.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-elf-ph3/2.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-elf-ph3/3.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-elf-ph3/4.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-elf-ph3/5.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-elf-ph3/6.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-elf-ph3/7.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-elf-ph3/8.png"
+    ],
+  },
+  {
     "id": "25",
     "title": "Toyota Hiace Wagon",
     "model": "GL",
@@ -841,6 +899,34 @@ const shipmentsData: Shipment[] = [
       "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/toyota-vitz-ghana1/2.png",
       "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/toyota-vitz-ghana1/3.png",
     ]
+  },
+  {
+    id: "elfph2",
+    title: "Isuzu Elf",
+    model: undefined,
+    year: 2004,
+    destination: "Philippines",
+    cover: "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-elf-ph2/1.png",
+    images: [
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-elf-ph2/1.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-elf-ph2/2.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-elf-ph2/3.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-elf-ph2/4.png"
+    ],
+  },
+  {
+    id: "forwardph2",
+    title: "Isuzu Forward Dump",
+    model: undefined,
+    year: 1996,
+    destination: "Philippines",
+    cover: "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-forward-ph2/1.png",
+    images: [
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-forward-ph2/1.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-forward-ph2/2.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-forward-ph2/3.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-forward-ph2/4.png"
+    ],
   },
 ]
 
