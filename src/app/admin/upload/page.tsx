@@ -2,11 +2,15 @@
 
 import { useState, useRef, useEffect } from 'react';
 import shipmentsData from "@/components/Shipments/shipmentsData";
+import { customAlphabet } from 'nanoid';
 
 type UploadedFile = { path: string; url: string };
 
 const ADMIN_PASSWORD = "meven"; // 🔒 change this
 const HEADER_SAFE_TOP = "pt-24 md:pt-28"; // adjust if your header is taller/shorter
+
+// 🔑 Generate short IDs (5 chars, alphanumeric)
+const nanoid = customAlphabet('0123456789abcdefghijklmnopqrstuvwxyz', 5);
 
 export default function Upload() {
   const [authenticated, setAuthenticated] = useState(false);
@@ -42,6 +46,13 @@ export default function Upload() {
       alert('Wrong password!');
     }
   }
+
+  // --- auto-generate ID when title changes (if idVal is empty) ---
+  useEffect(() => {
+    if (!idVal && title.trim()) {
+      setIdVal(nanoid()); // auto assign short unique ID
+    }
+  }, [title, idVal]);
 
   // --- submit handler: uploads folder, then builds snippet from FORM values ---
   async function handleSubmit(e: React.FormEvent) {
@@ -99,7 +110,7 @@ export default function Upload() {
 
       // Build shipment object FROM FORM VALUES (no meta.json needed)
       const shipment = {
-        id: idVal || rootFolder || 'shipment-id',
+        id: idVal || rootFolder || nanoid(),
         title: title || 'Car Title',
         model: model || undefined,
         year: typeof year === 'number' ? year : undefined,
@@ -156,7 +167,7 @@ export default function Upload() {
               type="password"
               ref={passwordRef}                 
               placeholder="Enter password"
-              autoComplete="current-password"   /* nice-to-have */
+              autoComplete="current-password"
               className="
                 w-full rounded-md px-3 py-2 text-sm
                 bg-[var(--rt-surface)] text-[var(--rt-ink)]
@@ -198,7 +209,7 @@ export default function Upload() {
                 <input
                   value={idVal}
                   onChange={(e) => setIdVal(e.target.value)}
-                  placeholder="e.g. elf1"
+                  placeholder="auto-generated if empty"
                   className="
                     w-full rounded-md px-3 py-2 text-sm
                     bg-[var(--rt-surface)] text-[var(--rt-ink)]

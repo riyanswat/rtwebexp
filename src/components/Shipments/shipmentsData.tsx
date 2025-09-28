@@ -186,6 +186,26 @@ const shipmentsData: Shipment[] = [
     ],
   },
   {
+    id: "xloiu",
+    title: "Toyota RAV4",
+    model: undefined,
+    year: 2020,
+    destination: "Tanzania",
+    cover: "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/toyota-rav4-tz1/1.png",
+    images: [
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/toyota-rav4-tz1/1.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/toyota-rav4-tz1/2.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/toyota-rav4-tz1/3.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/toyota-rav4-tz1/4.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/toyota-rav4-tz1/5.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/toyota-rav4-tz1/6.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/toyota-rav4-tz1/7.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/toyota-rav4-tz1/8.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/toyota-rav4-tz1/9.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/toyota-rav4-tz1/10.png"
+    ],
+  },
+  {
     "id": "1",
     "title": "Toyota Corolla",
     "model": "Sedan",
