@@ -6,8 +6,23 @@ import SectionTitle from "../Common/SectionTitle";
 import SingleShipment from "./SingleShipment";
 import shipmentsData from "./shipmentsData";
 import type { Shipment } from "@/types/shipment";
-import Link from "next/link";
 import Button from "../ui/Button";
+
+/* ======================
+   Hook: detect desktop
+   ====================== */
+function useIsDesktop() {
+  const [isDesktop, setIsDesktop] = useState(false);
+
+  useEffect(() => {
+    const check = () => setIsDesktop(window.innerWidth >= 1024); // Tailwind "lg"
+    check(); // run once on mount
+    window.addEventListener("resize", check);
+    return () => window.removeEventListener("resize", check);
+  }, []);
+
+  return isDesktop;
+}
 
 /** Small local debounce hook */
 function useDebounce<T>(value: T, delay = 300) {
@@ -41,9 +56,14 @@ const Shipments = ({
   ctaLabel = "View more shipments",
   showFilters = true, // default ON
 }: Props) => {
-  // Raw list (respect optional limit)
+  const isDesktop = useIsDesktop();
+  const dynamicLimit = isDesktop ? 8 : 4;
+
+  // Raw list (respect optional limit, else use dynamic limit)
   const baseList: Shipment[] =
-    typeof limit === "number" ? shipmentsData.slice(0, limit) : shipmentsData;
+    typeof limit === "number"
+      ? shipmentsData.slice(0, limit)
+      : shipmentsData.slice(0, dynamicLimit);
 
   // Derive filter options
   const allDestinations = useMemo(
@@ -60,14 +80,17 @@ const Shipments = ({
     () =>
       Array.from(
         new Set(
-          baseList.map((s) => s.year).filter((y): y is number => typeof y === "number")
+          baseList
+            .map((s) => s.year)
+            .filter((y): y is number => typeof y === "number")
         )
       ).sort((a, b) => a - b),
     [baseList]
   );
 
   const minYearGlobal = allYears[0] ?? 1970;
-  const maxYearGlobal = allYears[allYears.length - 1] ?? new Date().getFullYear();
+  const maxYearGlobal =
+    allYears[allYears.length - 1] ?? new Date().getFullYear();
 
   // UI state
   const [query, setQuery] = useState("");
@@ -88,23 +111,26 @@ const Shipments = ({
     return () => window.removeEventListener("keydown", handleKey);
   }, [showFilters]);
 
-  // Filtering & default sorting (newest first)
-  // Filtering only — preserve original order from shipmentsData
+  // Filtering
   const filtered = useMemo(() => {
     const q = debouncedQuery.trim().toLowerCase();
 
     return baseList.filter((s) => {
       const matchesQ =
-        !showFilters || q.length === 0 ||
+        !showFilters ||
+        q.length === 0 ||
         [s.title, s.model, s.destination]
           .filter(Boolean)
           .some((v) => String(v).toLowerCase().includes(q));
 
-      const matchesDest = !showFilters || dest === "__all__" || s.destination === dest;
+      const matchesDest =
+        !showFilters || dest === "__all__" || s.destination === dest;
 
       const y = typeof s.year === "number" ? s.year : undefined;
-      const yMin = !showFilters ? undefined : (typeof minYear === "number" ? minYear : undefined);
-      const yMax = !showFilters ? undefined : (typeof maxYear === "number" ? maxYear : undefined);
+      const yMin =
+        !showFilters ? undefined : typeof minYear === "number" ? minYear : undefined;
+      const yMax =
+        !showFilters ? undefined : typeof maxYear === "number" ? maxYear : undefined;
 
       const matchesYear =
         (yMin == null || (y != null && y >= yMin)) &&
@@ -113,7 +139,6 @@ const Shipments = ({
       return matchesQ && matchesDest && matchesYear;
     });
   }, [baseList, debouncedQuery, dest, minYear, maxYear, showFilters]);
-
 
   return (
     <section
@@ -245,7 +270,10 @@ const Shipments = ({
             {/* Quick bar / count */}
             <div className="md:col-span-12 flex flex-wrap items-center gap-3 pt-1">
               <span className="text-[12px] text-[var(--rt-ink-dim)]">
-                Showing <strong className="text-[var(--rt-ink)]">{filtered.length}</strong>{" "}
+                Showing{" "}
+                <strong className="text-[var(--rt-ink)]">
+                  {filtered.length}
+                </strong>{" "}
                 {filtered.length === 1 ? "shipment" : "shipments"}
               </span>
               {(query || dest !== "__all__" || minYear !== "" || maxYear !== "") && (
@@ -265,7 +293,13 @@ const Shipments = ({
                   "
                 >
                   Reset
-                  <svg viewBox="0 0 24 24" className="ml-1 h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2">
+                  <svg
+                    viewBox="0 0 24 24"
+                    className="ml-1 h-4 w-4"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                  >
                     <path d="M6 18L18 6M6 6l12 12" />
                   </svg>
                 </button>
@@ -276,7 +310,8 @@ const Shipments = ({
 
         {/* Grid / Empty state */}
         {filtered.length > 0 ? (
-          <div className="grid grid-cols-1 gap-x-8 gap-y-10 md:grid-cols-2 lg:grid-cols-3">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2 md:gap-4">
+
             {filtered.map((item) => (
               <SingleShipment key={item.id} item={item} />
             ))}
@@ -295,20 +330,22 @@ const Shipments = ({
 
         {ctaHref && (
           <div className={`mt-10 ${center ? "text-center" : ""}`}>
-
-            <Button href={ctaHref} variant="outline" size="md">{ctaLabel} <svg
-              viewBox="0 0 24 24"
-              className="ml-2 h-5 w-5"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M5 12h14M13 5l7 7-7 7"
-              />
-            </svg></Button>
+            <Button href={ctaHref} variant="outline" size="md">
+              {ctaLabel}{" "}
+              <svg
+                viewBox="0 0 24 24"
+                className="ml-2 h-5 w-5"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M5 12h14M13 5l7 7-7 7"
+                />
+              </svg>
+            </Button>
           </div>
         )}
       </div>

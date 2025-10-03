@@ -20,6 +20,30 @@ const emblaOptions: EmblaOptionsType = {
   duration: 40,
 };
 
+/* =========================
+   SIZE DIALS — TWEAK HERE
+   ========================= */
+// Max width of the entire card. Make this smaller to shrink the whole tile.
+// Examples:
+//  - "max-w-[260px]" (smaller)
+//  - "max-w-[300px]" (default-ish small)
+//  - "max-w-[340px]" (bigger)
+const CARD_MAX_W = "max-w-[260px] md:max-w-[260px]";
+
+// Card inner padding. Reduce to tighten spacing.
+const CARD_PADDING = "p-3 lg:px-3 xl:px-4";
+
+// Aspect ratio of the cover image area. Lower height = smaller tile height.
+// Good options: aspect-[4/3], aspect-[16/10], aspect-[3/2], aspect-square
+const IMAGE_ASPECT = "aspect-[4/3]";
+
+// Title font size. e.g., "text-base", "text-sm", or "text-lg"
+const TITLE_SIZE = "text-sm";
+
+// Badge (destination chip) text size.
+const BADGE_TEXT = "text-[12px]";
+/* ========================= */
+
 const SingleShipment = ({ item }: Props) => {
   const { title, model, year, destination, cover, images } = item;
 
@@ -150,14 +174,14 @@ const SingleShipment = ({ item }: Props) => {
   const goTo = (i: number) => { emblaApi?.scrollTo(i); };
 
   return (
-    <div className="w-full">
+    <div className={`w-full ${CARD_MAX_W} mx-auto`}>
       {/* Card */}
       <div
-        className="
-          relative rounded-md p-6 lg:px-5 xl:px-6
+        className={`
+          relative rounded-md ${CARD_PADDING}
           rt-card transition-all duration-150
-          hover:scale-[1.02]
-        "
+          hover:scale-[1.01]
+        `}
       >
         {/* Image */}
         <button
@@ -170,12 +194,12 @@ const SingleShipment = ({ item }: Props) => {
           "
           aria-label={`Open gallery for ${title}`}
         >
-          <div className="relative aspect-[16/9] w-full">
+          <div className={`relative ${IMAGE_ASPECT} w-full`}>
             <Image
               src={cover}
               alt={`${title}${year ? ` ${year}` : ""} — shipped to ${destination}`}
               fill
-              sizes="(min-width: 1024px) 33vw, 100vw"
+              sizes="(min-width: 1280px) 20vw, (min-width: 1024px) 25vw, 50vw"
               className="object-cover transition-transform duration-300 group-hover:scale-[1.02]"
             />
           </div>
@@ -185,31 +209,29 @@ const SingleShipment = ({ item }: Props) => {
         </button>
 
         {/* Details */}
-        <div className="mt-5">
-          <h3 className="text-[var(--rt-ink)] text-lg font-semibold">
+        <div className="mt-4">
+          <h3 className={`text-[var(--rt-ink)] ${TITLE_SIZE} font-semibold`}>
             {title}
             {model ? <span className="text-[var(--rt-ink-dim)]">{` — ${model}`}</span> : null}
             {year != null && <span className="text-[var(--rt-ink-dim)]"> · {year}</span>}
           </h3>
 
-          <div className="mt-3 flex flex-wrap items-center gap-2">
+          <div className="mt-2 flex flex-wrap items-center gap-2">
             <span
-              className="
-      inline-flex items-center rounded-full
-      bg-[var(--rt-surface)] px-3 py-1.5 text-[12px]
-      ring-1 ring-[var(--rt-ring)] shadow-[var(--shadow-one)] select-none
-    "
+              className={`
+                inline-flex items-center rounded-full
+                bg-[var(--rt-surface)] px-2.5 py-1 ${BADGE_TEXT}
+                ring-1 ring-[var(--rt-ring)] shadow-[var(--shadow-one)] select-none
+              `}
               aria-label={`Shipped to ${destination}`}
             >
-              {/* plane (shipping) icon */}
               <svg
                 viewBox="0 0 24 24"
-                className="mr-1.5 h-3.5 w-3.5 text-[var(--rt-primary)]"
+                className="mr-1 h-3 w-3 text-[var(--rt-primary)]"
                 fill="none"
                 stroke="currentColor"
                 strokeWidth="2"
               >
-                {/* paper-airplane outline */}
                 <path strokeLinecap="round" strokeLinejoin="round" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
               </svg>
 
@@ -223,7 +245,6 @@ const SingleShipment = ({ item }: Props) => {
               <strong className="font-semibold text-[var(--rt-ink)] uppercase">{destination}</strong>
             </span>
           </div>
-
         </div>
       </div>
 
@@ -246,7 +267,7 @@ const SingleShipment = ({ item }: Props) => {
                 ref={frameRef}
                 className="relative rounded-xl bg-[#0B0F14]/70 ring-1 ring-white/15 shadow-[0_10px_60px_rgba(0,0,0,0.7)] p-3"
               >
-                {/* Close — moved to a cleaner top-right “badge” and slightly larger */}
+                {/* Close */}
                 <button
                   type="button"
                   onClick={(e) => { e.stopPropagation(); close(); }}
