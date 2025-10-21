@@ -133,7 +133,22 @@ const shipmentsData: Shipment[] = [
       "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/nissan-diesel-tanker-tz1/6.png"
     ],
   },
-
+  {
+    id: "8vpt6",
+    title: "Toyota Noah Hybrid",
+    model: "X",
+    year: 2022,
+    destination: "UK",
+    cover: "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/toyota-noah-uk2/1.png",
+    images: [
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/toyota-noah-uk2/1.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/toyota-noah-uk2/2.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/toyota-noah-uk2/3.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/toyota-noah-uk2/4.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/toyota-noah-uk2/5.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/toyota-noah-uk2/6.png"
+    ],
+  },
   {
     id: "alphard1",
     title: "Toyota Alphard",
@@ -150,6 +165,21 @@ const shipmentsData: Shipment[] = [
       "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/toyota-alphard-tz1/6.png",
       "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/toyota-alphard-tz1/7.png",
       "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/toyota-alphard-tz1/8.png"
+    ],
+  },
+  {
+    id: "s2n3d",
+    title: "Mercedes Benz A180",
+    model: undefined,
+    year: 2016,
+    destination: "UK",
+    cover: "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/benz-a180-uk1/1.png",
+    images: [
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/benz-a180-uk1/1.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/benz-a180-uk1/2.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/benz-a180-uk1/3.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/benz-a180-uk1/4.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/benz-a180-uk1/5.png"
     ],
   },
   {
