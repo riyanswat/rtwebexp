@@ -1,76 +1,79 @@
-
 import Image from "next/image";
 import Link from "next/link";
+import Button from "../ui/Button";
 
 const Hero = () => {
   return (
-    <>
-      <section
-        id="home"
-        className="relative z-10 overflow-hidden bg-white pb-16 pt-[120px] dark:bg-gray-dark md:pb-[120px] md:pt-[150px] xl:pb-[160px] xl:pt-[180px] 2xl:pb-[200px] 2xl:pt-[210px]"
-      >
-        {/* background image */}
-        <Image
-          src="/images/hero-bg.png" // Put your image in public/images/
-          alt="Hero Background"
-          draggable={false}
-          fill
-          className="absolute inset-0 object-cover opacity-70 dark:opacity-30 select-none"
-          style={{ objectFit: 'cover', filter: 'brightness(0.5)' }}
-          priority
-        />
-
-        <div className="container relative">
-          <div className="-mx-4 flex flex-wrap">
-            <div className="w-full px-4">
-              <div className="mx-auto max-w-[800px] text-center">
-                <h1 className="mb-5 text-3xl font-bold leading-tight text-black dark:text-white sm:text-4xl sm:leading-tight md:text-5xl md:leading-tight">
-                  Your Trusted Car Exporter from Japan
-                </h1>
-                <p className="mb-12 text-base leading-relaxed! text-body-color dark:text-body-color-dark sm:text-lg md:text-xl">
-                  We export all kinds of vehicles from Japan — used cars, trucks, heavy machinery and even European imports — straight to your port, with honest and transparent service.
-                </p>
-                <div className="flex flex-col items-center justify-center space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
-                  <Link
-                    href="/contact"
-                    className="rounded-xs bg-primary px-8 py-4 text-base font-semibold text-white duration-300 ease-in-out hover:bg-primary/80"
-                  >
-                    Get a Free Quote
-                  </Link>
-                  {/* <Link
-                    href="/"
-                    className="inline-block rounded-xs bg-black px-8 py-4 text-base font-semibold text-white duration-300 ease-in-out hover:bg-black/90 dark:bg-white/10 dark:text-white dark:hover:bg-white/5"
-                  >
-                    Future use
-                  </Link> */}
-                </div>
+    <section
+      id="home"
+      className="
+        relative z-10 overflow-hidden
+        rt-hero text-[var(--rt-ink)]
+        pt-[150px] md:pt-[150px] lg:pt-[180px]
+        pb-16 md:pb-[110px] lg:pb-[140px]
+      "
+    >
+      <div className="container relative">
+        <div className="flex flex-wrap items-center -mx-4">
+          {/* LEFT */}
+          <div className="w-full px-4 lg:w-1/2">
+            <div className="max-w-[560px]">
+              <h1 className="mb-6 text-3xl font-extrabold leading-tight sm:text-5xl md:text-5xl">
+                Your Trusted <span className="text-[var(--rt-primary)]">Car Exporter</span> from Japan
+              </h1>
 
 
-                {/* three bullets below */}
 
-                <div className="mt-10 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-body-color-dark">
-                  <span className="inline-flex items-center gap-2">
-                    <span className="h-1.5 w-1.5 rounded-full bg-primary/70" />
-                    Transparent Pricing
+              <p className="mb-8 text-base sm:text-lg md:text-xl text-[var(--rt-ink-dim)] leading-relaxed">
+                We export all kinds of vehicles from Japan — used cars, trucks, heavy machinery and even European imports — straight to your port.
+              </p>
+
+              <div className="flex flex-wrap gap-4">
+                {/* these the are instances  of the custom Button component ive made in components/ui */}
+                <Button href="/contact" variant="primary" size="md">Get a Free Quote</Button>
+                <Button href="#how-it-works" variant="outline" size="md">View Our Process</Button>
+              </div>
+
+              <div className="mt-10 flex flex-wrap gap-x-6 gap-y-2 text-sm text-[var(--rt-ink-dim)]">
+                {[
+                  "Honest and Transparent Service",
+                  "Worldwide Shipping",
+                  "Dealer-Trusted Service",
+                ].map((item, idx) => (
+                  <span key={idx} className="inline-flex items-center gap-2">
+                    <span className="h-1.5 w-1.5 rounded-full bg-[var(--rt-primary)]/80" />
+                    {item}
                   </span>
-                  <span className="inline-flex items-center gap-2">
-                    <span className="h-1.5 w-1.5 rounded-full bg-primary/70" />
-                    Worldwide Shipping
-                  </span>
-                  <span className="inline-flex items-center gap-2">
-                    <span className="h-1.5 w-1.5 rounded-full bg-primary/70" />
-                    Dealer-Trusted Service
-                  </span>
-                </div>
-
-                {/* Three bullets above */}
-
+                ))}
               </div>
             </div>
           </div>
+
+          {/* RIGHT */}
+          <div className="relative mt-12 w-full px-4 lg:mt-0 lg:w-1/2">
+            <div
+              className="
+      relative mx-auto max-w-[480px]   /* smaller: was 560px */
+      lg:ml-auto lg:mr-0              /* push to the right on large screens */
+    "
+            >
+              <Image
+                src="/images/hero-bg.jpg"
+                alt="Featured vehicle"
+                width={640}
+                height={430}
+                priority
+                className="
+        rounded-lg object-cover
+        shadow-[0_14px_40px_rgba(2,6,23,.22)]
+      "
+              />
+            </div>
+          </div>
+
         </div>
-      </section>
-    </>
+      </div>
+    </section>
   );
 };
 
