@@ -18,12 +18,12 @@ export default function CTA() {
             href="/contact"
             className="px-8 py-4 rounded-xl font-semibold bg-white text-blue-700
               shadow-btn transition-all duration-300 ease-out
-              hover:-translate-y-0.5 hover:scale-102 hover:shadow-btn-hover
+              hover:-translate-y-0.5 hover:scale-101 hover:shadow-btn-hover
               focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--rt-primary)]/50 active:scale-99"
           >
             Get a Free Quote
           </Link>
-          <Link
+          {/* <Link
             href="/contact"
             className="px-8 py-4 rounded-xl font-semibold border border-white/40 text-white
               transition-all duration-300 ease-out
@@ -31,7 +31,7 @@ export default function CTA() {
               focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--rt-primary)]/50 active:scale-99"
           >
             Contact Us
-          </Link>
+          </Link> */}
         </div>
       </div>
     </section>
