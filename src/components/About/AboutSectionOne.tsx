@@ -9,12 +9,12 @@ const AboutSectionOne = () => {
           <div className="w-full px-4 lg:w-1/2">
             <h2 className="mb-6 text-3xl font-bold text-[var(--rt-ink)] sm:text-4xl">Who We Are</h2>
             <p className="mb-8 text-base text-[var(--rt-ink-dim)]">
-              We are a Japan-based car exporting company, helping dealers and importers worldwide access Japanese vehicles. Our focus is on honesty, transparency, and hassle-free exports.
+              For more than a decade, we’ve been connecting dealers and importers worldwide with the cars they were looking for — whether Japanese or imported. Based in Japan, we’ve earned the trust of hundreds of clients by making the export process transparent, straightforward and tailored to their needs.
             </p>
           </div>
 
           {/* Image */}
-          <div className="w-full px-4 lg:w-1/2">
+          {/* <div className="w-full px-4 lg:w-1/2">
             <div className="relative mx-auto max-w-[500px] aspect-[25/24] lg:mr-0">
               <Image
                 src="/images/about/aboutimage.png"
@@ -24,7 +24,18 @@ const AboutSectionOne = () => {
                 priority
               />
             </div>
-          </div>
+          </div> */}
+             <div className="w-full px-4 lg:w-1/2">
+                      <div className="relative mx-auto max-w-[500px]">
+                        <Image
+                          src="/images/about/aboutimage.png"
+                          alt="About Rayan Trading"
+                          width={500}
+                          height={500}
+                          className="rounded-lg object-contain shadow-[var(--shadow-two)]"
+                        />
+                      </div>
+                    </div>
         </div>
       </div>
     </section>

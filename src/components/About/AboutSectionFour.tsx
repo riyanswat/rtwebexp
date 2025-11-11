@@ -81,7 +81,7 @@ const AboutSectionFour = () => {
           <div className="w-full px-4 lg:w-1/2">
             <div className="relative mx-auto max-w-[500px]">
               <Image
-                src="/images/about/about4.png"
+                src="/images/about/about2.png"
                 alt="What we do at Rayan Trading"
                 width={500}
                 height={500}
