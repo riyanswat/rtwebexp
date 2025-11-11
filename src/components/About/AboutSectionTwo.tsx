@@ -76,7 +76,7 @@ const AboutSectionTwo = () => {
           <div className="w-full px-4 lg:w-1/2">
             <div className="relative mx-auto max-w-[500px]">
               <Image
-                src="/images/about/about2.jpg"
+                src="/images/about/global.png"
                 alt="World map showing shipping routes"
                 width={500}
                 height={500}
