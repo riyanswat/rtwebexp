@@ -1,76 +1,117 @@
+"use client";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 
-const offerings = [
+const faqs = [
   {
-    title: "Japanese Used Vehicles",
-    description:
-      "Sedans, SUVs, kei cars—sourced from the biggest auctions in Japan with verified mileage and auction sheets.",
-    icon: (
-      <svg viewBox="0 0 24 24" className="h-6 w-6 text-[var(--rt-primary)]" fill="none" stroke="currentColor" strokeWidth="1.8">
-        <path d="M3 14l2-5a3 3 0 012.8-2h6.4A3 3 0 0117 9l2 5" />
-        <path d="M5 16h14" />
-        <circle cx="7.5" cy="16.5" r="1.5" fill="currentColor" />
-        <circle cx="16.5" cy="16.5" r="1.5" fill="currentColor" />
-      </svg>
-    ),
+    question: "What does your company do?",
+    answer:
+      "We specialize in exporting Japanese and imported vehicles worldwide — from used sedans and SUVs to trucks, buses, and classic cars. We've been in the business for over 10 years, offering full transparency and reliable service.",
   },
   {
-    title: "Trucks, Buses & Machinery",
-    description:
-      "Commercial vehicles and heavy equipment for work fleets—fully inspected, with all export documents managed by us.",
-    icon: (
-      <svg viewBox="0 0 24 24" className="h-6 w-6 text-[var(--rt-primary)]" fill="none" stroke="currentColor" strokeWidth="1.8">
-        <path d="M3 16V7a1 1 0 011-1h9v10H3zM13 11h4l3 3v2h-7v-5z" />
-        <circle cx="7" cy="18" r="2" />
-        <circle cx="17" cy="18" r="2" />
-      </svg>
-    ),
+    question: "Can I buy a car directly from Japan through you?",
+    answer:
+      "Yes. You can choose a car from our listings or request a specific model. We’ll handle everything — auction bidding, inspection, payment processing, and shipping to your country.",
   },
   {
-    title: "European Imports",
-    description: "Imported cars in Japan — German, British, American, and more.",
-    icon: (
-      <svg viewBox="0 0 24 24" className="h-6 w-6 text-[var(--rt-primary)]" fill="none" stroke="currentColor" strokeWidth="1.8">
-        <circle cx="12" cy="12" r="9" />
-        <path d="M3 12h18M12 3c3.5 3.5 3.5 14.5 0 18M12 3c-3.5 3.5-3.5 14.5 0 18" />
-      </svg>
-    ),
+    question: "What payment methods do you accept?",
+    answer:
+      "We primarily accept international bank transfers (TT). Other options like PayPal or L/C are possible in certain cases. All transactions are fully invoiced and traceable.",
   },
   {
-    title: "Classic & Collector",
-    description: "Sourcing of classic and collectible vehicles upon request.",
-    icon: (
-      <svg viewBox="0 0 24 24" className="h-6 w-6 text-[var(--rt-primary)]" fill="currentColor">
-        <path d="M12 3l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4L12 18.8 6.2 20.8l1.1-6.4L2.6 9.8l6.5-.9L12 3z" />
-      </svg>
-    ),
+    question: "Which countries do you ship to?",
+    answer:
+      "We ship vehicles globally — including the UK, New Zealand, Australia, South Africa, Kenya, UAE, and many others. If your country allows vehicle imports, we can arrange shipping there.",
+  },
+  {
+    question: "How long does it take to receive my vehicle?",
+    answer:
+      "Shipping time depends on your port of destination. Generally, it takes 4–8 weeks from purchase confirmation to vessel arrival.",
+  },
+  {
+    question: "Do you provide vehicle inspection or reports?",
+    answer:
+      "Yes. Every car is inspected before export. We provide auction sheets, detailed condition reports, and inspection certificates such as JEVIC when required by your country.",
+  },
+  {
+    question: "What happens if my car arrives damaged?",
+    answer:
+      "In rare cases of shipping damage, we assist with all claim procedures and documentation to help you obtain compensation from the relevant shipping or insurance company.",
+  },
+  {
+    question: "What documents will I receive after shipment?",
+    answer:
+      "You’ll receive the Export Certificate, Bill of Lading, Invoice, and Inspection Certificate (if applicable). All documents are couriered or sent digitally once the vessel departs.",
+  },
+  {
+    question: "Do you offer dealer or bulk discounts?",
+    answer:
+      "Yes. We offer competitive pricing for repeat clients and bulk purchases. Contact us directly for dealer partnerships or business inquiries.",
   },
 ];
 
 const FAQ = () => {
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+
+  const toggleFAQ = (index: number) => {
+    setOpenIndex(openIndex === index ? null : index);
+  };
+
   return (
     <section className="rt-section-b py-16 md:py-20 lg:py-28">
       <div className="container">
         <div className="-mx-4 flex flex-wrap items-center">
-          {/* Text + cards */}
+          {/* Text + FAQs */}
           <div className="w-full px-4 lg:w-1/2">
             <div className="mb-10">
-              <h2 className="mb-3 text-3xl font-bold text-[var(--rt-ink)] sm:text-4xl">What We Do</h2>
+              <h2 className="mb-3 text-3xl font-bold text-[var(--rt-ink)] sm:text-4xl">
+                FAQs
+              </h2>
               <p className="mb-8 text-base text-[var(--rt-ink-dim)]">
-                A focused range of services to match different buyer needs—from daily drivers to performance, commercial, and collector vehicles.
+                Here are some of the most common questions we receive from our clients worldwide.
               </p>
 
-              <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
-                {offerings.map((item, i) => (
+              <div className="space-y-3">
+                {faqs.map((item, i) => (
                   <div
                     key={i}
-                    className="flex items-start space-x-4 rounded-lg rt-card p-5 transition-transform duration-200 ease-in-out hover:-translate-y-1 hover:ring-1 hover:ring-[var(--rt-primary)]/40"
+                    className="rounded-lg rt-card p-4 cursor-pointer hover:ring-1 hover:ring-[var(--rt-primary)]/40 transition-all"
+                    onClick={() => toggleFAQ(i)}
                   >
-                    <div className="flex-shrink-0">{item.icon}</div>
-                    <div>
-                      <h3 className="mb-1 text-lg font-semibold text-[var(--rt-ink)]">{item.title}</h3>
-                      <p className="text-sm text-[var(--rt-ink-dim)]">{item.description}</p>
+                    <div className="flex justify-between items-center">
+                      <h3 className="text-base font-semibold text-[var(--rt-ink)]">
+                        {item.question}
+                      </h3>
+                      <motion.svg
+                        initial={false}
+                        animate={{ rotate: openIndex === i ? 180 : 0 }}
+                        transition={{ duration: 0.25 }}
+                        viewBox="0 0 24 24"
+                        className="h-5 w-5 text-[var(--rt-primary)] flex-shrink-0"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="1.8"
+                      >
+                        <path d="M6 9l6 6 6-6" />
+                      </motion.svg>
                     </div>
+
+                    <AnimatePresence initial={false}>
+                      {openIndex === i && (
+                        <motion.div
+                          key="content"
+                          initial={{ opacity: 0, height: 0 }}
+                          animate={{ opacity: 1, height: "auto" }}
+                          exit={{ opacity: 0, height: 0 }}
+                          transition={{ duration: 0.3, ease: "easeInOut" }}
+                        >
+                          <p className="mt-3 text-sm text-[var(--rt-ink-dim)] leading-relaxed">
+                            {item.answer}
+                          </p>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
                   </div>
                 ))}
               </div>
@@ -82,7 +123,7 @@ const FAQ = () => {
             <div className="relative mx-auto max-w-[500px]">
               <Image
                 src="/images/about/about2.png"
-                alt="What we do at Rayan Trading"
+                alt="FAQ about Rayan Trading's export process"
                 width={500}
                 height={500}
                 className="rounded-lg object-contain shadow-[var(--shadow-two)]"
