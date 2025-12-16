@@ -14,7 +14,7 @@ const testimonialData: Testimonial[] = [
   },
   {
     id: 2,
-    name: "Hassan",
+    name: "Hassan Khan",
     country: "UK",
     content:
       "I have imported and still import cars from Rayan Trading. They are reliable and I am satisfied with their team and service.",
@@ -32,8 +32,8 @@ const testimonialData: Testimonial[] = [
   },
   {
     id: 4,
-    name: "Harmoosh",
-    country: "Lebanon",
+    name: "Salim Abdallah",
+    country: "Tanzania",
     content:
       "I highly recommend Rayan Trading for their service. They are my first choice for car and machinery import to Lebanon and they have never disappointed me.",
     image: "/images/testimonials/auth-03.png",
@@ -42,7 +42,7 @@ const testimonialData: Testimonial[] = [
   {
     id: 5,
     name: "Omar Khalid",
-    country: "Lebanon",
+    country: "U.A.E",
     content:
       "Rayan Trading staff is trustworthy and friendly. I will always use their service.",
     image: "/images/testimonials/auth-03.png",
