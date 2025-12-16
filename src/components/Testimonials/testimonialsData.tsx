@@ -41,7 +41,7 @@ const testimonialData: Testimonial[] = [
   },
   {
     id: 5,
-    name: "Abbas",
+    name: "Omar Khalid",
     country: "Lebanon",
     content:
       "Rayan Trading staff is trustworthy and friendly. I will always use their service.",
