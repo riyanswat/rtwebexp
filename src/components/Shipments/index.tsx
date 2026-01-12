@@ -151,7 +151,7 @@ const Shipments = ({
       <div className="container">
         <SectionTitle
           title={title}
-          paragraph={paragraph ?? "A few of the vehicles we’ve recently shipped."}
+          paragraph={paragraph ?? "Some of the vehicles we’ve recently shipped."}
           center={center}
         />
 
