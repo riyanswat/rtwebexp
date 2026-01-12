@@ -52,13 +52,13 @@ export default function ContactForm() {
             <WhatsAppIcon />
           </div>
           <div>
-            <h4 className="text-lg font-semibold text-[var(--rt-ink)]">WhatsApp (Japan)</h4>
+            <h4 className="text-lg font-semibold text-[var(--rt-ink)]">WhatsApp</h4>
             <p className="text-[var(--rt-ink-dim)] text-sm">+81 90 5776 3690</p>
           </div>
         </a>
 
         {/* WhatsApp - Pakistan */}
-        <a
+        {/* <a
           href="https://wa.me/923110947665" // REPLACE WITH ACTUAL NUMBER
           target="_blank"
           rel="noopener noreferrer"
@@ -72,7 +72,7 @@ export default function ContactForm() {
             <h4 className="text-lg font-semibold text-[var(--rt-ink)]">WhatsApp (Pakistan)</h4>
             <p className="text-[var(--rt-ink-dim)] text-sm">+92 311 094 7665</p>
           </div>
-        </a>
+        </a> */}
 
         {/* Address */}
         <a

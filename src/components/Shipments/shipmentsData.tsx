@@ -97,6 +97,23 @@ const shipmentsData: Shipment[] = [
     ],
   },
   {
+    "id": "estima5",
+    "title": "Toyota Estima Hybrid",
+    "model": "Aeras Smart",
+    "year": 2019,
+    "destination": "UK",
+    "cover": "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/toyota-estima-uk5/1.png",
+    "images": [
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/toyota-estima-uk5/1.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/toyota-estima-uk5/2.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/toyota-estima-uk5/3.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/toyota-estima-uk5/4.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/toyota-estima-uk5/5.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/toyota-estima-uk5/6.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/toyota-estima-uk5/7.png",
+    ]
+  },
+  {
     id: "giga2",
     title: "Isuzu Giga",
     model: undefined,
@@ -182,23 +199,7 @@ const shipmentsData: Shipment[] = [
       "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/benz-a180-uk1/5.png"
     ],
   },
-  {
-    "id": "estima5",
-    "title": "Toyota Estima Hybrid",
-    "model": "Aeras Smart",
-    "year": 2019,
-    "destination": "UK",
-    "cover": "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/toyota-estima-uk5/1.png",
-    "images": [
-      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/toyota-estima-uk5/1.png",
-      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/toyota-estima-uk5/2.png",
-      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/toyota-estima-uk5/3.png",
-      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/toyota-estima-uk5/4.png",
-      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/toyota-estima-uk5/5.png",
-      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/toyota-estima-uk5/6.png",
-      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/toyota-estima-uk5/7.png",
-    ]
-  },
+  
   {
     id: "benz1",
     title: "Mercedes Benz",
