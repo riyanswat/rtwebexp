@@ -163,6 +163,19 @@ const shipmentsData: Shipment[] = [
       "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-giga-ph2/11.png"
     ],
   },
+  {
+  id: "udbk2",
+  title: "Toyota CH-R",
+  model: "G-LED edition",
+  year: 2018,
+  destination: "Australia",
+  cover: "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/chr-aus1/1.png",
+  images: [
+  "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/chr-aus1/1.png",
+  "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/chr-aus1/2.png",
+  "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/chr-aus1/3.png"
+],
+},
   
   {
     id: "8vpt6",
