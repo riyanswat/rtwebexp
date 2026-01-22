@@ -20,6 +20,19 @@ const shipmentsData: Shipment[] = [
     ]
   },
   {
+  id: "w6hg8",
+  title: "Honda Odyssey Hybrid",
+  model: undefined,
+  year: 2017,
+  destination: "Australia",
+  cover: "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/odyssey-aus1/1.png",
+  images: [
+  "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/odyssey-aus1/1.png",
+  "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/odyssey-aus1/2.png",
+  "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/odyssey-aus1/3.png"
+],
+},
+  {
     id: "hiluxtz1",
     title: "Toyota Hilux Pick Up",
     model: "Z GR Sport",
@@ -114,6 +127,22 @@ const shipmentsData: Shipment[] = [
     ]
   },
   {
+    id: "tanker1",
+    title: "Nissan Diesel Tanker",
+    model: undefined,
+    year: 2001,
+    destination: "Tanzania",
+    cover: "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/nissan-diesel-tanker-tz1/1.png",
+    images: [
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/nissan-diesel-tanker-tz1/1.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/nissan-diesel-tanker-tz1/2.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/nissan-diesel-tanker-tz1/3.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/nissan-diesel-tanker-tz1/4.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/nissan-diesel-tanker-tz1/5.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/nissan-diesel-tanker-tz1/6.png"
+    ],
+  },
+  {
     id: "giga2",
     title: "Isuzu Giga",
     model: undefined,
@@ -134,22 +163,7 @@ const shipmentsData: Shipment[] = [
       "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-giga-ph2/11.png"
     ],
   },
-  {
-    id: "tanker1",
-    title: "Nissan Diesel Tanker",
-    model: undefined,
-    year: 2001,
-    destination: "Tanzania",
-    cover: "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/nissan-diesel-tanker-tz1/1.png",
-    images: [
-      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/nissan-diesel-tanker-tz1/1.png",
-      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/nissan-diesel-tanker-tz1/2.png",
-      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/nissan-diesel-tanker-tz1/3.png",
-      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/nissan-diesel-tanker-tz1/4.png",
-      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/nissan-diesel-tanker-tz1/5.png",
-      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/nissan-diesel-tanker-tz1/6.png"
-    ],
-  },
+  
   {
     id: "8vpt6",
     title: "Toyota Noah Hybrid",
