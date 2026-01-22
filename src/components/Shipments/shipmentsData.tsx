@@ -25,9 +25,9 @@ const shipmentsData: Shipment[] = [
   model: undefined,
   year: 2017,
   destination: "Australia",
-  cover: "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/odyssey-aus1/1.png",
+  cover: "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/odyssey-aus1/11.png",
   images: [
-  "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/odyssey-aus1/1.png",
+  "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/odyssey-aus1/11.png",
   "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/odyssey-aus1/2.png",
   "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/odyssey-aus1/3.png"
 ],
