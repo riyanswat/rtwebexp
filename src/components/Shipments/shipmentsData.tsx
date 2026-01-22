@@ -32,26 +32,7 @@ const shipmentsData: Shipment[] = [
   "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/odyssey-aus1/3.png"
 ],
 },
-  {
-    id: "hiluxtz1",
-    title: "Toyota Hilux Pick Up",
-    model: "Z GR Sport",
-    year: 2022,
-    destination: "Tanzania",
-    cover: "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/toyota-hilux-tz1/1.png",
-    images: [
-      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/toyota-hilux-tz1/1.png",
-      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/toyota-hilux-tz1/2.png",
-      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/toyota-hilux-tz1/3.png",
-      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/toyota-hilux-tz1/4.png",
-      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/toyota-hilux-tz1/5.png",
-      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/toyota-hilux-tz1/6.png",
-      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/toyota-hilux-tz1/7.png",
-      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/toyota-hilux-tz1/8.png",
-      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/toyota-hilux-tz1/9.png",
-      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/toyota-hilux-tz1/10.png"
-    ],
-  },
+  
   {
     "id": "18",
     "title": "Audi A1",
@@ -68,27 +49,7 @@ const shipmentsData: Shipment[] = [
       "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/audi-a1-uk1/6.png",
     ]
   },
-  {
-    "id": "hino",
-    "title": "Hino Liesse 2",
-    "model": "HR GX",
-    "year": 2020,
-    "destination": "Pakistan",
-    "cover": "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/hino-liesse-pk1/1.png",
-    "images": [
-      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/hino-liesse-pk1/1.png",
-      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/hino-liesse-pk1/2.png",
-      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/hino-liesse-pk1/3.png",
-      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/hino-liesse-pk1/4.png",
-      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/hino-liesse-pk1/5.png",
-      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/hino-liesse-pk1/6.png",
-      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/hino-liesse-pk1/7.png",
-      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/hino-liesse-pk1/8.png",
-      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/hino-liesse-pk1/9.png",
-      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/hino-liesse-pk1/10.png",
-      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/hino-liesse-pk1/11.png",
-    ]
-  },
+  
   {
     id: "touringaus1",
     title: "Toyota Corolla Touring Hybrid",
@@ -143,6 +104,37 @@ const shipmentsData: Shipment[] = [
     ],
   },
   {
+    id: "benzuae1",
+    title: "Mercedes Benz G 500",
+    model: "4X4 2850",
+    year: 2001,
+    destination: "UAE",
+    cover: "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/benz-uae1/1.png",
+    images: [
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/benz-uae1/1.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/benz-uae1/2.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/benz-uae1/3.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/benz-uae1/4.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/benz-uae1/5.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/benz-uae1/6.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/benz-uae1/7.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/benz-uae1/8.png"
+    ],
+  },
+    {
+  id: "udbk2",
+  title: "Toyota CH-R",
+  model: "G-LED edition",
+  year: 2018,
+  destination: "Australia",
+  cover: "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/chr-aus1/1.png",
+  images: [
+  "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/chr-aus1/1.png",
+  "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/chr-aus1/2.png",
+  "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/chr-aus1/3.png"
+],
+},
+  {
     id: "giga2",
     title: "Isuzu Giga",
     model: undefined,
@@ -163,19 +155,7 @@ const shipmentsData: Shipment[] = [
       "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-giga-ph2/11.png"
     ],
   },
-  {
-  id: "udbk2",
-  title: "Toyota CH-R",
-  model: "G-LED edition",
-  year: 2018,
-  destination: "Australia",
-  cover: "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/chr-aus1/1.png",
-  images: [
-  "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/chr-aus1/1.png",
-  "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/chr-aus1/2.png",
-  "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/chr-aus1/3.png"
-],
-},
+
   
   {
     id: "8vpt6",
@@ -278,6 +258,27 @@ const shipmentsData: Shipment[] = [
     ]
   },
   {
+    "id": "hino",
+    "title": "Hino Liesse 2",
+    "model": "HR GX",
+    "year": 2020,
+    "destination": "Pakistan",
+    "cover": "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/hino-liesse-pk1/1.png",
+    "images": [
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/hino-liesse-pk1/1.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/hino-liesse-pk1/2.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/hino-liesse-pk1/3.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/hino-liesse-pk1/4.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/hino-liesse-pk1/5.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/hino-liesse-pk1/6.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/hino-liesse-pk1/7.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/hino-liesse-pk1/8.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/hino-liesse-pk1/9.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/hino-liesse-pk1/10.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/hino-liesse-pk1/11.png",
+    ]
+  },
+  {
     "id": "prius4",
     "title": "Toyota Prius",
     "model": "S Safety Plus",
@@ -291,6 +292,26 @@ const shipmentsData: Shipment[] = [
       "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/toyota-prius-uk4/4.png",
       "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/toyota-prius-uk4/5.png",
     ]
+  },
+  {
+    id: "hiluxtz1",
+    title: "Toyota Hilux Pick Up",
+    model: "Z GR Sport",
+    year: 2022,
+    destination: "Tanzania",
+    cover: "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/toyota-hilux-tz1/1.png",
+    images: [
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/toyota-hilux-tz1/1.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/toyota-hilux-tz1/2.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/toyota-hilux-tz1/3.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/toyota-hilux-tz1/4.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/toyota-hilux-tz1/5.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/toyota-hilux-tz1/6.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/toyota-hilux-tz1/7.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/toyota-hilux-tz1/8.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/toyota-hilux-tz1/9.png",
+      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/toyota-hilux-tz1/10.png"
+    ],
   },
   {
     "id": "estima4",
@@ -375,6 +396,7 @@ const shipmentsData: Shipment[] = [
       "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-forward-ph1/5.png"
     ],
   },
+  
   {
     id: "giga1",
     title: "Isuzu Giga",
@@ -546,24 +568,7 @@ const shipmentsData: Shipment[] = [
       "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/bmw-uae1/7.png"
     ],
   },
-  {
-    id: "benzuae1",
-    title: "Mercedes Benz G 500",
-    model: "4X4 2850",
-    year: 2001,
-    destination: "UAE",
-    cover: "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/benz-uae1/1.png",
-    images: [
-      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/benz-uae1/1.png",
-      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/benz-uae1/2.png",
-      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/benz-uae1/3.png",
-      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/benz-uae1/4.png",
-      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/benz-uae1/5.png",
-      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/benz-uae1/6.png",
-      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/benz-uae1/7.png",
-      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/benz-uae1/8.png"
-    ],
-  },
+  
   {
     "id": "8",
     "title": "Toyota Prius Alpha",
