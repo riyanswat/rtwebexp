@@ -122,7 +122,7 @@ const FAQ = () => {
           <div className="w-full px-4 lg:w-1/2">
             <div className="relative mx-auto max-w-[500px]">
               <Image
-                src="/images/about/bentley2.jpg"
+                src="/images/about/faqimg.png"
                 alt="FAQ about Rayan Trading's export process"
                 width={500}
                 height={500}

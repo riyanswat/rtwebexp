@@ -11,6 +11,7 @@ const countriesData: string[] = [
   "Ghana",
   "Germany",
   "Lebanon",
+  "Ireland",
   // "Chile",
   // "Peru",
   // "Ireland",
