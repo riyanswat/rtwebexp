@@ -3,22 +3,18 @@ import { Shipment } from "@/types/shipment";
 
 const shipmentsData: Shipment[] = [
   {
-    "id": "6",
-    "title": "Lexus LX 570",
-    "model": "",
-    "year": 2017,
-    "destination": "UK",
-    "cover": "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/lexus-lx570-uk1/1.jpg",
-    "images": [
-      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/lexus-lx570-uk1/1.jpg",
-      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/lexus-lx570-uk1/2.png",
-      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/lexus-lx570-uk1/3.png",
-      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/lexus-lx570-uk1/4.jpg",
-      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/lexus-lx570-uk1/5.png",
-      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/lexus-lx570-uk1/6.png",
-      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/lexus-lx570-uk1/7.jpg"
-    ]
-  },
+  id: "6",
+  title: "Lexus LX",
+  model: "570",
+  year: 2017,
+  destination: "UK",
+  cover: "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/lexus-lx-uk11/1.png",
+  images: [
+  "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/lexus-lx-uk11/1.png",
+  "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/lexus-lx-uk11/2.png",
+  "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/lexus-lx-uk11/3.png"
+],
+},
   {
   id: "xcl6y",
   title: "Honda Odyssey Hybrid",
@@ -33,19 +29,16 @@ const shipmentsData: Shipment[] = [
 ],
 },
 {
-  id: "ekj9x",
-  title: "Audi A3 ",
-  model: "Sedan",
+  id: "audi-a3-uk33",
+  title: "Audi",
+  model: "A3",
   year: 2022,
   destination: "UK",
-  cover: "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/audi-a3-uk4/1.jpg",
+  cover: "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/audi-a3-uk33/1.png",
   images: [
-  "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/audi-a3-uk4/1.jpg",
-  "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/audi-a3-uk4/2.jpg",
-  "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/audi-a3-uk4/3.jpg",
-  "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/audi-a3-uk4/4.jpg",
-  "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/audi-a3-uk4/5.jpg",
-  "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/audi-a3-uk4/6.jpg"
+  "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/audi-a3-uk33/1.png",
+  "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/audi-a3-uk33/2.png",
+  "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/audi-a3-uk33/3.png"
 ],
 },
   
@@ -151,27 +144,27 @@ const shipmentsData: Shipment[] = [
       "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/audi-a1-uk1/6.png",
     ]
   },
-  {
-    id: "giga2",
-    title: "Isuzu Giga",
-    model: undefined,
-    year: 2013,
-    destination: "Philippines",
-    cover: "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-giga-ph2/1.png",
-    images: [
-      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-giga-ph2/1.png",
-      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-giga-ph2/2.png",
-      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-giga-ph2/3.png",
-      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-giga-ph2/4.png",
-      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-giga-ph2/5.png",
-      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-giga-ph2/6.png",
-      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-giga-ph2/7.png",
-      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-giga-ph2/8.png",
-      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-giga-ph2/9.png",
-      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-giga-ph2/10.png",
-      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-giga-ph2/11.png"
-    ],
-  },
+  // {
+  //   id: "giga2",
+  //   title: "Isuzu Giga",
+  //   model: undefined,
+  //   year: 2013,
+  //   destination: "Philippines",
+  //   cover: "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-giga-ph2/1.png",
+  //   images: [
+  //     "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-giga-ph2/1.png",
+  //     "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-giga-ph2/2.png",
+  //     "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-giga-ph2/3.png",
+  //     "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-giga-ph2/4.png",
+  //     "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-giga-ph2/5.png",
+  //     "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-giga-ph2/6.png",
+  //     "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-giga-ph2/7.png",
+  //     "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-giga-ph2/8.png",
+  //     "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-giga-ph2/9.png",
+  //     "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-giga-ph2/10.png",
+  //     "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-giga-ph2/11.png"
+  //   ],
+  // },
 
   
   {
@@ -398,38 +391,38 @@ const shipmentsData: Shipment[] = [
     ]
   },
 
-  {
-    id: "forward1",
-    title: "Isuzu Forward Dump",
-    model: undefined,
-    year: 2014,
-    destination: "Philippines",
-    cover: "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-forward-ph1/1.png",
-    images: [
-      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-forward-ph1/1.png",
-      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-forward-ph1/2.png",
-      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-forward-ph1/3.png",
-      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-forward-ph1/4.png",
-      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-forward-ph1/5.png"
-    ],
-  },
+  // {
+  //   id: "forward1",
+  //   title: "Isuzu Forward Dump",
+  //   model: undefined,
+  //   year: 2014,
+  //   destination: "Philippines",
+  //   cover: "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-forward-ph1/1.png",
+  //   images: [
+  //     "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-forward-ph1/1.png",
+  //     "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-forward-ph1/2.png",
+  //     "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-forward-ph1/3.png",
+  //     "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-forward-ph1/4.png",
+  //     "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-forward-ph1/5.png"
+  //   ],
+  // },
   
-  {
-    id: "giga1",
-    title: "Isuzu Giga",
-    model: undefined,
-    year: 1995,
-    destination: "Philippines",
-    cover: "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-giga-ph1/1.png",
-    images: [
-      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-giga-ph1/1.png",
-      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-giga-ph1/2.png",
-      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-giga-ph1/3.png",
-      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-giga-ph1/4.png",
-      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-giga-ph1/5.png",
-      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-giga-ph1/6.png"
-    ],
-  },
+  // {
+  //   id: "giga1",
+  //   title: "Isuzu Giga",
+  //   model: undefined,
+  //   year: 1995,
+  //   destination: "Philippines",
+  //   cover: "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-giga-ph1/1.png",
+  //   images: [
+  //     "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-giga-ph1/1.png",
+  //     "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-giga-ph1/2.png",
+  //     "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-giga-ph1/3.png",
+  //     "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-giga-ph1/4.png",
+  //     "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-giga-ph1/5.png",
+  //     "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-giga-ph1/6.png"
+  //   ],
+  // },
   {
     id: "noahtz1",
     title: "Toyota Noah",
@@ -462,21 +455,21 @@ const shipmentsData: Shipment[] = [
       "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/toyota-estima-uk1/5.png"
     ]
   },
-  {
-    id: "great1",
-    title: "Mitsubishi Great Dump",
-    model: undefined,
-    year: 1996,
-    destination: "Philippines",
-    cover: "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/mits-great-ph1/1.png",
-    images: [
-      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/mits-great-ph1/1.png",
-      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/mits-great-ph1/2.png",
-      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/mits-great-ph1/3.png",
-      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/mits-great-ph1/4.png",
-      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/mits-great-ph1/5.png"
-    ],
-  },
+  // {
+  //   id: "great1",
+  //   title: "Mitsubishi Great Dump",
+  //   model: undefined,
+  //   year: 1996,
+  //   destination: "Philippines",
+  //   cover: "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/mits-great-ph1/1.png",
+  //   images: [
+  //     "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/mits-great-ph1/1.png",
+  //     "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/mits-great-ph1/2.png",
+  //     "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/mits-great-ph1/3.png",
+  //     "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/mits-great-ph1/4.png",
+  //     "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/mits-great-ph1/5.png"
+  //   ],
+  // },
   {
     id: "premiotz1",
     title: "Toyota Premio",
@@ -551,23 +544,23 @@ const shipmentsData: Shipment[] = [
       "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/toyota-tacoma-uae/5.png"
     ]
   },
-  {
-    id: "elf1",
-    title: "Isuzu Elf",
-    model: "Aluminum van turbo 3.65t",
-    year: 1996,
-    destination: "Philippines",
-    cover: "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-elf-ph1/1.png",
-    images: [
-      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-elf-ph1/1.png",
-      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-elf-ph1/2.png",
-      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-elf-ph1/3.png",
-      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-elf-ph1/4.png",
-      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-elf-ph1/5.png",
-      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-elf-ph1/6.png",
-      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-elf-ph1/7.png"
-    ],
-  },
+  // {
+  //   id: "elf1",
+  //   title: "Isuzu Elf",
+  //   model: "Aluminum van turbo 3.65t",
+  //   year: 1996,
+  //   destination: "Philippines",
+  //   cover: "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-elf-ph1/1.png",
+  //   images: [
+  //     "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-elf-ph1/1.png",
+  //     "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-elf-ph1/2.png",
+  //     "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-elf-ph1/3.png",
+  //     "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-elf-ph1/4.png",
+  //     "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-elf-ph1/5.png",
+  //     "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-elf-ph1/6.png",
+  //     "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-elf-ph1/7.png"
+  //   ],
+  // },
   {
     id: "bmw1",
     title: "BMW 6 series",
@@ -955,24 +948,24 @@ const shipmentsData: Shipment[] = [
       "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/toyota-corolla-touring-uk2/4.png",
     ]
   },
-  {
-    id: "elfph3",
-    title: "Isuzu Elf",
-    model: "Double Cab",
-    year: 1996,
-    destination: "Philippines",
-    cover: "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-elf-ph3/1.png",
-    images: [
-      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-elf-ph3/1.png",
-      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-elf-ph3/2.png",
-      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-elf-ph3/3.png",
-      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-elf-ph3/4.png",
-      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-elf-ph3/5.png",
-      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-elf-ph3/6.png",
-      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-elf-ph3/7.png",
-      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-elf-ph3/8.png"
-    ],
-  },
+  // {
+  //   id: "elfph3",
+  //   title: "Isuzu Elf",
+  //   model: "Double Cab",
+  //   year: 1996,
+  //   destination: "Philippines",
+  //   cover: "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-elf-ph3/1.png",
+  //   images: [
+  //     "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-elf-ph3/1.png",
+  //     "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-elf-ph3/2.png",
+  //     "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-elf-ph3/3.png",
+  //     "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-elf-ph3/4.png",
+  //     "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-elf-ph3/5.png",
+  //     "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-elf-ph3/6.png",
+  //     "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-elf-ph3/7.png",
+  //     "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-elf-ph3/8.png"
+  //   ],
+  // },
   {
     "id": "25",
     "title": "Toyota Hiace Wagon",
@@ -1000,34 +993,34 @@ const shipmentsData: Shipment[] = [
       "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/toyota-vitz-ghana1/3.png",
     ]
   },
-  {
-    id: "elfph2",
-    title: "Isuzu Elf",
-    model: undefined,
-    year: 2004,
-    destination: "Philippines",
-    cover: "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-elf-ph2/1.png",
-    images: [
-      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-elf-ph2/1.png",
-      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-elf-ph2/2.png",
-      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-elf-ph2/3.png",
-      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-elf-ph2/4.png"
-    ],
-  },
-  {
-    id: "forwardph2",
-    title: "Isuzu Forward Dump",
-    model: undefined,
-    year: 1996,
-    destination: "Philippines",
-    cover: "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-forward-ph2/1.png",
-    images: [
-      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-forward-ph2/1.png",
-      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-forward-ph2/2.png",
-      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-forward-ph2/3.png",
-      "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-forward-ph2/4.png"
-    ],
-  },
+  // {
+  //   id: "elfph2",
+  //   title: "Isuzu Elf",
+  //   model: undefined,
+  //   year: 2004,
+  //   destination: "Philippines",
+  //   cover: "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-elf-ph2/1.png",
+  //   images: [
+  //     "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-elf-ph2/1.png",
+  //     "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-elf-ph2/2.png",
+  //     "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-elf-ph2/3.png",
+  //     "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-elf-ph2/4.png"
+  //   ],
+  // },
+  // {
+  //   id: "forwardph2",
+  //   title: "Isuzu Forward Dump",
+  //   model: undefined,
+  //   year: 1996,
+  //   destination: "Philippines",
+  //   cover: "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-forward-ph2/1.png",
+  //   images: [
+  //     "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-forward-ph2/1.png",
+  //     "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-forward-ph2/2.png",
+  //     "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-forward-ph2/3.png",
+  //     "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/isuzu-forward-ph2/4.png"
+  //   ],
+  // },
 ]
 
 export default shipmentsData;

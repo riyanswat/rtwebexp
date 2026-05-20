@@ -124,7 +124,7 @@ const Hero = () => {
               )}
             >
               <Image
-                src="/images/hero-bg.jpg"
+                src="/images/hero/hero-lexus.png"
                 alt="Featured vehicle"
                 width={640}
                 height={430}
