@@ -14,7 +14,7 @@ const testimonialData: Testimonial[] = [
   },
   {
     id: 2,
-    name: "Hassan",
+    name: "Mohsin",
     country: "UK",
     content:
       "I have imported and still import cars from Rayan Trading. They are reliable and I am satisfied with their team and service.",
