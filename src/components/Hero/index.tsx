@@ -62,9 +62,7 @@ const Hero = () => {
                   "delay-[180ms]"
                 )}
               >
-                We export all kinds of vehicles from Japan — used cars, trucks,
-                heavy machinery and even European imports — straight to your
-                port.
+                We help customers around the world source and import vehicles from Japan, including cars, trucks, heavy machinery and European cars.
               </p>
 
               <div
