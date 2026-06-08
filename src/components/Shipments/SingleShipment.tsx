@@ -337,6 +337,78 @@ const SingleShipment = ({ item }: Props) => {
                   )}
                 </div>
 
+
+{/* info when the gallery is opened */}
+
+
+                  {/* Vehicle Information */}
+<div
+  className="
+    mt-4
+    rounded-lg
+    border border-white/10
+    bg-white/[0.03]
+    px-5 py-4
+    backdrop-blur-sm
+  "
+>
+  <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
+    <div>
+      <h3 className="text-lg font-semibold text-white">
+        {title}
+        {model ? (
+          <span className="text-white/80">
+            {" "}
+            {model}
+          </span>
+        ) : null}
+      </h3>
+
+      {year && (
+        <p className="mt-1 text-sm text-white/70">
+          {year}
+        </p>
+      )}
+    </div>
+
+    <div
+      className="
+        inline-flex items-center gap-2
+        rounded-full
+        bg-[var(--rt-surface)]
+        px-4 py-2
+        ring-1 ring-[var(--rt-ring)]
+      "
+    >
+      <svg
+        viewBox="0 0 24 24"
+        className="h-4 w-4 text-[var(--rt-primary)]"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"
+        />
+      </svg>
+
+      <span className="text-sm text-[var(--rt-ink-dim)]">
+        Destination
+      </span>
+
+      <span className="font-semibold text-[var(--rt-ink)] uppercase">
+        {destination}
+      </span>
+    </div>
+  </div>
+</div>
+
+
+{/* info when the gallery is opened */}
+                
+
                 {/* Thumbnails */}
                 {(images.length ? images : [cover]).length > 1 && (
                   <div className="mt-4 -mx-2">
