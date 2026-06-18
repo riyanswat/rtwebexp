@@ -2,17 +2,17 @@
 import { Shipment } from "@/types/shipment";
 
 const shipmentsData: Shipment[] = [
-  {
-  id: "6",
-  title: "Lexus LX",
+{
+  id: "lexus-lx-uk222",
+  title: "Lexus LX ",
   model: "570",
   year: 2017,
   destination: "UK",
-  cover: "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/lexus-lx-uk11/1.png",
+  cover: "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/lexus-lx-uk222/1.png",
   images: [
-  "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/lexus-lx-uk11/1.png",
-  "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/lexus-lx-uk11/2.png",
-  "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/lexus-lx-uk11/3.png"
+  "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/lexus-lx-uk222/1.png",
+  "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/lexus-lx-uk222/2.png",
+  "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/lexus-lx-uk222/3.png"
 ],
 },
   {
@@ -29,16 +29,16 @@ const shipmentsData: Shipment[] = [
 ],
 },
 {
-  id: "audi-a3-uk33",
-  title: "Audi",
-  model: "A3",
+  id: "audi-a3-uk444",
+  title: "Audi A3",
+  model: undefined,
   year: 2022,
   destination: "UK",
-  cover: "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/audi-a3-uk33/1.png",
+  cover: "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/audi-a3-uk444/1.png",
   images: [
-  "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/audi-a3-uk33/1.png",
-  "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/audi-a3-uk33/2.png",
-  "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/audi-a3-uk33/3.png"
+  "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/audi-a3-uk444/1.png",
+  "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/audi-a3-uk444/2.png",
+  "https://xguakfysxymnhd9l.public.blob.vercel-storage.com/shipments/audi-a3-uk444/3.png"
 ],
 },
   
