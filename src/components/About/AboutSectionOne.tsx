@@ -2,6 +2,7 @@ import Image from "next/image";
 
 const AboutSectionOne = () => {
   return (
+    // check our export statistics on tandemo: https://www.trademo.com/companies/rayan-trading/27925362
     <section id="about" className="rt-section-a pt-16 md:pt-20 lg:pt-28">
       <div className="container">
         <div className="-mx-4 flex flex-wrap items-center">
