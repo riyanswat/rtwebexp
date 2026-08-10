@@ -686,7 +686,7 @@ const Contact = () => {
                       type="text"
                       name="name"
                       id="name"
-                      placeholder="Enter your full name"
+                      placeholder="Enter your name"
                       required
                       className="
                         h-[52px]
