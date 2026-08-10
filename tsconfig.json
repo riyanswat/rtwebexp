@@ -5,12 +5,21 @@
       "dom.iterable",
       "esnext"
     ],
+
+    "target": "ES2017",
+
+    "module": "esnext",
+    "moduleResolution": "node",
+
+    "jsx": "preserve",
+
     "baseUrl": ".",
     "paths": {
       "@/*": [
         "./src/*"
       ]
     },
+
     "allowJs": true,
     "skipLibCheck": true,
     "strict": false,
@@ -18,24 +27,25 @@
     "noEmit": true,
     "incremental": true,
     "esModuleInterop": true,
-    "module": "esnext",
-    "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "jsx": "preserve",
+
     "plugins": [
       {
         "name": "next"
       }
     ],
-    "target": "ES2017"
+
+    "ignoreDeprecations": "6.0"
   },
+
   "include": [
     "next-env.d.ts",
     ".next/types/**/*.ts",
     "**/*.ts",
     "**/*.tsx"
   ],
+
   "exclude": [
     "node_modules"
   ]

@@ -17,6 +17,7 @@ export default function Home() {
     <>
       <ScrollUp />
       <Hero />
+      <Work />
 
       <Shipments
         title="Recent Shipments"
@@ -27,7 +28,6 @@ export default function Home() {
         showFilters={false}   // ← hide filters on homepage
       />
 
-      <Work />
       <Countries />
       <Testimonials />
       <CTA />
