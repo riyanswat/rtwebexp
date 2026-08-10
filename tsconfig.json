@@ -5,15 +5,13 @@
       "dom.iterable",
       "esnext"
     ],
-
     "target": "ES2017",
 
     "module": "esnext",
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
 
     "jsx": "preserve",
 
-    "baseUrl": ".",
     "paths": {
       "@/*": [
         "./src/*"
@@ -34,9 +32,7 @@
       {
         "name": "next"
       }
-    ],
-
-    "ignoreDeprecations": "6.0"
+    ]
   },
 
   "include": [
