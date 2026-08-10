@@ -2,20 +2,13 @@ import Contact from "@/components/Contact";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Contact Page | Rayan Trading",
-  description: "This is Contact Page for Rayan Trading",
+  title: "Contact Rayan Trading | Import Cars from Japan",
+  description:
+    "Contact Rayan Trading to source Japanese used cars, trucks, machinery and other vehicles directly from Japan. We arrange worldwide shipping for dealers, importers and private buyers.",
 };
 
 const ContactPage = () => {
-  return (
-    <>
-      <section className="rt-section-a pt-32 pb-2 text-center">
-        <h1 className="pt-1 text-4xl font-bold text-[var(--rt-ink)]">Contact</h1>
-      </section>
-
-      <Contact />
-    </>
-  );
+  return <Contact />;
 };
 
 export default ContactPage;
