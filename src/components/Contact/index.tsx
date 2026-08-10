@@ -616,7 +616,7 @@ const Contact = () => {
     >
       <Toaster position="top-center" richColors closeButton />
 
-      <div className="container">
+      <div className="container mt-20 md:mt-24">
         <div className="-mx-4 flex flex-wrap">
           {/* Form Column */}
           <div className="w-full px-4 lg:w-7/12 xl:w-8/12">
