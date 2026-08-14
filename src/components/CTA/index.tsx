@@ -60,8 +60,8 @@ export default function CTA() {
               sm:text-lg
             "
           >
-            Tell us what you're looking for and we'll source it directly from
-            Japan and handle the export process for you.
+            Tell us what you&apos;re looking for and we&apos;ll source it
+            directly from Japan and handle the export process for you.
           </p>
 
           <Link
