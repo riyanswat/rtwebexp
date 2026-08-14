@@ -6,23 +6,25 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "About Rayan Trading",
-  description: "This is About Page for Rayan Trading",
-  keywords: ["About Rayan Trading", "Rayan Trading", "car export", "toyota", "honda"],
+  description:
+    "Learn how Rayan Trading sources vehicles from Japan according to each customer’s requirements and manages the export process worldwide.",
+  keywords: [
+    "Rayan Trading",
+    "Japan vehicle exporter",
+    "Japanese car exporter",
+    "vehicle sourcing Japan",
+    "Japanese used vehicles",
+  ],
 };
 
 const AboutPage = () => {
   return (
-    <>
-      {/* Top banner using theme tokens */}
-      <section className="rt-section-a pt-32 pb-6 text-center">
-        <h1 className="pt-1 text-4xl font-bold text-[var(--rt-ink)]">About Us</h1>
-      </section>
-
+    <main className="overflow-hidden">
       <About1 />
       <About2 />
       <About3 />
       <About4 />
-    </>
+    </main>
   );
 };
 
