@@ -207,8 +207,8 @@ const FAQ = () => {
                 </h3>
 
                 <p className="mb-6 text-sm leading-6 text-[var(--rt-ink-dim)]">
-                  If you have a question that isn't answered here, get in
-                  touch with us and tell us what vehicle you're looking for.
+                  If you have a question that isn&apos;t answered here, get in
+                  touch with us and tell us what vehicle you&apos;re looking for.
                 </p>
 
                 <a
