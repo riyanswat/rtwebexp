@@ -42,7 +42,7 @@ const features = [
   },
 ];
 
-const AboutSectionTwo = () => {
+const About3 = () => {
   return (
     <section className="rt-section-b py-16 md:py-20 lg:py-28">
       <div className="container">
@@ -90,4 +90,4 @@ const AboutSectionTwo = () => {
   );
 };
 
-export default AboutSectionTwo;
+export default About3;

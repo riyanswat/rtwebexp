@@ -1,7 +1,7 @@
-import AboutSectionOne from "@/components/About/AboutSectionOne";
-import AboutSectionTwo from "@/components/About/AboutSectionTwo";
-import AboutSectionThree from "@/components/About/AboutSectionThree";
-import AboutSectionFour from "@/components/About/AboutSectionFour";
+import About1 from "@/components/About/About1";
+import About2 from "@/components/About/About2";
+import About3 from "@/components/About/About3";
+import About4 from "@/components/About/About4";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -18,10 +18,10 @@ const AboutPage = () => {
         <h1 className="pt-1 text-4xl font-bold text-[var(--rt-ink)]">About Us</h1>
       </section>
 
-      <AboutSectionOne />
-      <AboutSectionFour />
-      <AboutSectionTwo />
-      <AboutSectionThree />
+      <About1 />
+      <About2 />
+      <About3 />
+      <About4 />
     </>
   );
 };

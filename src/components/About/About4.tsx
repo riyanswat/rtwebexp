@@ -54,7 +54,7 @@ const steps = [
   },
 ];
 
-const AboutSectionThree = () => {
+const About4 = () => {
   return (
     <section className="rt-section-a py-16 md:py-20 lg:py-28">
       <div className="container">
@@ -107,4 +107,4 @@ const AboutSectionThree = () => {
   );
 };
 
-export default AboutSectionThree;
+export default About4;
