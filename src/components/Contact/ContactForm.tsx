@@ -3,6 +3,7 @@
 
 import {
   ClockIcon,
+  EnvelopeIcon,
   MapPinIcon,
   PhoneIcon,
 } from "@heroicons/react/24/outline";
@@ -72,7 +73,8 @@ export default function ContactForm() {
             text-[var(--rt-ink-dim)]
           "
         >
-          Prefer to speak directly? You can reach us by phone or WhatsApp.
+          Prefer to speak directly? You can reach us by phone, email, or
+          WhatsApp.
         </p>
       </div>
 
@@ -130,27 +132,7 @@ export default function ContactForm() {
             </p>
           </div>
 
-          <svg
-            className="
-              ml-auto
-              h-4
-              w-4
-              shrink-0
-              text-[var(--rt-ink-dim)]
-              transition-transform
-              duration-200
-              group-hover:translate-x-1
-            "
-            viewBox="0 0 20 20"
-            fill="currentColor"
-            aria-hidden="true"
-          >
-            <path
-              fillRule="evenodd"
-              d="M3 10a.75.75 0 01.75-.75h10.69l-3.22-3.22a.75.75 0 111.06-1.06l4.5 4.5a.75.75 0 010 1.06l-4.5 4.5a.75.75 0 11-1.06-1.06l3.22-3.22H3.75A.75.75 0 013 10z"
-              clipRule="evenodd"
-            />
-          </svg>
+          <ArrowIcon />
         </a>
 
         {/* WhatsApp */}
@@ -232,9 +214,140 @@ export default function ContactForm() {
           </svg>
         </a>
 
+        {/* Email */}
+        <div className="group relative">
+          <a
+            href="mailto:info@rayantrading.net"
+            className="
+              group/email
+              flex
+              items-center
+              gap-4
+              rounded-xl
+              border
+              border-[var(--rt-ring)]
+              bg-[var(--rt-surface)]
+              p-4
+              transition-all
+              duration-200
+              hover:-translate-y-0.5
+              hover:border-[var(--rt-primary)]/30
+              hover:[box-shadow:var(--shadow-btn-hover)]
+            "
+            aria-label="Email Rayan Trading at info@rayantrading.net"
+          >
+            <div
+              className="
+                flex
+                h-12
+                w-12
+                shrink-0
+                items-center
+                justify-center
+                rounded-xl
+                bg-[var(--rt-primary)]/[0.09]
+                text-[var(--rt-primary)]
+                transition-transform
+                duration-200
+                group-hover/email:scale-105
+              "
+            >
+              <EnvelopeIcon className="h-6 w-6" />
+            </div>
+
+            <div className="min-w-0 flex-1">
+              <p className="text-xs font-medium text-[var(--rt-ink-dim)]">
+                Email
+              </p>
+
+              <h4 className="mt-0.5 break-all text-base font-semibold text-[var(--rt-ink)]">
+                info@rayantrading.net
+              </h4>
+
+              <p className="mt-0.5 text-xs text-[var(--rt-ink-dim)]">
+                Send us an enquiry
+              </p>
+            </div>
+
+            <ArrowIcon />
+          </a>
+
+          {/* Spam-folder reminder */}
+          <div
+            className="
+              pointer-events-none
+              absolute
+              bottom-full
+              left-1/2
+              z-50
+              mb-3
+              w-[280px]
+              -translate-x-1/2
+              translate-y-1
+              rounded-xl
+              border
+              border-[var(--rt-ring)]
+              bg-[var(--rt-surface)]
+              px-4
+              py-3
+              text-xs
+              leading-5
+              text-[var(--rt-ink-dim)]
+              opacity-0
+              shadow-[0_15px_40px_rgba(15,23,42,0.14)]
+              transition-all
+              duration-200
+              group-hover:translate-y-0
+              group-hover:opacity-100
+              sm:w-[300px]
+            "
+          >
+            <div className="flex gap-3">
+              <div
+                className="
+                  mt-0.5
+                  flex
+                  h-7
+                  w-7
+                  shrink-0
+                  items-center
+                  justify-center
+                  rounded-full
+                  bg-[var(--rt-primary)]/[0.09]
+                  text-[var(--rt-primary)]
+                "
+              >
+                <EnvelopeIcon className="h-4 w-4" />
+              </div>
+
+              <p>
+                If you don&apos;t see our reply in your inbox, please check
+                your <strong className="text-[var(--rt-ink)]">spam or junk folder</strong>.
+              </p>
+            </div>
+
+            {/* Tooltip arrow */}
+            <div
+              className="
+                absolute
+                -bottom-1.5
+                left-1/2
+                h-3
+                w-3
+                -translate-x-1/2
+                rotate-45
+                border-b
+                border-r
+                border-[var(--rt-ring)]
+                bg-[var(--rt-surface)]
+              "
+            />
+          </div>
+        </div>
+
         {/* Address */}
         <a
-          href="https://maps.app.goo.gl/ebNLBJxREFD7nr1x7"
+          href="https://maps.app.goo.gl/jds1Sdmrf46arxJK7"
           target="_blank"
           rel="noopener noreferrer"
           className="
@@ -383,6 +496,31 @@ export default function ContactForm() {
     </div>
   );
 }
+
+/* Arrow icon */
+const ArrowIcon = () => (
+  <svg
+    className="
+      ml-auto
+      h-4
+      w-4
+      shrink-0
+      text-[var(--rt-ink-dim)]
+      transition-transform
+      duration-200
+      group-hover:translate-x-1
+    "
+    viewBox="0 0 20 20"
+    fill="currentColor"
+    aria-hidden="true"
+  >
+    <path
+      fillRule="evenodd"
+      d="M3 10a.75.75 0 01.75-.75h10.69l-3.22-3.22a.75.75 0 111.06-1.06l4.5 4.5a.75.75 0 010 1.06l-4.5 4.5a.75.75 0 11-1.06-1.06l3.22-3.22H3.75A.75.75 0 013 10z"
+      clipRule="evenodd"
+    />
+  </svg>
+);
 
 /* WhatsApp icon */
 const WhatsAppIcon = () => (

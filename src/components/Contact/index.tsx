@@ -4,205 +4,13 @@
 import { useEffect, useRef, useState } from "react";
 import ContactForm from "./ContactForm";
 import { Toaster, toast } from "sonner";
+import countries from "./countriesNames";
 
-const countries = [
-  "Afghanistan",
-  "Albania",
-  "Algeria",
-  "Andorra",
-  "Angola",
-  "Antigua and Barbuda",
-  "Argentina",
-  "Armenia",
-  "Australia",
-  "Austria",
-  "Azerbaijan",
-  "Bahamas",
-  "Bahrain",
-  "Bangladesh",
-  "Barbados",
-  "Belarus",
-  "Belgium",
-  "Belize",
-  "Benin",
-  "Bhutan",
-  "Bolivia",
-  "Bosnia and Herzegovina",
-  "Botswana",
-  "Brazil",
-  "Brunei",
-  "Bulgaria",
-  "Burkina Faso",
-  "Burundi",
-  "Cambodia",
-  "Cameroon",
-  "Canada",
-  "Cape Verde",
-  "Central African Republic",
-  "Chad",
-  "Chile",
-  "China",
-  "Colombia",
-  "Comoros",
-  "Congo",
-  "Costa Rica",
-  "Croatia",
-  "Cuba",
-  "Cyprus",
-  "Czech Republic",
-  "Denmark",
-  "Djibouti",
-  "Dominica",
-  "Dominican Republic",
-  "Ecuador",
-  "Egypt",
-  "El Salvador",
-  "Equatorial Guinea",
-  "Eritrea",
-  "Estonia",
-  "Eswatini",
-  "Ethiopia",
-  "Fiji",
-  "Finland",
-  "France",
-  "Gabon",
-  "Gambia",
-  "Georgia",
-  "Germany",
-  "Ghana",
-  "Greece",
-  "Grenada",
-  "Guatemala",
-  "Guinea",
-  "Guinea-Bissau",
-  "Guyana",
-  "Haiti",
-  "Honduras",
-  "Hungary",
-  "Iceland",
-  "India",
-  "Indonesia",
-  "Iran",
-  "Iraq",
-  "Ireland",
-  "Israel",
-  "Italy",
-  "Jamaica",
-  "Japan",
-  "Jordan",
-  "Kazakhstan",
-  "Kenya",
-  "Kiribati",
-  "Kuwait",
-  "Kyrgyzstan",
-  "Laos",
-  "Latvia",
-  "Lebanon",
-  "Lesotho",
-  "Liberia",
-  "Libya",
-  "Liechtenstein",
-  "Lithuania",
-  "Luxembourg",
-  "Madagascar",
-  "Malawi",
-  "Malaysia",
-  "Maldives",
-  "Mali",
-  "Malta",
-  "Marshall Islands",
-  "Mauritania",
-  "Mauritius",
-  "Mexico",
-  "Micronesia",
-  "Moldova",
-  "Monaco",
-  "Mongolia",
-  "Montenegro",
-  "Morocco",
-  "Mozambique",
-  "Myanmar",
-  "Namibia",
-  "Nauru",
-  "Nepal",
-  "Netherlands",
-  "New Zealand",
-  "Nicaragua",
-  "Niger",
-  "Nigeria",
-  "North Korea",
-  "North Macedonia",
-  "Norway",
-  "Oman",
-  "Pakistan",
-  "Palau",
-  "Palestine",
-  "Panama",
-  "Papua New Guinea",
-  "Paraguay",
-  "Peru",
-  "Philippines",
-  "Poland",
-  "Portugal",
-  "Qatar",
-  "Romania",
-  "Russia",
-  "Rwanda",
-  "Saint Kitts and Nevis",
-  "Saint Lucia",
-  "Saint Vincent and the Grenadines",
-  "Samoa",
-  "San Marino",
-  "Sao Tome and Principe",
-  "Saudi Arabia",
-  "Senegal",
-  "Serbia",
-  "Seychelles",
-  "Sierra Leone",
-  "Singapore",
-  "Slovakia",
-  "Slovenia",
-  "Solomon Islands",
-  "Somalia",
-  "South Africa",
-  "South Korea",
-  "South Sudan",
-  "Spain",
-  "Sri Lanka",
-  "Sudan",
-  "Suriname",
-  "Sweden",
-  "Switzerland",
-  "Syria",
-  "Taiwan",
-  "Tajikistan",
-  "Tanzania",
-  "Thailand",
-  "Timor-Leste",
-  "Togo",
-  "Tonga",
-  "Trinidad and Tobago",
-  "Tunisia",
-  "Turkey",
-  "Turkmenistan",
-  "Tuvalu",
-  "Uganda",
-  "Ukraine",
-  "United Arab Emirates",
-  "United Kingdom",
-  "United States",
-  "Uruguay",
-  "Uzbekistan",
-  "Vanuatu",
-  "Vatican City",
-  "Venezuela",
-  "Vietnam",
-  "Yemen",
-  "Zambia",
-  "Zimbabwe",
-];
+type CountrySelectProps = {
+  resetKey: number;
+};
 
-const CountrySelect = () => {
+const CountrySelect = ({ resetKey }: CountrySelectProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const [search, setSearch] = useState("");
   const [selectedCountry, setSelectedCountry] = useState("");
@@ -211,10 +19,23 @@ const CountrySelect = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
 
+  /*
+   * Reset the selector after a successful form submission.
+   */
+  useEffect(() => {
+    setIsOpen(false);
+    setSearch("");
+    setSelectedCountry("");
+    setHighlightedIndex(0);
+  }, [resetKey]);
+
   const filteredCountries = countries.filter((country) =>
     country.toLowerCase().includes(search.toLowerCase().trim())
   );
 
+  /*
+   * Close dropdown when clicking outside.
+   */
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (
@@ -288,14 +109,27 @@ const CountrySelect = () => {
 
       <label
         htmlFor="country-search"
-        className="mb-3 block text-sm font-semibold text-[var(--rt-ink)]"
+        className="mb-2.5 block text-sm font-semibold text-[var(--rt-ink)]"
       >
-        Country <span className="text-[var(--rt-primary)]">*</span>
+        Country{" "}
+        <span className="text-[var(--rt-primary)]">*</span>
       </label>
 
       <div className="relative">
         {/* Globe icon */}
-        <div className="pointer-events-none absolute left-4 top-1/2 z-10 flex -translate-y-1/2 items-center text-[var(--rt-ink-dim)]">
+        <div
+          className="
+            pointer-events-none
+            absolute
+            left-4
+            top-1/2
+            z-10
+            flex
+            -translate-y-1/2
+            items-center
+            text-[var(--rt-ink-dim)]
+          "
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="h-5 w-5"
@@ -305,6 +139,7 @@ const CountrySelect = () => {
             strokeWidth="1.8"
           >
             <circle cx="12" cy="12" r="9" />
+
             <path
               strokeLinecap="round"
               d="M3 12h18M12 3c2.1 2.35 3.2 5.35 3.2 9S14.1 18.65 12 21c-2.1-2.35-3.2-5.35-3.2-9S9.9 5.35 12 3z"
@@ -417,7 +252,7 @@ const CountrySelect = () => {
             shadow-[0_20px_50px_rgba(15,23,42,0.15)]
           "
         >
-          {/* Search header */}
+          {/* Dropdown header */}
           <div className="border-b border-slate-100 px-4 py-3">
             <div className="flex items-center justify-between">
               <span className="text-xs font-semibold uppercase tracking-wider text-slate-400">
@@ -483,6 +318,7 @@ const CountrySelect = () => {
                       strokeWidth="1.7"
                     >
                       <circle cx="12" cy="12" r="9" />
+
                       <path
                         strokeLinecap="round"
                         d="M3 12h18M12 3c2.1 2.35 3.2 5.35 3.2 9S14.1 18.65 12 21c-2.1-2.35-3.2-5.35-3.2-9S9.9 5.35 12 3z"
@@ -522,6 +358,7 @@ const CountrySelect = () => {
                     strokeWidth="1.8"
                   >
                     <circle cx="11" cy="11" r="7" />
+
                     <path
                       strokeLinecap="round"
                       d="m20 20-4-4"
@@ -555,6 +392,11 @@ const CountrySelect = () => {
 const Contact = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
+  /*
+   * Changing this value forces the country selector to reset.
+   */
+  const [countryResetKey, setCountryResetKey] = useState(0);
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
@@ -584,18 +426,14 @@ const Contact = () => {
 
       form.reset();
 
-      // Reset the custom country field after submission.
-      const countryInput = document.querySelector<HTMLInputElement>(
-        'input[name="country"]'
-      );
-
-      if (countryInput) {
-        countryInput.value = "";
-      }
+      // Properly reset the React country selector.
+      setCountryResetKey((current) => current + 1);
     } catch (error) {
       console.error("Form submission error:", error);
 
-      toast.error("Something went wrong submitting the form.");
+      toast.error("Something went wrong submitting the form.", {
+        description: "Please try again or contact us directly.",
+      });
     } finally {
       setIsSubmitting(false);
     }
@@ -751,7 +589,7 @@ const Contact = () => {
 
                 {/* Country */}
                 <div className="mt-6">
-                  <CountrySelect />
+                  <CountrySelect key={countryResetKey} resetKey={countryResetKey} />
                 </div>
 
                 {/* Vehicle Details */}
@@ -840,17 +678,20 @@ const Contact = () => {
                           stroke="currentColor"
                           strokeWidth="4"
                         />
+
                         <path
                           className="opacity-75"
                           fill="currentColor"
                           d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"
                         />
                       </svg>
+
                       Sending...
                     </>
                   ) : (
                     <>
                       Submit Vehicle Request
+
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         className="ml-2 h-4 w-4"
@@ -877,7 +718,7 @@ const Contact = () => {
             </div>
           </div>
 
-          {/* Info Column */}
+          {/* Information Column */}
           <div className="w-full px-4 lg:w-5/12 xl:w-4/12">
             <ContactForm />
           </div>
