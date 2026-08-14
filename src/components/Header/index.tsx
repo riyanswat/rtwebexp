@@ -1,4 +1,5 @@
 "use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -10,146 +11,289 @@ const Header = () => {
   const [sticky, setSticky] = useState(false);
   const pathname = usePathname();
 
+  // Sticky header
   useEffect(() => {
-    const onScroll = () => setSticky(window.scrollY >= 80);
-    window.addEventListener("scroll", onScroll, { passive: true });
-    onScroll();
-    return () => window.removeEventListener("scroll", onScroll);
+    const handleScroll = () => {
+      setSticky(window.scrollY > 40);
+    };
+
+    handleScroll();
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
-  useEffect(() => { setNavbarOpen(false); }, [pathname]);
+  // Close mobile menu when navigating
+  useEffect(() => {
+    setNavbarOpen(false);
+  }, [pathname]);
+
+  // Prevent background scrolling while mobile menu is open
+  useEffect(() => {
+    if (!navbarOpen) return;
+
+    const originalOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+
+    return () => {
+      document.body.style.overflow = originalOverflow;
+    };
+  }, [navbarOpen]);
 
   return (
     <header
       className={[
-        "header top-0 left-0 z-[9999] flex w-full items-center transition-all duration-300",
-        sticky ? "fixed" : "absolute",
-        "py-1", // consistent vertical padding; logo still shrinks on sticky
+        "fixed left-0 top-0 z-[9999] w-full",
+        "transition-all duration-300 ease-out",
+        sticky
+          ? "bg-[var(--rt-header-glass)] shadow-[0_4px_24px_rgba(0,0,0,0.06)] backdrop-blur-md"
+          : "bg-transparent",
       ].join(" ")}
     >
-      {/* Glass BACKGROUND layer (so links stay transparent) */}
+      {/* Subtle bottom border when sticky */}
       <div
-        aria-hidden
+        aria-hidden="true"
         className={[
-          "pointer-events-none absolute inset-0 z-0 transition-opacity duration-300",
-          sticky ? "opacity-100" : "opacity-0",
-          "backdrop-blur-md bg-[var(--rt-header-glass)]",
-        ].join(" ")}
-      />
-
-      {/* hairline */}
-      <div
-        aria-hidden
-        className={[
-          "pointer-events-none absolute inset-x-0 bottom-0 h-px transition-opacity duration-300 z-0",
-          "bg-[linear-gradient(90deg,rgba(2,6,23,0),var(--rt-header-hairline),rgba(2,6,23,0))]",
+          "pointer-events-none absolute bottom-0 left-0 right-0 h-px",
+          "bg-[linear-gradient(90deg,transparent,var(--rt-header-hairline),transparent)]",
+          "transition-opacity duration-300",
           sticky ? "opacity-100" : "opacity-0",
         ].join(" ")}
       />
 
-      <div className="container relative z-10">
-        <div className="relative -mx-4 flex items-center justify-between">
-          {/* Logo */}
-          <div className="w-70 max-w-full px-4 xl:mr-12">
+      <div className="container relative">
+        <div
+          className={[
+            "relative flex items-center justify-between",
+            "transition-[height] duration-300 ease-out",
+            sticky ? "h-[68px]" : "h-[82px]",
+          ].join(" ")}
+        >
+          {/* =========================================================
+              LOGO
+          ========================================================= */}
+          <div className="flex-shrink-0">
             <Link
               href="/"
-              className={[
-                "header-logo block w-full rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/40",
-                sticky ? "py-2" : "py-4",
-              ].join(" ")}
               aria-label="Rayan Trading Home"
+              className="
+                group block rounded-md
+                focus:outline-none
+                focus-visible:ring-2
+                focus-visible:ring-[var(--rt-primary)]/40
+              "
             >
-              <span
+              <Image
+                src="/images/logo/logo_light.png"
+                alt="Rayan Trading"
+                width={160}
+                height={34}
+                priority
                 className={[
-                  "inline-block origin-left transition-transform duration-300 ease-out",
-                  sticky ? "scale-[0.95]" : "scale-125",
-                ].join(" ")}
-              >
-                <Image
-                  src="/images/logo/logo_light.png"
-                  alt="logo"
-                  width={160}
-                  height={34}
-                  priority
-                />
-              </span>
+  "h-auto w-[175px] object-contain",
+  "transition-all duration-300 ease-out",
+  "group-hover:scale-[1.02]",
+  sticky ? "lg:w-[155px]" : "lg:w-[250px]",
+].join(" ")}
+              />
             </Link>
           </div>
 
-          {/* Right side */}
-          <div className="ml-auto flex items-center justify-end px-4">
-            {/* Mobile toggle */}
-            <button
-              onClick={() => setNavbarOpen((s) => !s)}
-              id="navbarToggler"
-              aria-label="Toggle navigation"
-              aria-expanded={navbarOpen}
-              aria-controls="navbarCollapse"
-              className="absolute right-4 top-1/2 -translate-y-1/2 rounded-lg p-2 lg:hidden focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/50 bg-transparent"
-            >
-              <span className={["block h-0.5 w-7 bg-[var(--rt-ink)] transition-all", navbarOpen ? "translate-y-[6px] rotate-45" : ""].join(" ")} />
-              <span className={["mt-1 block h-0.5 w-7 bg-[var(--rt-ink)] transition-opacity", navbarOpen ? "opacity-0" : "opacity-100"].join(" ")} />
-              <span className={["mt-1 block h-0.5 w-7 bg-[var(--rt-ink)] transition-all", navbarOpen ? "-translate-y-[6px] -rotate-45" : ""].join(" ")} />
-            </button>
+          {/* =========================================================
+              DESKTOP NAVIGATION
+          ========================================================= */}
+          <nav
+            aria-label="Main navigation"
+            className="hidden lg:block"
+          >
+            <ul className="flex items-center gap-8 xl:gap-10">
+              {menuData.map((menuItem) => {
+                const isActive =
+                  menuItem.path === "/"
+                    ? pathname === "/"
+                    : pathname === menuItem.path ||
+                      pathname.startsWith(`${menuItem.path}/`);
 
-            {/* Mobile overlay */}
-            {navbarOpen && (
-              <button
-                className="fixed inset-0 z-20 block lg:hidden cursor-default bg-transparent"
-                aria-hidden="true"
-                onClick={() => setNavbarOpen(false)}
-              />
-            )}
+                return (
+                  <li key={menuItem.id} className="relative">
+                    <Link
+                      href={menuItem.path}
+                      className={[
+                        "group relative inline-flex items-center",
+                        "py-2 text-[15px] font-medium",
+                        "transition-colors duration-200",
+                        "focus:outline-none",
+                        "focus-visible:ring-2",
+                        "focus-visible:ring-[var(--rt-primary)]/40",
+                        "focus-visible:ring-offset-2",
+                        "rounded-sm",
+                        isActive
+                          ? "text-[var(--rt-ink)]"
+                          : "text-[var(--rt-ink)]/75 hover:text-[var(--rt-ink)]",
+                      ].join(" ")}
+                    >
+                      <span>{menuItem.title}</span>
 
-            {/* Nav */}
-            <nav
-              id="navbarCollapse"
-              className={[
-                // Mobile menu: keep glassy panel
-                "navbar absolute right-4 z-30 w-[260px] rounded-lg border border-[var(--rt-ring)]",
-                "bg-[var(--rt-header-glass)] p-4 backdrop-blur-md",
-                "transition-all duration-300",
-                navbarOpen
-                  ? "visible top-[calc(100%+12px)] opacity-100"
-                  : "invisible top-[calc(100%+24px)] opacity-0",
-                // Desktop: NO background/pill
-                "lg:visible lg:static lg:w-auto lg:border-0 lg:bg-transparent lg:p-0 lg:opacity-100 lg:shadow-none lg:backdrop-blur-0",
-              ].join(" ")}
-            >
-              <ul className="block lg:flex lg:items-center lg:space-x-10">
-                {menuData.map((menuItem, index) => {
-                  const isActive = menuItem.path && pathname === menuItem.path;
-                  return (
-                    <li key={index} className="group relative bg-transparent">
-                      <Link
-                        href={menuItem.path}
-                        onClick={() => setNavbarOpen(false)}
+                      {/* Active / hover underline */}
+                      <span
+                        aria-hidden="true"
                         className={[
-                          "relative flex py-2 text-base lg:inline-flex lg:px-0 bg-transparent", // force transparent
-                          sticky ? "lg:py-3" : "lg:py-6",
+                          "absolute bottom-0 left-0 h-[2px]",
+                          "rounded-full bg-[var(--rt-primary)]",
+                          "transition-all duration-200 ease-out",
                           isActive
-                            ? "text-[var(--rt-ink)]"
-                            : "text-[var(--rt-ink)]/80 hover:text-[var(--rt-ink)]",
-                          "transition-colors duration-200",
+                            ? "w-full"
+                            : "w-0 group-hover:w-full",
                         ].join(" ")}
-                      >
-                        <span
-                          className={[
-                            "relative inline-block bg-transparent",
-                            "after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:bg-[var(--rt-primary)] after:content-[''] after:transition-[width] after:duration-300",
-                            "after:w-0 group-hover:after:w-full focus-visible:after:w-full",
-                          ].join(" ")}
-                        >
-                          {menuItem.title}
-                        </span>
-                      </Link>
-                    </li>
-                  );
-                })}
-              </ul>
-            </nav>
-          </div>
+                      />
+                    </Link>
+                  </li>
+                );
+              })}
+            </ul>
+          </nav>
+
+          {/* =========================================================
+              MOBILE MENU BUTTON
+          ========================================================= */}
+          <button
+            type="button"
+            onClick={() => setNavbarOpen((open) => !open)}
+            aria-label={navbarOpen ? "Close navigation" : "Open navigation"}
+            aria-expanded={navbarOpen}
+            aria-controls="mobile-navigation"
+            className="
+              relative z-[10002]
+              flex h-11 w-11
+              items-center justify-center
+              rounded-lg
+              transition-colors duration-200
+              hover:bg-[var(--rt-primary)]/5
+              focus:outline-none
+              focus-visible:ring-2
+              focus-visible:ring-[var(--rt-primary)]/40
+              lg:hidden
+            "
+          >
+            <span className="relative block h-5 w-6">
+              <span
+                className={[
+                  "absolute left-0 top-0 block h-[2px] w-6 rounded-full",
+                  "bg-[var(--rt-ink)]",
+                  "transition-all duration-200 ease-out",
+                  navbarOpen
+                    ? "top-[9px] rotate-45"
+                    : "",
+                ].join(" ")}
+              />
+
+              <span
+                className={[
+                  "absolute left-0 top-[9px] block h-[2px] w-6 rounded-full",
+                  "bg-[var(--rt-ink)]",
+                  "transition-all duration-200 ease-out",
+                  navbarOpen
+                    ? "opacity-0"
+                    : "opacity-100",
+                ].join(" ")}
+              />
+
+              <span
+                className={[
+                  "absolute left-0 top-[18px] block h-[2px] w-6 rounded-full",
+                  "bg-[var(--rt-ink)]",
+                  "transition-all duration-200 ease-out",
+                  navbarOpen
+                    ? "top-[9px] -rotate-45"
+                    : "",
+                ].join(" ")}
+              />
+            </span>
+          </button>
         </div>
+
+        {/* =========================================================
+            MOBILE OVERLAY
+        ========================================================= */}
+        {navbarOpen && (
+          <div
+            aria-hidden="true"
+            onClick={() => setNavbarOpen(false)}
+            className="
+              fixed inset-0 z-[9998]
+              bg-black/10
+              backdrop-blur-[2px]
+              lg:hidden
+            "
+          />
+        )}
+
+        {/* =========================================================
+            MOBILE NAVIGATION
+        ========================================================= */}
+        <nav
+          id="mobile-navigation"
+          aria-label="Mobile navigation"
+          className={[
+            "absolute left-4 right-4 top-full z-[10001]",
+            "lg:hidden",
+            "overflow-hidden rounded-xl",
+            "border border-[var(--rt-ring)]",
+            "bg-[var(--rt-surface)]/95",
+            "shadow-[0_16px_40px_rgba(0,0,0,0.12)]",
+            "backdrop-blur-xl",
+            "transition-all duration-200 ease-out",
+            navbarOpen
+              ? "visible translate-y-2 opacity-100"
+              : "invisible -translate-y-1 opacity-0 pointer-events-none",
+          ].join(" ")}
+        >
+          <ul className="p-2">
+            {menuData.map((menuItem) => {
+              const isActive =
+                menuItem.path === "/"
+                  ? pathname === "/"
+                  : pathname === menuItem.path ||
+                    pathname.startsWith(`${menuItem.path}/`);
+
+              return (
+                <li key={menuItem.id}>
+                  <Link
+                    href={menuItem.path}
+                    onClick={() => setNavbarOpen(false)}
+                    className={[
+                      "flex items-center rounded-lg",
+                      "px-4 py-3.5",
+                      "text-[15px] font-medium",
+                      "transition-all duration-150",
+                      "focus:outline-none",
+                      "focus-visible:ring-2",
+                      "focus-visible:ring-[var(--rt-primary)]/40",
+                      isActive
+                        ? "bg-[var(--rt-primary)]/8 text-[var(--rt-primary)]"
+                        : "text-[var(--rt-ink)] hover:bg-[var(--rt-primary)]/5 hover:text-[var(--rt-primary)]",
+                    ].join(" ")}
+                  >
+                    <span
+                      className={[
+                        "mr-3 h-1.5 w-1.5 rounded-full",
+                        "transition-opacity duration-150",
+                        isActive
+                          ? "bg-[var(--rt-primary)] opacity-100"
+                          : "bg-[var(--rt-ink-dim)] opacity-0",
+                      ].join(" ")}
+                    />
+
+                    {menuItem.title}
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
+        </nav>
       </div>
     </header>
   );

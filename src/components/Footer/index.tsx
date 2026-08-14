@@ -1,4 +1,5 @@
 "use client";
+
 import Link from "next/link";
 
 const Footer = () => {
@@ -22,13 +23,6 @@ const Footer = () => {
         { label: "Ports & Countries", href: "/#countries" },
       ],
     },
-    // {
-    //   title: "Legal",
-    //   links: [
-    //     { label: "Terms", href: "/terms" },
-    //     { label: "Privacy", href: "/privacy" },
-    //   ],
-    // },
   ];
 
   const socials = [
@@ -51,7 +45,7 @@ const Footer = () => {
     {
       href: "https://share.google/2JlgCj9YzRT2Bc24R",
       label: "Google Maps",
-      type: "stroke" as const, // use your old stroked icon exactly
+      type: "stroke" as const,
       icon: (
         <>
           <path d="M12 22s8-4.5 8-12a8 8 0 10-16 0c0 7.5 8 12 8 12z" />
@@ -65,63 +59,85 @@ const Footer = () => {
     <footer
       className="
         relative z-10
-        text-[var(--rt-footer-ink)]
         bg-[var(--rt-footer-bg)]
+        text-[var(--rt-footer-ink)]
         before:pointer-events-none before:absolute before:inset-0
         before:bg-[radial-gradient(120%_80%_at_50%_-10%,rgba(255,255,255,0.06),transparent_55%),radial-gradient(120%_80%_at_100%_100%,rgba(0,0,0,0.35),transparent_50%)]
         before:opacity-90
       "
     >
-      {/* subtle top hairline */}
-      <div className="absolute inset-x-0 top-0 h-px bg-[linear-gradient(90deg,rgba(255,255,255,0),rgba(255,255,255,0.14),rgba(255,255,255,0))]" />
+      {/* Subtle top border */}
+      <div
+        className="
+          absolute inset-x-0 top-0 h-px
+          bg-[linear-gradient(90deg,rgba(255,255,255,0),rgba(255,255,255,0.14),rgba(255,255,255,0))]
+        "
+      />
 
       <div className="container pt-16 md:pt-20 lg:pt-20">
-        {/* Top: address + socials */}
+        {/* Top section */}
         <div className="-mx-4 flex flex-wrap items-start justify-between gap-y-10">
-          {/* Address / identity */}
+          {/* Company / Address */}
           <div className="w-full px-4 md:w-6/12 lg:w-5/12">
-            <h4 className="mb-3 text-lg font-semibold text-[var(--rt-footer-ink)]">
-              <Link href="/">RAYAN TRADING</Link>
+            <h4 className="mb-3 text-lg font-semibold">
+              <Link
+                href="/"
+                className="
+                  inline-block
+                  text-[var(--rt-footer-ink)]
+                  transition-all duration-200 ease-out
+                  hover:-translate-y-[1px]
+                  hover:text-[var(--rt-footer-accent)]
+                "
+              >
+                RAYAN TRADING
+              </Link>
             </h4>
+
             <p className="mb-6 text-base leading-relaxed text-[var(--rt-footer-ink-dim)]">
-              Exporting Japanese and imported vehicles from Japan with 10+ years of trusted global service.
+              Exporting Japanese and imported vehicles from Japan with 10+
+              years of trusted global service.
             </p>
 
-            {/* Socials — slightly larger, but very subtle ring glow */}
+            {/* Socials */}
             <div className="flex items-center gap-4">
-              {socials.map(({ href, label, icon, type }, i) => (
+              {socials.map(({ href, label, icon, type }) => (
                 <a
-                  key={i}
+                  key={label}
                   href={href}
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={label}
                   className="
-                    group relative inline-flex h-12 w-12 items-center justify-center rounded-full
-                    text-[var(--rt-footer-ink)]/85 transition-all duration-300
-                    bg-[#0C1622] ring-1 ring-white/10
+                    group relative inline-flex h-12 w-12
+                    items-center justify-center rounded-full
+                    bg-[#0C1622]
+                    text-[var(--rt-footer-ink)]/85
+                    ring-1 ring-white/10
+                    transition-all duration-200 ease-out
+                    hover:-translate-y-[2px]
                     hover:text-[var(--rt-footer-accent)]
-                    focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--rt-footer-accent)]/30
-                    before:absolute before:inset-0 before:rounded-full before:content-['']
-                    before:ring-[2px] before:ring-[var(--rt-footer-accent)]/0 before:transition-all before:duration-300
-                    hover:before:ring-[var(--rt-footer-accent)]/15
-                    hover:shadow-[0_0_10px_rgba(77,144,254,0.15)]
+                    hover:ring-[var(--rt-footer-accent)]/20
+                    hover:shadow-[0_6px_18px_rgba(0,0,0,0.18)]
+                    active:translate-y-0
+                    focus:outline-none
+                    focus-visible:ring-2
+                    focus-visible:ring-[var(--rt-footer-accent)]/40
                   "
                 >
                   {type === "fill" ? (
                     <svg
                       viewBox="0 0 24 24"
-                      className="h-[22px] w-[22px]"
+                      className="h-[22px] w-[22px] transition-transform duration-200 group-hover:scale-105"
                       fill="currentColor"
                       stroke="none"
                     >
                       {icon}
                     </svg>
                   ) : (
-                    // Google Maps (old stroked icon)
                     <svg
                       viewBox="0 0 24 24"
-                      className="h-[22px] w-[22px]"
+                      className="h-[22px] w-[22px] transition-transform duration-200 group-hover:scale-105"
                       fill="none"
                       stroke="currentColor"
                       strokeWidth="2"
@@ -134,26 +150,34 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Footer nav columns */}
+          {/* Navigation */}
           <div className="w-full px-4 md:w-6/12 lg:w-6/12">
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-8">
+            <div className="grid grid-cols-2 gap-8 sm:grid-cols-3">
               {navCols.map((col) => (
                 <div key={col.title}>
-                  <h5 className="mb-4 text-sm font-semibold uppercase tracking-wider text-[var(--rt-footer-ink)]/90 select-none">
+                  <h5
+                    className="
+                      mb-4 select-none text-sm font-semibold uppercase
+                      tracking-wider text-[var(--rt-footer-ink)]/90
+                    "
+                  >
                     {col.title}
                   </h5>
+
                   <ul className="space-y-3">
-                    {col.links.map((l) => (
-                      <li key={l.label}>
+                    {col.links.map((link) => (
+                      <li key={link.label}>
                         <Link
-                          href={l.href}
+                          href={link.href}
                           className="
+                            inline-block
                             text-[var(--rt-footer-ink-dim)]
-                            transition-colors duration-150
-                            hover:text-[var(--rt-footer-ink)/10]
+                            transition-all duration-200 ease-out
+                            hover:translate-x-[2px]
+                            hover:text-[var(--rt-footer-ink)]
                           "
                         >
-                          {l.label}
+                          {link.label}
                         </Link>
                       </li>
                     ))}
@@ -165,9 +189,14 @@ const Footer = () => {
         </div>
 
         {/* Divider */}
-        <div className="mt-14 h-px w-full bg-[linear-gradient(90deg,rgba(255,255,255,0),rgba(255,255,255,0.10),rgba(255,255,255,0))]" />
+        <div
+          className="
+            mt-14 h-px w-full
+            bg-[linear-gradient(90deg,rgba(255,255,255,0),rgba(255,255,255,0.10),rgba(255,255,255,0))]
+          "
+        />
 
-        {/* Bottom: copyright */}
+        {/* Copyright */}
         <div className="py-8">
           <p className="text-center text-[13px] text-[var(--rt-footer-ink-dim)]">
             © {year} Rayan Trading. All Rights Reserved.
