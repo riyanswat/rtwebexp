@@ -217,7 +217,7 @@ const About4 = () => {
 
                     <div className="min-w-0">
                       <div className="mb-1 flex flex-wrap items-center gap-2">
-                        <span className="text-xs font-semibold tracking-[0.1em] text-[var(--rt-primary)]">
+                        <span className="select-none text-xs font-semibold tracking-[0.1em] text-[var(--rt-primary)]">
                           0{index + 1}
                         </span>
 

@@ -156,7 +156,7 @@ const About2 = () => {
                       {item.icon}
                     </div>
 
-                    <span className="text-xs font-semibold tracking-[0.12em] text-[var(--rt-ink)]/30">
+                    <span className="select-none text-xs font-semibold tracking-[0.12em] text-[var(--rt-ink)]/30">
                       {item.number}
                     </span>
                   </div>

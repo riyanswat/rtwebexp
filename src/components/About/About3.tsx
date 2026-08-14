@@ -59,7 +59,7 @@ const About3 = () => {
                 <div key={point.title} className="group flex gap-4">
                   <div className="relative flex flex-col items-center">
                     <div
-                      className="
+                      className="select-none
                         flex h-9 w-9 flex-shrink-0 items-center justify-center
                         rounded-full
                         border border-[var(--rt-primary)]/20
