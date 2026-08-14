@@ -62,7 +62,7 @@ const Hero = () => {
                   "delay-[180ms]"
                 )}
               >
-                We help customers around the world source and import vehicles from Japan, including cars, trucks, heavy machinery and European cars.
+                We help customers around the world source vehicles from Japan, including Japanese and European cars, trucks and heavy machinery
               </p>
 
               <div
@@ -94,16 +94,7 @@ const Hero = () => {
                   "delay-[360ms]"
                 )}
               >
-                {[
-                  "Honest and Transparent Service",
-                  "Worldwide Shipping",
-                  "Dealer-Trusted Service",
-                ].map((item, idx) => (
-                  <span key={idx} className="inline-flex items-center gap-2">
-                    <span className="h-1.5 w-1.5 rounded-full bg-[var(--rt-primary)]/80" />
-                    {item}
-                  </span>
-                ))}
+          
               </div>
             </div>
           </div>

@@ -1,6 +1,7 @@
 "use client";
+
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
 
 const faqs = [
@@ -12,17 +13,17 @@ const faqs = [
   {
     question: "Can I buy a car directly from Japan through you?",
     answer:
-      "Yes. You can choose a car from our listings or request a specific model. We’ll handle everything — auction bidding, inspection, payment processing, and shipping to your country.",
+      "Yes. You can share the details of the car with us and we will handle everything, including auction bidding, inspection, payment processing and shipping to your country.",
   },
   {
     question: "What payment methods do you accept?",
     answer:
-      "We primarily accept international bank transfers (TT). Other options like PayPal or L/C are possible in certain cases. All transactions are fully invoiced and traceable.",
+      "We primarily accept international bank transfers (TT). Other options like WISE are possible in certain cases. All transactions are fully invoiced and traceable.",
   },
   {
     question: "Which countries do you ship to?",
     answer:
-      "We ship vehicles globally — including the UK, New Zealand, Australia, South Africa, Kenya, UAE, and many others. If your country allows vehicle imports, we can arrange shipping there.",
+      "We ship vehicles globally, including the UK, Ireland, New Zealand, Australia, South Africa, Tanzania, Pakistan, UAE, Jamaica and many others. If your country allows vehicle imports, we can arrange shipping there.",
   },
   {
     question: "How long does it take to receive my vehicle?",
@@ -32,12 +33,7 @@ const faqs = [
   {
     question: "Do you provide vehicle inspection or reports?",
     answer:
-      "Yes. Every car is inspected before export. We provide auction sheets, detailed condition reports, and inspection certificates such as JEVIC when required by your country.",
-  },
-  {
-    question: "What happens if my car arrives damaged?",
-    answer:
-      "In rare cases of shipping damage, we assist with all claim procedures and documentation to help you obtain compensation from the relevant shipping or insurance company.",
+      "Yes. Every car is inspected before export.",
   },
   {
     question: "What documents will I receive after shipment?",
@@ -55,81 +51,187 @@ const FAQ = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   const toggleFAQ = (index: number) => {
-    setOpenIndex(openIndex === index ? null : index);
+    setOpenIndex((current) => (current === index ? null : index));
   };
 
   return (
-    <section className="rt-section-b py-16 md:py-20 lg:py-28">
+    <section className="rt-section-b py-20 md:py-24 lg:py-28">
       <div className="container">
-        <div className="-mx-4 flex flex-wrap items-center">
-          {/* Text + FAQs */}
-          <div className="w-full px-4 lg:w-1/2">
-            <div className="mb-10">
-              <h2 className="mb-3 text-3xl font-bold text-[var(--rt-ink)] sm:text-4xl">
-                FAQs
-              </h2>
-              <p className="mb-8 text-base text-[var(--rt-ink-dim)]">
-                Here are some of the most common questions we receive from our clients worldwide.
-              </p>
+        <div className="grid items-start gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-20">
+          
+          {/* FAQ CONTENT */}
+          <div>
+            <div className="mb-9">
+              <span className="mb-3 inline-block text-sm font-semibold uppercase tracking-[0.18em] text-[var(--rt-primary)]">
+                Common questions
+              </span>
 
-              <div className="space-y-3">
-                {faqs.map((item, i) => (
+              <h2 className="mb-4 text-3xl font-bold tracking-tight text-[var(--rt-ink)] sm:text-4xl">
+                Frequently Asked Questions
+              </h2>
+
+              <p className="max-w-xl text-base leading-7 text-[var(--rt-ink-dim)]">
+                Everything you need to know about sourcing vehicles from Japan,
+                purchasing through us, and arranging international shipping.
+              </p>
+            </div>
+
+            {/* FAQ LIST */}
+            <div className="border-t border-[var(--rt-ring)]">
+              {faqs.map((item, index) => {
+                const isOpen = openIndex === index;
+                const answerId = `faq-answer-${index}`;
+
+                return (
                   <div
-                    key={i}
-                    className="rounded-lg rt-card p-4 cursor-pointer hover:ring-1 hover:ring-[var(--rt-primary)]/40 transition-all"
-                    onClick={() => toggleFAQ(i)}
+                    key={item.question}
+                    className="border-b border-[var(--rt-ring)]"
                   >
-                    <div className="flex justify-between items-center">
-                      <h3 className="text-base font-semibold text-[var(--rt-ink)]">
-                        {item.question}
-                      </h3>
-                      <motion.svg
-                        initial={false}
-                        animate={{ rotate: openIndex === i ? 180 : 0 }}
-                        transition={{ duration: 0.25 }}
-                        viewBox="0 0 24 24"
-                        className="h-5 w-5 text-[var(--rt-primary)] flex-shrink-0"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="1.8"
+                    <button
+                      type="button"
+                      onClick={() => toggleFAQ(index)}
+                      aria-expanded={isOpen}
+                      aria-controls={answerId}
+                      className="
+                        group flex w-full items-center justify-between
+                        gap-6 py-5 text-left
+                        transition-colors duration-200
+                        focus:outline-none
+                        focus-visible:ring-2
+                        focus-visible:ring-[var(--rt-primary)]/50
+                        focus-visible:ring-offset-2
+                      "
+                    >
+                      <span
+                        className={`
+                          text-[15px] font-semibold leading-6
+                          transition-colors duration-200
+                          ${
+                            isOpen
+                              ? "text-[var(--rt-primary)]"
+                              : "text-[var(--rt-ink)]"
+                          }
+                        `}
                       >
-                        <path d="M6 9l6 6 6-6" />
-                      </motion.svg>
-                    </div>
+                        {item.question}
+                      </span>
+
+                      {/* Plus / minus icon */}
+                      <span
+                        className={`
+                          flex h-8 w-8 flex-shrink-0 items-center justify-center
+                          rounded-full border
+                          transition-all duration-200
+                          ${
+                            isOpen
+                              ? "border-[var(--rt-primary)] bg-[var(--rt-primary)] text-white"
+                              : "border-[var(--rt-ring)] text-[var(--rt-ink-dim)] group-hover:border-[var(--rt-primary)] group-hover:text-[var(--rt-primary)]"
+                          }
+                        `}
+                      >
+                        <span className="relative h-3.5 w-3.5">
+                          <span className="absolute left-0 top-1/2 h-px w-3.5 -translate-y-1/2 bg-current" />
+
+                          <span
+                            className={`
+                              absolute left-1/2 top-0 h-3.5 w-px
+                              -translate-x-1/2
+                              bg-current
+                              transition-transform duration-200
+                              ${
+                                isOpen
+                                  ? "scale-y-0"
+                                  : "scale-y-100"
+                              }
+                            `}
+                          />
+                        </span>
+                      </span>
+                    </button>
 
                     <AnimatePresence initial={false}>
-                      {openIndex === i && (
+                      {isOpen && (
                         <motion.div
-                          key="content"
-                          initial={{ opacity: 0, height: 0 }}
-                          animate={{ opacity: 1, height: "auto" }}
-                          exit={{ opacity: 0, height: 0 }}
-                          transition={{ duration: 0.3, ease: "easeInOut" }}
+                          id={answerId}
+                          initial={{ height: 0, opacity: 0 }}
+                          animate={{ height: "auto", opacity: 1 }}
+                          exit={{ height: 0, opacity: 0 }}
+                          transition={{
+                            height: {
+                              duration: 0.22,
+                              ease: "easeOut",
+                            },
+                            opacity: {
+                              duration: 0.16,
+                            },
+                          }}
+                          className="overflow-hidden"
                         >
-                          <p className="mt-3 text-sm text-[var(--rt-ink-dim)] leading-relaxed">
-                            {item.answer}
-                          </p>
+                          <div className="pb-5 pr-12">
+                            <p className="text-sm leading-7 text-[var(--rt-ink-dim)]">
+                              {item.answer}
+                            </p>
+                          </div>
                         </motion.div>
                       )}
                     </AnimatePresence>
                   </div>
-                ))}
+                );
+              })}
+            </div>
+          </div>
+
+          {/* IMAGE / SUPPORT PANEL */}
+          <div className="lg:sticky lg:top-28">
+            <div className="overflow-hidden rounded-2xl border border-[var(--rt-ring)] bg-[var(--rt-surface)] [box-shadow:var(--shadow-two)]">
+              
+              <div className="relative aspect-[4/3] overflow-hidden">
+                <Image
+                  src="/images/about/faqimg.png"
+                  alt="Rayan Trading vehicle export process"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 45vw"
+                  className="object-cover"
+                />
+
+                <div className="absolute inset-0 bg-gradient-to-t from-black/45 via-black/5 to-transparent" />
+              </div>
+
+              <div className="p-7 sm:p-8">
+                <p className="mb-2 text-sm font-semibold uppercase tracking-[0.14em] text-[var(--rt-primary)]">
+                  Need more information?
+                </p>
+
+                <h3 className="mb-3 text-xl font-bold text-[var(--rt-ink)]">
+                  We’re happy to help.
+                </h3>
+
+                <p className="mb-6 text-sm leading-6 text-[var(--rt-ink-dim)]">
+                  If you have a question that isn't answered here, get in
+                  touch with us and tell us what vehicle you're looking for.
+                </p>
+
+                <a
+                  href="/contact"
+                  className="
+                    inline-flex items-center justify-center
+                    rounded-md
+                    bg-[var(--rt-primary)]
+                    px-5 py-3
+                    text-sm font-semibold text-white
+                    transition-all duration-200
+                    hover:-translate-y-0.5
+                    hover:bg-[var(--rt-primary-600)]
+                    hover:[box-shadow:var(--shadow-btn-hover)]
+                    active:translate-y-0
+                  "
+                >
+                  Contact Rayan Trading
+                </a>
               </div>
             </div>
           </div>
 
-          {/* Image */}
-          <div className="w-full px-4 lg:w-1/2">
-            <div className="relative mx-auto max-w-[500px]">
-              <Image
-                src="/images/about/faqimg.png"
-                alt="FAQ about Rayan Trading's export process"
-                width={500}
-                height={500}
-                className="rounded-lg object-contain shadow-[var(--shadow-two)]"
-              />
-            </div>
-          </div>
         </div>
       </div>
     </section>
