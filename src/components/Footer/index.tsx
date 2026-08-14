@@ -34,14 +34,14 @@ const Footer = () => {
         <path d="M13 10.5V8.25c0-.69.56-1.25 1.25-1.25H16V4h-2.12C11.74 4 10 5.74 10 7.88V10.5H8v3h2V20h3v-6.5h2.2l.8-3H13z" />
       ),
     },
-    {
-      href: "https://www.instagram.com/rayantradingjp",
-      label: "Instagram",
-      type: "fill" as const,
-      icon: (
-        <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm5 5a5 5 0 1 0 .001 10.001A5 5 0 0 0 12 7Zm0 2.2A2.8 2.8 0 1 1 9.2 12 2.8 2.8 0 0 1 12 9.2ZM18 6.3a1.2 1.2 0 1 0 0 2.4 1.2 1.2 0 0 0 0-2.4Z" />
-      ),
-    },
+    // {
+    //   href: "https://www.instagram.com/rayantradingjp",
+    //   label: "Instagram",
+    //   type: "fill" as const,
+    //   icon: (
+    //     <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm5 5a5 5 0 1 0 .001 10.001A5 5 0 0 0 12 7Zm0 2.2A2.8 2.8 0 1 1 9.2 12 2.8 2.8 0 0 1 12 9.2ZM18 6.3a1.2 1.2 0 1 0 0 2.4 1.2 1.2 0 0 0 0-2.4Z" />
+    //   ),
+    // },
     {
       href: "https://share.google/2JlgCj9YzRT2Bc24R",
       label: "Google Maps",
