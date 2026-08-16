@@ -26,7 +26,7 @@ const blogData: Blog[] = [
       image: "/images/blog/author-02.png",
       designation: "Owner",
     },
-    tags: ["computer"],
+    tags: ["australia"],
     publishDate: "12-09-2025",
   },
   {
