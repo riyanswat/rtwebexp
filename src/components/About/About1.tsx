@@ -103,7 +103,7 @@ const About1 = () => {
               />
 
               <Image
-                src="/images/about/aboutimage.png"
+                src="/images/about/about1.png"
                 alt="Rayan Trading"
                 width={500}
                 height={500}

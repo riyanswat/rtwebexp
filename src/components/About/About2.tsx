@@ -97,7 +97,7 @@ const About2 = () => {
               />
 
               <Image
-                src="/images/about/about2.png"
+                src="/images/about/about2.jpg"
                 alt="Vehicles sourced by Rayan Trading"
                 width={500}
                 height={500}
