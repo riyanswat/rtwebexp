@@ -347,7 +347,7 @@ export default function ContactForm() {
 
         {/* Address */}
         <a
-          href="https://maps.app.goo.gl/jds1Sdmrf46arxJK7"
+          href="https://maps.app.goo.gl/MAELkvF61AbX5MUo6"
           target="_blank"
           rel="noopener noreferrer"
           className="
