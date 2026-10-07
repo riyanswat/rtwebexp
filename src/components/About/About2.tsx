@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const offerings = [
   {
-    number: "01",
+    number: "1",
     title: "Japanese Used Vehicles",
     description:
       "Sedans, SUVs, kei cars and other Japanese vehicles sourced through major auctions across Japan.",
@@ -22,7 +22,7 @@ const offerings = [
     ),
   },
   {
-    number: "02",
+    number: "2",
     title: "Trucks, Buses & Machinery",
     description:
       "Commercial vehicles and heavy equipment for businesses, fleets and specialized requirements.",
@@ -41,7 +41,7 @@ const offerings = [
     ),
   },
   {
-    number: "03",
+    number: "3",
     title: "European & Imported Vehicles",
     description:
       "European, British, American and other imported vehicles already available within the Japanese market.",
@@ -59,7 +59,7 @@ const offerings = [
     ),
   },
   {
-    number: "04",
+    number: "4",
     title: "Classic & Collector Cars",
     description:
       "Special and collectible vehicles sourced according to individual requests and availability.",

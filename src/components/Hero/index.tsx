@@ -44,7 +44,7 @@ const Hero = () => {
                   mounted && "opacity-100 translate-x-0"
                 )}
               >
-                Your Reliable Partner for{" "}
+                Your Partner for{" "}
                 <span className="text-[var(--rt-primary)]">
                   Vehicle Exports
                 </span>{" "}

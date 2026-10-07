@@ -40,7 +40,7 @@ const SingleWork = ({
     group-hover:text-white
   "
 >
-  {String(step).padStart(2, "0")}
+  {String(step)}
 </span>
 
         <div
