@@ -91,7 +91,7 @@ const BlogDetailsPage = () => {
                   <path d="M16 2v4M8 2v4M3 9h18" />
                 </svg>
 
-                January 2026
+                September 12, 2025
               </div>
             </div>
           </div>
